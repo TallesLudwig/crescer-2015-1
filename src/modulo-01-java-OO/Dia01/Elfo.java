@@ -10,6 +10,7 @@ public class Elfo
     
     private String nome;
     private int flechas, experiencia;
+    private int vidaOrc= 110;
 
     // type initializer
     {
@@ -41,6 +42,17 @@ public class Elfo
         flechas--;
         experiencia++;
     }
+    
+    
+    
+    public void atacarOrc(){
+        flechas--;
+        vidaOrc= orc - 10;    
+    }
+    
+     
+    
+    
     
     //ublic void setNome(String novoNome) {
       //  nome = novoNome;
