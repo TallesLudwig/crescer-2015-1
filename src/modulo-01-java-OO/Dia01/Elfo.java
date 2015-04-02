@@ -42,9 +42,9 @@ public class Elfo
         experiencia++;
     }
     
-    public void setNome(String novoNome) {
-        nome = novoNome;
-    }
+    //ublic void setNome(String novoNome) {
+      //  nome = novoNome;
+    //}
     
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
