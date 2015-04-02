@@ -41,6 +41,7 @@ public class Elfo
         flechas--;
         experiencia++;
         umOrc.tomaFlecha();
+
     }
     
  
