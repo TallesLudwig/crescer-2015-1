@@ -10,8 +10,6 @@ public class Elfo
     
     private String nome;
     private int flechas, experiencia;
-    private int vidaOrc= 110;
-
     // type initializer
     {
         flechas = 42;
@@ -36,19 +34,16 @@ public class Elfo
     
     /**
      * Atira uma flecha e perde uma unidade.
+     * chamando um orc,tomaFlecha();
      */
-    public void atirarFlecha() {
-        //flechas = flechas - 1;
+    public void atirarFlecha(Orc umOrc) {
+       
         flechas--;
         experiencia++;
+        umOrc.tomaFlecha();
     }
     
-    
-    
-    public void atacarOrc(){
-        flechas--;
-        vidaOrc= orc - 10;    
-    }
+ 
     
      
     
