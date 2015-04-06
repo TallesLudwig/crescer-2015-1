@@ -61,11 +61,11 @@ public class ElfoTest
         Elfo umElfo;
         // Act - Execução da ação de testes
         umOrc = new Orc();
-        umElfo = new Elfo("Legolas", 900);
+        umElfo = new Elfo("Legolas", 50);
         // Assert - Verificação
         int esperadoF =0;
-        int esperadoXP = 900;
-        for(int i =0; i<900; i++){
+        int esperadoXP = 50;
+        for(int i =0; i<50; i++){
             umElfo.atirarFlecha(umOrc);
         }
         
