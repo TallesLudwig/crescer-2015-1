@@ -10,6 +10,7 @@ public class Elfo
     
     private String nome;
     private int flechas, experiencia;
+
     // type initializer
     {
         flechas = 42;
@@ -34,25 +35,23 @@ public class Elfo
     
     /**
      * Atira uma flecha e perde uma unidade.
-     * chamando um orc,tomaFlecha();
+     * 
+     * @param umOrc Orc que receberá uma flechada.
      */
     public void atirarFlecha(Orc umOrc) {
-       
+        //flechas = flechas - 1;
         flechas--;
         experiencia++;
-        umOrc.tomaFlecha();
-
+        umOrc.recebeAtaque();
     }
     
- 
+     public int getXP() {
+      return experiencia;
+    }
     
-     
-    
-    
-    
-    //ublic void setNome(String novoNome) {
-      //  nome = novoNome;
-    //}
+     public int getFlechas() {
+      return flechas;
+    }
     
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
