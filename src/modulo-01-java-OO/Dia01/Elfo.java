@@ -45,6 +45,14 @@ public class Elfo
         umOrc.recebeAtaque();
     }
     
+     public int getXP() {
+      return experiencia;
+    }
+    
+     public int getFlechas() {
+      return flechas;
+    }
+    
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
             flechas = novaQtdFlechas;
