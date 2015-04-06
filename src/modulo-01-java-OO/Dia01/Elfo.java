@@ -65,6 +65,10 @@ public class Elfo
         return this.nome;
     }
     
+    public String toString() {
+        return this.nome+" possui "+this.flechas+" flechas e "+ this.experiencia+ " niveis de experencia.";
+    }
+    
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
             flechas = novaQtdFlechas;
