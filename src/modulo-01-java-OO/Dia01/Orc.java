@@ -16,10 +16,7 @@ public class Orc
      */
      
     public Orc(){
-        if(this.vida<=0){
-            status = Status.morto;
-        }
-      }
+         }
     
     
     /**
@@ -29,10 +26,14 @@ public class Orc
     public void recebeAtaque() {
         this.vida -= 10;
         // this.vida = this.vida - 10;
+        if(this.vida<=0){
+            this.status = Status.morto;
+        }
     }
     
     public int getVida() {
         return this.vida;
+       
     }
     
     /**

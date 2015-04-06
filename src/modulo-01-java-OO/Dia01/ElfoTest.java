@@ -93,49 +93,7 @@ public class ElfoTest
         // Assert
         assertEquals(nomeEsperado, elfo.getNome());
         assertEquals(flechasEsperadas, elfo.getFlechas());
-    }
- 
-    
-     @Test
-    public void testarToString() {
-        // Arrange
-        String nomeCriado = "Robin";
-        String ResultadoEsperado;
-        int flechasCriadas = 46;
-        
-        // Act
-        Elfo elfo = new Elfo(nomeCriado, flechasCriadas);
-        Orc umOrc= new Orc();
-        elfo.atirarFlecha(umOrc);
-        elfo.atirarFlecha(umOrc);
-        elfo.atirarFlecha(umOrc);
-        elfo.atirarFlecha(umOrc);
-        
-        ResultadoEsperado="Robin possui 42 flechas e 4 niveis de experencia.";
-
-        // Assert
-        assertEquals(ResultadoEsperado, elfo.toString());
-        
-    }
-    
-    @Test
-    public void testarToStringSemAtirrar() {
-        // Arrange
-        String nomeCriado = "Robin";
-        String ResultadoEsperado;
-        int flechasCriadas = 44;
-        
-        // Act
-        Elfo elfo = new Elfo(nomeCriado, flechasCriadas);
-        Orc umOrc= new Orc();
-        
-        
-        ResultadoEsperado="Robin possui 44 flechas e 0 niveis de experencia.";
-
-        // Assert
-        assertEquals(ResultadoEsperado, elfo.toString());
-        
-    }   
+    } 
     @Test
     public void elfoToStringPadrao() {
         // Arrange
