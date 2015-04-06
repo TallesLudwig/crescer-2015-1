@@ -101,15 +101,17 @@ public class ElfoTest
         // Arrange
         String nomeCriado = "Robin";
         String ResultadoEsperado;
-        int flechasCriadas = 44;
+        int flechasCriadas = 46;
         
         // Act
         Elfo elfo = new Elfo(nomeCriado, flechasCriadas);
         Orc umOrc= new Orc();
         elfo.atirarFlecha(umOrc);
         elfo.atirarFlecha(umOrc);
+        elfo.atirarFlecha(umOrc);
+        elfo.atirarFlecha(umOrc);
         
-        ResultadoEsperado="Robin possui 42 flechas e 2 niveis de experencia.";
+        ResultadoEsperado="Robin possui 42 flechas e 4 niveis de experencia.";
 
         // Assert
         assertEquals(ResultadoEsperado, elfo.toString());

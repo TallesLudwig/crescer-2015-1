@@ -6,18 +6,21 @@
 public class Orc
 {
     private int vida = 110;
-
+    private Status status;
     {
-        //vida = 110;
+        status = Status.Vivo;
     }
     
     /**
      * Construtor para objetos da classe Orc
-    public Orc()
-    {
-        //vida = 110;
-    }
-    **/
+     */
+     
+    public Orc(){
+        if(this.vida<=0){
+            status = Status.morto;
+        }
+      }
+    
     
     /**
      * Faz o Orc sofrer um ataque.
