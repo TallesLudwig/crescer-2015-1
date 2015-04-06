@@ -29,6 +29,11 @@ public class Elfo
         this.flechas = flechas;
     }
     
+    /**
+     * Cria um elfo informando nome.
+     * 
+     * @param nome Nome a ser dado para o Elfo.
+     */
     public Elfo(String nome) {
         this.nome = nome;
     }
@@ -51,6 +56,13 @@ public class Elfo
     
      public int getFlechas() {
       return flechas;
+    }
+    
+    public int getExperiencia() {
+        return this.experiencia;
+    }
+    public String getNome() {
+        return this.nome;
     }
     
     /*public void setFlechas(int novaQtdFlechas) {

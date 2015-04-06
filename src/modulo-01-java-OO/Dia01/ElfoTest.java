@@ -1,6 +1,3 @@
-/** Teste
- * 
- */
 
 import static org.junit.Assert.*;
 import org.junit.After;
@@ -55,7 +52,7 @@ public class ElfoTest
     
     
      @Test
-    public void elfo900Tirro() {
+    public void elfo50Tirros() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc;
         Elfo umElfo;
@@ -74,5 +71,29 @@ public class ElfoTest
         assertEquals(esperadoF, resultadoObtidoF);
         assertEquals(resultadoObtidoXP,  umElfo.getXP());
     }
+    @Test
+    public void elfoNasceComNomeEPoucasFlechasInformados() {
+        // Arrange
+        String nomeEsperado = "Robin";
+        int flechasEsperadas = 12;
+        // Act
+        Elfo elfo = new Elfo(nomeEsperado, flechasEsperadas);
+        // Assert
+        assertEquals(nomeEsperado, elfo.getNome());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    
+    @Test
+    public void elfoNasceComNomeEFlechasNegativasInformados() {
+        // Arrange
+        String nomeEsperado = "Robin";
+        int flechasEsperadas = -567853;
+        // Act
+        Elfo elfo = new Elfo(nomeEsperado, flechasEsperadas);
+        // Assert
+        assertEquals(nomeEsperado, elfo.getNome());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+ 
 }
 
