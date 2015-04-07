@@ -91,35 +91,35 @@ public class OrcTest
         assertEquals(esperadoXp, resultadoxpObtido);
     }
     
-        @Test
+    @Test
     public void orcRecebeAtaqueSemDano1() {
         // Arrange
-        Orc orc = new Orc("Brutos");
+        Orc orc = new Orc("Brasdasdu");
         // Act
-        
+          orc.setXP(1);
         orc.recebeAtaque();
         int esperadoV =110;
         int resultadoVObtido = orc.getVida();
-        int esperadoXp =0;
+        int esperadoXp =1;
         int resultadoxpObtido = orc.getXP();
         // Assert
         
         assertEquals(esperadoV, resultadoVObtido);
         assertEquals(esperadoXp, resultadoxpObtido);
     }
-        @Test
+    @Test
     public void orcRecebeAtaqueSemDano2() {
         // Arrange
-        Orc orc = new Orc("Brutos");
+        Orc orc = new Orc("Brasdasdu");
         // Act
-        
+          orc.setXP(1);
         orc.recebeAtaque();
         orc.recebeAtaque();
         orc.recebeAtaque();
         orc.recebeAtaque();
         int esperadoV =110;
         int resultadoVObtido = orc.getVida();
-        int esperadoXp =0;
+        int esperadoXp =1;
         int resultadoxpObtido = orc.getXP();
         // Assert
         
@@ -129,13 +129,14 @@ public class OrcTest
         @Test
     public void orcRecebeAtaqueSemDano3() {
         // Arrange
-        Orc orc = new Orc("Brutos");
+        Orc orc = new Orc("Brasdasdu");
         // Act
+          orc.setXP(1);
         orc.setStatus(Status.Dormindo);
         orc.recebeAtaque();
         int esperadoV =110;
         int resultadoVObtido = orc.getVida();
-        int esperadoXp =0;
+        int esperadoXp =1;
         int resultadoxpObtido = orc.getXP();
         // Assert
         

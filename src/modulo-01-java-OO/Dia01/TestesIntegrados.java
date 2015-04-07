@@ -10,15 +10,18 @@ import org.junit.Test;
  */
 public class TestesIntegrados
 {
-    /**@Test
+    @Test
     public void umElfoAtiraEmDoisOrcs() {
         // Arrange
         Elfo elfo = new Elfo("O Elfo");
-        Orc orc1 = new Orc("Brutos");
-        Orc orc2 = new Orc("Brutos2");
+        Orc orc1 = new Orc("Brutos da silva");
+        Orc orc2 = new Orc("Brutos da silv");
         // Act
+       
         elfo.atirarFlecha(orc1);
         elfo.atirarFlecha(orc2);
+        
+             
         // Assert
         int experienciaEsperada = 2;
         int flechasEsperadas = 40;
@@ -27,11 +30,17 @@ public class TestesIntegrados
         
         assertEquals(experienciaEsperada, elfo.getExperiencia());
         assertEquals(flechasEsperadas, elfo.getFlechas());
+       
         assertEquals(vidaEsperadaOrc, orc1.getVida());
         assertEquals(vidaEsperadaOrc, orc2.getVida());
+        
+        
         assertEquals(toStringEsperadoOrc, orc1.toString());
         assertEquals(toStringEsperadoOrc, orc2.toString());
-    }*/
+        
+       
+     
+    }
     
     
     

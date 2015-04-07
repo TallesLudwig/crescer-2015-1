@@ -112,14 +112,13 @@ public class Orc
         if(this.status==Status.Cacando || this.status==Status.Dormindo){
             this.Numero =  this.Numero +1;
         }
+                
+        if(this.experiencia%2 == 0){
+            this.Numero = Math.pow(this.Numero,3) ;
+        } else if(this.experiencia>2){
+            this.Numero = Math.pow(this.Numero,2) ;
+        }
         
-        if(this.experiencia%2 == 0 && this.experiencia>0 ){
-            Math.pow(this.Numero,3) ;
-            
-        }
-         else if(this.experiencia% 2 != 0 &&  this.experiencia>2){
-            Math.pow(this.Numero,2) ;
-        }
         return this.Numero;
         
     }
