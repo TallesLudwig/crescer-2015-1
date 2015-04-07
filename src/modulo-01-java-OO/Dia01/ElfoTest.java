@@ -1,76 +1,67 @@
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * The test class ElfoTest.
+ * Testes unitários para a classe Elfo.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  CWI Software
  */
 public class ElfoTest
 {
-   @Test
-    public void elfo1Tirro() {
-        // Arrange - Montagem dos dados de teste
-        Orc umOrc;
-        Elfo umElfo;
-        // Act - Execução da ação de testes
-        umOrc = new Orc();
-        umElfo = new Elfo("Legolas", 10);
-        // Assert - Verificação
-        int esperadoF = 9;
-        int esperadoXP = 1;
-        umElfo.atirarFlecha(umOrc);
-        int resultadoObtidoF= umElfo.getFlechas();
-        int resultadoObtidoXP= umElfo.getXP();
-        assertEquals(esperadoF, resultadoObtidoF);
-        assertEquals(resultadoObtidoXP,  umElfo.getXP());
+    @Test
+    public void elfoNasceComNomeInformado() {
+        // Arrange
+        String esperado = "Celeborn";        
+        // Act
+        Elfo elfo = new Elfo(esperado);
+        // Assert
+        assertEquals(esperado, elfo.getNome());
     }
     
-     @Test
-    public void elfo5Tirro() {
-        // Arrange - Montagem dos dados de teste
-        Orc umOrc;
-        Elfo umElfo;
-        // Act - Execução da ação de testes
-        umOrc = new Orc();
-        umElfo = new Elfo("Legolas", 10);
-        // Assert - Verificação
-        int esperadoF = 0;
-        int esperadoXP = 10;
-         for(int i =0; i<10; i++){
-            umElfo.atirarFlecha(umOrc);
-        }
-        int resultadoObtidoF= umElfo.getFlechas();
-        int resultadoObtidoXP= umElfo.getXP();
-        assertEquals(esperadoF, resultadoObtidoF);
-        assertEquals(resultadoObtidoXP,  umElfo.getXP());
+    @Test
+    public void elfoNasceComNomeVazio() {
+        // Arrange
+        String esperado = "";        
+        // Act
+        Elfo elfo = new Elfo(esperado);
+        // Assert
+        assertEquals(esperado, elfo.getNome());
     }
     
-    
-     @Test
-    public void elfo50Tirros() {
-        // Arrange - Montagem dos dados de teste
-        Orc umOrc;
-        Elfo umElfo;
-        // Act - Execução da ação de testes
-        umOrc = new Orc();
-        umElfo = new Elfo("Legolas", 50);
-        // Assert - Verificação
-        int esperadoF =0;
-        int esperadoXP = 50;
-        for(int i =0; i<50; i++){
-            umElfo.atirarFlecha(umOrc);
-        }
-        
-        int resultadoObtidoF= umElfo.getFlechas();
-        int resultadoObtidoXP= umElfo.getXP();
-        assertEquals(esperadoF, resultadoObtidoF);
-        assertEquals(resultadoObtidoXP,  umElfo.getXP());
+    @Test
+    public void elfoNasceComNomeNulo() {
+        // Arrange
+        String esperado = null;        
+        // Act
+        Elfo elfo = new Elfo(esperado);
+        // Assert
+        assertEquals(esperado, elfo.getNome());
     }
+    
+    @Test
+    public void elfoNasceCom42FlechasPorPadrao() {
+        // Arrange
+        int esperado = 42;
+        // Act
+        Elfo elfo = new Elfo("um nome qualquer");
+        // Assert
+        assertEquals(esperado, elfo.getFlechas());
+    }
+    
+    @Test
+    public void elfoNasceComNomeEMuitasFlechasInformados() {
+        // Arrange
+        String nomeEsperado = "Robin";
+        int flechasEsperadas = 567853;
+        // Act
+        Elfo elfo = new Elfo(nomeEsperado, flechasEsperadas);
+        // Assert
+        assertEquals(nomeEsperado, elfo.getNome());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    
     @Test
     public void elfoNasceComNomeEPoucasFlechasInformados() {
         // Arrange
@@ -93,7 +84,58 @@ public class ElfoTest
         // Assert
         assertEquals(nomeEsperado, elfo.getNome());
         assertEquals(flechasEsperadas, elfo.getFlechas());
-    } 
+    }
+    
+    @Test
+    public void elfoAtiraFlechaEmUmOrc() {
+        // Arrange
+        Elfo elfo = new Elfo("Legolas");
+        Orc orc = new Orc("Brutos");
+        // Act
+        elfo.atirarFlecha(orc);
+        // Assert
+        int experienciaEsperada = 1;
+        int flechasEsperadas = 41;
+        
+        assertEquals(experienciaEsperada, elfo.getExperiencia());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    
+    @Test
+    public void elfoAtiraFlechasDuasVezesNoMesmoOrc() {
+        // Arrange
+        Elfo elfo = new Elfo("Legolas");
+        Orc orc = new Orc("Brutos");
+        // Act
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        // Assert
+        int experienciaEsperada = 2;
+        int flechasEsperadas = 40;
+        
+        assertEquals(experienciaEsperada, elfo.getExperiencia());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    
+    @Test
+    public void elfoAtiraFlechasCincoVezesNoMesmoOrc() {
+        // Arrange
+        Elfo elfo = new Elfo("Legolas", 4);
+        Orc orc = new Orc("Brutos");
+        // Act
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        // Assert
+        int experienciaEsperada = 5;
+        int flechasEsperadas = -1;
+        
+        assertEquals(experienciaEsperada, elfo.getExperiencia());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    
     @Test
     public void elfoToStringPadrao() {
         // Arrange
@@ -105,4 +147,17 @@ public class ElfoTest
         assertEquals(resultadoEsperado, resultadoObtido);
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
+
+
