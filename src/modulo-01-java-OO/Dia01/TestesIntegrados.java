@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class TestesIntegrados
 {
-    @Test
+    /**@Test
     public void umElfoAtiraEmDoisOrcs() {
         // Arrange
         Elfo elfo = new Elfo("O Elfo");
@@ -31,7 +31,7 @@ public class TestesIntegrados
         assertEquals(vidaEsperadaOrc, orc2.getVida());
         assertEquals(toStringEsperadoOrc, orc1.toString());
         assertEquals(toStringEsperadoOrc, orc2.toString());
-    }
+    }*/
     
     
     

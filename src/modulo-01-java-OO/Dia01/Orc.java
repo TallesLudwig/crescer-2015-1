@@ -8,11 +8,12 @@ public class Orc
     private int vida = 110;
     private Status status;
     private String nome;
-    private int experiencia, Numero;
+    private int experiencia;
+    private Double Numero;
 
     {
         //vida = 110;
-        Numero=0;
+        Numero=0.0;
         status= Status.Vivo;
     }
     
@@ -27,28 +28,26 @@ public class Orc
     
     
     /**
-     * Faz o Orc sofrer um ataque.
-     * Atualmente 10 de dano será decrementado.
+     * chama gerarNumero() para o teste de dano
+     * gerarNumero<=0 nao toma dano e ganha XP
+     * 0>gerarNumero<=100 nao leva dano
+     * 100>gerarNumero leva 10 de dano
      */
     public void recebeAtaque() {
        
          if(vida<=0){
             status= Status.Morto;
         }
-       int numeroteste=gerarNumero();    
-       if(numeroteste<=0){
+         
+       if(gerarNumero()<=0){
              this.experiencia+=2;
-       } else if (numeroteste>0 && numeroteste<=100){
+       } else if (gerarNumero()>0 && gerarNumero()<=100){
         
         }else{
              this.vida -= 10;
         }
     }
-    
-    public int getVida() {
-      
-        return this.vida;
-    }
+  
     
     /**
      * Imprime a vida atual do Orc.
@@ -60,7 +59,17 @@ public class Orc
     public String toString() {
         return "Vida atual: " + this.vida;
     }
-    /**Se o orc possuir nome e o mesmo tiver mais de 5 letras, some 65 ao número.
+    
+    
+    /**
+     * gerarNumero para ver se o numero que o orc recebe dependendo do:
+     * nome
+     * status
+     * vida
+     * XP
+     * Atuais;
+     * 
+     * Se o orc possuir nome e o mesmo tiver mais de 5 letras, some 65 ao número.
         Caso contrário, subtraia 60.
         
         B. Se o orc possuir vida entre 30 e 60, multiple o número por dois, senão se a
@@ -80,9 +89,9 @@ public class Orc
       *
       *
       */   
-    private int gerarNumero(){
-        //this Numero=0;
-        if(this.nome.length()>=5){
+    private Double gerarNumero(){
+        this.Numero=0.0;
+        if(this.nome !=null && this.nome.length()>5){
             this.Numero =this.Numero+65;
         } else {
          this.Numero =this.Numero-60;
@@ -105,29 +114,40 @@ public class Orc
         }
         
         if(this.experiencia%2 == 0 && this.experiencia>0 ){
+            Math.pow(this.Numero,3) ;
             
-            this.Numero =  this.Numero*this.Numero*this.Numero;
         }
          else if(this.experiencia% 2 != 0 &&  this.experiencia>2){
-            this.Numero =  this.Numero*this.Numero;
-            
+            Math.pow(this.Numero,2) ;
         }
         return this.Numero;
         
     }
     
-    public String setStatus(String novoStatus) {
-    if (novoStatus=="Cacando") {  
-        this.status= Status.Cacando;
+    /**
+     * setStatus
+     */
+    
+    public void setStatus(Status novoStatus) {
+        this.status= novoStatus;
     }
-    if (novoStatus=="Fugindo") {  
-        this.status= Status.Fugindo;
-        }
-    if (novoStatus=="Dormindo") {  
-        this.status= Status.Dormindo;
-        }
-        return novoStatus;
-
+    
+    
+   /**
+    * Get/sets para testes
+     */
+    
+   public void setXP(int xp){
+        this.experiencia= xp;
     }
-   
+   public int  getXP(){
+        return experiencia;
+   }     
+   public int getVida() {
+      
+       return this.vida;
+   }
+   public void setVida(int vida){
+       this.vida= vida;
+   }
 }
