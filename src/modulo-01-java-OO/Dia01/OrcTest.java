@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * A classe de teste OrcTest.
@@ -207,6 +209,113 @@ public class OrcTest
        // assertEquals(estatusSperado, orc.getStatus());
         assertEquals(esperadoV, resultadoVObtido);
         assertEquals(esperadoXp, resultadoxpObtido);
+    }
+    
+    
+       @Test
+    public void orcIventarioAddItem() {
+        // Arrange
+        Orc orc = new Orc("Brutos");
+        ItemDoInventario adaga = new ItemDoInventario(1,"adaga");
+        
+        ArrayList InventarioEsperado = new ArrayList();
+        InventarioEsperado.add(adaga);
+       
+        // Act;
+        orc.adicionarItem(adaga);
+       
+               
+        
+        // Assert
+       // assertEquals(estatusSperado, orc.getStatus());
+        assertEquals(orc.getInventario(), InventarioEsperado);
+      
+    }
+    
+     @Test
+    public void orcIventarioAddItems() {
+        // Arrange
+        Orc orc = new Orc("Brutos");
+        ItemDoInventario adaga = new ItemDoInventario(1,"adaga");
+        
+        ArrayList InventarioEsperado = new ArrayList();
+        InventarioEsperado.add(adaga);
+        InventarioEsperado.add(adaga);
+        InventarioEsperado.add(adaga);
+        InventarioEsperado.add(adaga);
+        InventarioEsperado.add(adaga);
+        InventarioEsperado.add(adaga);
+        // Act;
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+               
+        
+        // Assert
+       // assertEquals(estatusSperado, orc.getStatus());
+        assertEquals(orc.getInventario(), InventarioEsperado);
+      
+    }
+    
+    @Test
+    public void orcIventarioremoveItems() {
+        // Arrange
+        Orc orc = new Orc("Brutos");
+        ItemDoInventario adaga = new ItemDoInventario(1,"adaga");
+        
+        ArrayList InventarioEsperado = new ArrayList();
+        InventarioEsperado.add(adaga);
+        InventarioEsperado.add(adaga);
+        InventarioEsperado.add(adaga);
+    
+        // Act;
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.perdeItem(adaga);
+        orc.perdeItem(adaga);
+        orc.perdeItem(adaga);
+               
+        
+        // Assert
+       // assertEquals(estatusSperado, orc.getStatus());
+        assertEquals(orc.getInventario(), InventarioEsperado);
+      
+    }
+    @Test
+    public void orcIventarioRemoveTodosItems() {
+        // Arrange
+        Orc orc = new Orc("Brutos");
+        ItemDoInventario adaga = new ItemDoInventario(1,"adaga");
+        
+        ArrayList InventarioEsperado = new ArrayList();
+        
+    
+        // Act;
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.adicionarItem(adaga);
+        orc.perdeItem(adaga);
+        orc.perdeItem(adaga);
+        orc.perdeItem(adaga);
+        orc.perdeItem(adaga);
+        orc.perdeItem(adaga);
+        orc.perdeItem(adaga);
+               
+        
+        // Assert
+       // assertEquals(estatusSperado, orc.getStatus());
+        assertEquals(orc.getInventario(), InventarioEsperado);
+      
     }
 
 }

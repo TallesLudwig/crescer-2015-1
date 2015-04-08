@@ -3,6 +3,10 @@
  * 
  * @author CWI Software
  */
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Orc
 {
     private int vida = 110;
@@ -10,11 +14,15 @@ public class Orc
     private String nome;
     private int experiencia;
     private Double Numero;
+    
+    ArrayList Inventario = new ArrayList();
+    //private ItemDoInventario Item;
 
     {
         //vida = 110;
         Numero=0.0;
         status= Status.Vivo;
+        
     }
     
     /**
@@ -122,6 +130,13 @@ public class Orc
         return this.Numero;
         
     }
+    public void adicionarItem(ItemDoInventario i){
+              this.Inventario.add(i);
+    
+    }
+     public void perdeItem(ItemDoInventario i){
+        this.Inventario.remove(i);
+    }
     
     /**
      * setStatus
@@ -148,5 +163,9 @@ public class Orc
    }
    public void setVida(int vida){
        this.vida= vida;
+   }
+   
+   public ArrayList getInventario(){
+       return this.Inventario;
    }
 }
