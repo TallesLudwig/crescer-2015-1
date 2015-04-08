@@ -1,4 +1,5 @@
 
+
 /**
  * Write a description of class ItemDoInventario here.
  * 
@@ -29,4 +30,5 @@ public class ItemDoInventario
     public String getDescricao(){
         return this.descricao;
     }
+
 }

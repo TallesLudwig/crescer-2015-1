@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Define objetos do tipo Orc
  * 
@@ -8,14 +10,16 @@ import java.util.*;
 
 public class Orc
 {
+
     private int vida = 110;
     private Status status;
     private String nome;
     private int experiencia;
     private Double Numero;
-    
-    ArrayList<ItemDoInventario> Inventario = new ArrayList();
+    private ArrayList<ItemDoInventario> Inventario = new ArrayList<ItemDoInventario>();
+   // ArrayList<ItemDoInventario> Inventario = new ArrayList();
     //private ItemDoInventario Item;
+
 
     {
         //vida = 110;
@@ -28,11 +32,16 @@ public class Orc
      * Construtor para objetos da classe Orc
      * 
      * */
-    public Orc(String umNome)
+
+         public Orc(String nome)
     {
-      this.nome = umNome;
+        //vida = 110;
+        this.nome = nome;
     }
     
+    public Orc() {
+    }
+
     
     /**
      * chama gerarNumero() para o teste de dano
@@ -41,6 +50,7 @@ public class Orc
      * 100>gerarNumero leva 10 de dano
      */
     public void recebeAtaque() {
+
        
          if(vida<=0){
             status= Status.Morto;
@@ -53,8 +63,79 @@ public class Orc
         }else{
              this.vida -= 10;
         }
+
+            /*
+            double numeroGerado = gerarNumero();
+            
+            if (numeroGerado < 0) {
+                this.experiencia += 2;
+                return;
+            } else if (numeroGerado >= 0 && numeroGerado <= 100) {
+                return;
+            } else {
+                        
+                int danoVida = 10;
+                
+                if (this.vida >= danoVida) {
+                    this.vida -= danoVida;
+                    // this.vida = this.vida - 10;
+                    this.status = Status.FERIDO;
+                } 
+                
+                if (this.vida == 0) {
+                    this.status = Status.MORTO;
+                }
+            }
+    
+        }
+        
+        public String getNome() {
+            return this.nome;
+        }
+        
+        public int getExperiencia() {
+            return this.experiencia;
+        }
+        
+        public int getVida() {
+            return this.vida;
+                */
     }
   
+    
+    public Status getStatus() {
+        return this.status;
+    }
+    
+    public void setStatus(Status novoStatus) {
+        this.status = novoStatus;
+    }
+    
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+    
+    public ArrayList<ItemDoInventario> getItens() {
+        return this.Inventario;
+    }
+    
+    /**
+     * Adiciona um item ao inventário.
+     * 
+     * @param item Item a ser adicionado.
+     */
+    public void adicionarItem(ItemDoInventario item) {
+        this.Inventario.add(item);
+    }
+
+    /**
+     * Remove o item do inventário do orc.
+     * 
+     * @param item Item a ser perdido do inventário.
+     */
+    public void perderItem(ItemDoInventario item) {
+        this.Inventario.remove(item);
+    }
     
     /**
      * Imprime a vida atual do Orc.
@@ -67,6 +148,7 @@ public class Orc
         return "Vida atual: " + this.vida;
     }
     
+
     
     /**
      * gerarNumero para ver se o numero que o orc recebe dependendo do:
@@ -129,13 +211,7 @@ public class Orc
         return this.Numero;
         
     }
-    public void adicionarItem(ItemDoInventario i){
-              this.Inventario.add(i);
     
-    }
-     public void perdeItem(ItemDoInventario i){
-        this.Inventario.remove(i);
-    }
    /**
     * mostra ex: Adaga,Escudo,Bracelete
     * sem epaço e sem ponto final
@@ -157,15 +233,16 @@ public class Orc
         
              
         return builder.toString();
+       
     }
+    
+    
     
     /**
      * setStatus
      */
     
-    public void setStatus(Status novoStatus) {
-        this.status= novoStatus;
-    }
+  
     
     
    /**
@@ -189,4 +266,92 @@ public class Orc
    public ArrayList getInventario(){
        return this.Inventario;
    }
+
+    public String getNome(){
+       return this.nome;
+   }
 }
+
+/**
+ *  public String getDescricoesItens() {
+        StringBuilder builder = new StringBuilder();
+        
+        /*
+         * Utilizando for tradicional         
+        int numeroDeItens = this.itens.size();
+
+        for (int i = 0; i < numeroDeItens; i++) {
+            ItemDoInventario itemAtual = this.itens.get(i);
+            
+            boolean éÚltimoÍndice = i == numeroDeItens - 1;
+                        
+            builder.append(
+                éÚltimoÍndice ?
+                itemAtual.getDescricao() :
+                itemAtual.getDescricao() + ","
+            );
+        }
+        */
+       
+       // C#
+       //foreach (ItemDoInventario item in this.itens) { }
+       
+       /*
+        * Utilizando FOREACH!!
+       for (ItemDoInventario itemAtual : this.itens) {
+           int i = this.itens.indexOf(itemAtual);
+           int numeroDeItens = this.itens.size();
+           boolean éÚltimoÍndice = i == numeroDeItens - 1;
+           
+           builder.append(
+                éÚltimoÍndice ?
+                itemAtual.getDescricao() :
+                itemAtual.getDescricao() + ","
+            );
+       }
+       */
+      
+      /*
+       * JavaScript
+      for (var i = 0, numeroDeItens = this.itens.size(); i < numeroDeItens; i++) {
+      }
+      */
+      
+     /*
+      * WHILE (ENQUANTO)
+      int i = 0;
+      int numeroDeItens = this.itens.size();    
+
+      while (i < numeroDeItens) {
+          ItemDoInventario itemAtual = this.itens.get(i);
+          boolean éÚltimoÍndice = i == numeroDeItens - 1;
+           
+          builder.append(
+                éÚltimoÍndice ?
+                itemAtual.getDescricao() :
+                itemAtual.getDescricao() + ","
+          );
+          //
+          i++;
+      }
+      
+     
+     int i = 0;
+     int numeroDeItens = this.itens.size();
+     do {
+         if (numeroDeItens > 0) {
+             ItemDoInventario itemAtual = this.itens.get(i);
+              boolean éÚltimoÍndice = i == numeroDeItens - 1;
+               
+              builder.append(
+                    éÚltimoÍndice ?
+                    itemAtual.getDescricao() :
+                    itemAtual.getDescricao() + ","
+              );
+         }
+         i++;
+     } while(i < numeroDeItens);
+     
+       return builder.toString();
+    }
+   */

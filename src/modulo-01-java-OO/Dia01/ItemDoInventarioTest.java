@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -57,5 +56,6 @@ public class ItemDoInventarioTest
         
         assertEquals(esperado1, resultadoObtido1);
         assertEquals(esperado, resultadoObtido);
+
     }
 }
