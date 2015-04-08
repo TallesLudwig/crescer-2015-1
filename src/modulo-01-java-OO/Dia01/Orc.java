@@ -4,8 +4,7 @@
  * @author CWI Software
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class Orc
 {
@@ -15,7 +14,7 @@ public class Orc
     private int experiencia;
     private Double Numero;
     
-    ArrayList Inventario = new ArrayList();
+    ArrayList<ItemDoInventario> Inventario = new ArrayList();
     //private ItemDoInventario Item;
 
     {
@@ -136,6 +135,28 @@ public class Orc
     }
      public void perdeItem(ItemDoInventario i){
         this.Inventario.remove(i);
+    }
+   /**
+    * mostra ex: Adaga,Escudo,Bracelete
+    * sem epaço e sem ponto final
+    * 
+      */
+    
+    public String getDescricaoItens(){           
+        StringBuilder builder= new StringBuilder();
+        int numeroDeItens= this.Inventario.size();
+        
+        
+           for (int i = 0; i <= this.Inventario.size()-1; i++) {
+             builder.append(this.Inventario.get(i).getDescricao());
+            if(i < this.Inventario.size()-1){
+             builder.append(",");
+            }  
+                    
+        }
+        
+             
+        return builder.toString();
     }
     
     /**

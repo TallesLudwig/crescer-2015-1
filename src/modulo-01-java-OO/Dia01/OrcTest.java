@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
+
 
 /**
  * A classe de teste OrcTest.
@@ -218,7 +218,7 @@ public class OrcTest
         Orc orc = new Orc("Brutos");
         ItemDoInventario adaga = new ItemDoInventario(1,"adaga");
         
-        ArrayList InventarioEsperado = new ArrayList();
+        ArrayList<ItemDoInventario> InventarioEsperado = new ArrayList();
         InventarioEsperado.add(adaga);
        
         // Act;
@@ -238,7 +238,7 @@ public class OrcTest
         Orc orc = new Orc("Brutos");
         ItemDoInventario adaga = new ItemDoInventario(1,"adaga");
         
-        ArrayList InventarioEsperado = new ArrayList();
+        ArrayList<ItemDoInventario> InventarioEsperado = new ArrayList();
         InventarioEsperado.add(adaga);
         InventarioEsperado.add(adaga);
         InventarioEsperado.add(adaga);
@@ -266,7 +266,7 @@ public class OrcTest
         Orc orc = new Orc("Brutos");
         ItemDoInventario adaga = new ItemDoInventario(1,"adaga");
         
-        ArrayList InventarioEsperado = new ArrayList();
+        ArrayList<ItemDoInventario> InventarioEsperado = new ArrayList();
         InventarioEsperado.add(adaga);
         InventarioEsperado.add(adaga);
         InventarioEsperado.add(adaga);
@@ -294,7 +294,7 @@ public class OrcTest
         Orc orc = new Orc("Brutos");
         ItemDoInventario adaga = new ItemDoInventario(1,"adaga");
         
-        ArrayList InventarioEsperado = new ArrayList();
+        ArrayList<ItemDoInventario> InventarioEsperado = new ArrayList();
         
     
         // Act;
