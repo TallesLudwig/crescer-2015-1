@@ -31,4 +31,9 @@ public class ItemDoInventario
         return this.descricao;
     }
 
+    
+    public void setQuantidade(int novaQuantidade) {
+        this.quantidade = novaQuantidade;
+    }
+
 }

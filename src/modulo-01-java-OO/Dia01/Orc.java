@@ -12,13 +12,15 @@ public class Orc
 {
 
     private int vida = 110;
-    private Status status;
     private String nome;
+
     private int experiencia;
     private Double Numero;
     private ArrayList<ItemDoInventario> Inventario = new ArrayList<ItemDoInventario>();
    // ArrayList<ItemDoInventario> Inventario = new ArrayList();
-    //private ItemDoInventario Item;
+    private Status status = Status.Vivo;
+    private ArrayList<ItemDoInventario> itens = new ArrayList<ItemDoInventario>();
+    private final int NUMERO_SORTE = 3481;
 
 
     {
@@ -204,7 +206,7 @@ public class Orc
                 
         if(this.experiencia%2 == 0){
             this.Numero = Math.pow(this.Numero,3) ;
-        } else if(this.experiencia>2){
+        } else if(this.experiencia>=2){
             this.Numero = Math.pow(this.Numero,2) ;
         }
         
@@ -235,7 +237,21 @@ public class Orc
         return builder.toString();
        
     }
-    
+    /**
+     * Caso o Orc tenha sorte, adiciona 1000 quantidades para cada item do inventário.
+     */
+    public void tentarSorte() {
+        
+        double numeroGerado = gerarNumero();
+        
+        if (numeroGerado == NUMERO_SORTE) {
+            for (ItemDoInventario item : this.itens) {
+                int novaQuantidadeItem = item.getQuantidade() + 1000;
+                item.setQuantidade(novaQuantidadeItem);
+            }
+        }
+        
+    }
     
     
     /**
@@ -270,6 +286,8 @@ public class Orc
     public String getNome(){
        return this.nome;
    }
+   
+   
 }
 
 /**
@@ -354,4 +372,7 @@ public class Orc
      
        return builder.toString();
     }
+
    */
+
+    
