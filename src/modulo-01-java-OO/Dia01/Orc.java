@@ -180,7 +180,7 @@ public class Orc
       *
       *
       */   
-    private Double gerarNumero(){
+    public Double gerarNumero(){
         this.Numero=0.0;
         if(this.nome !=null && this.nome.length()>5){
             this.Numero =this.Numero+65;
@@ -204,11 +204,14 @@ public class Orc
             this.Numero =  this.Numero +1;
         }
                 
-        if(this.experiencia%2 == 0){
-            this.Numero = Math.pow(this.Numero,3) ;
-        } else if(this.experiencia>=2){
-            this.Numero = Math.pow(this.Numero,2) ;
+        
+          boolean experienciaÉPar = this.experiencia % 2 == 0;
+        if (experienciaÉPar) {
+            Numero = Numero * Numero * Numero;
+        } else if (this.experiencia > 2) {
+            Numero = Numero * Numero;
         }
+        System.out.println(this.Numero);
         
         return this.Numero;
         

@@ -405,7 +405,7 @@ public class OrcTest
     @Test
     public void orcTentarSorteAumenta1000UnidadesDosItens() {
         // Arrange
-        Orc urukhai = new Orc("a");
+        Orc urukhai = new Orc("Aa");
         urukhai.setStatus(Status.Dormindo);
         urukhai.setExperiencia(3);
         urukhai.adicionarItem(new ItemDoInventario(3, "Poção de mana"));
