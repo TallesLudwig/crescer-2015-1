@@ -225,9 +225,10 @@ public class Orc
     {
 
              ItemDoInventario maior= new ItemDoInventario(-9000," ");
-               for (int i = 0; i <= this.Inventario.size(); i++) {
+               for (int i = 0; i <= this.Inventario.size()-1; i++) {
                 if(maior.getQuantidade() <= this.Inventario.get(i).getQuantidade() ){
-                     maior= this.Inventario.get(i);
+                
+                 maior= this.Inventario.get(i);
                  }  
              }
              
@@ -237,7 +238,11 @@ public class Orc
                 return null;
             }
             
-      }
+            
+            
+            
+
+    }
     
  
     /**
