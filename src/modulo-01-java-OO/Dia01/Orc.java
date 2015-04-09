@@ -17,9 +17,7 @@ public class Orc
     private int experiencia;
     private Double Numero;
     private ArrayList<ItemDoInventario> Inventario = new ArrayList<ItemDoInventario>();
-   // ArrayList<ItemDoInventario> Inventario = new ArrayList();
     private Status status = Status.Vivo;
-   // private ArrayList<ItemDoInventario> itens = new ArrayList<ItemDoInventario>();
     private final int NUMERO_SORTE = 3481;
 
 
@@ -34,7 +32,6 @@ public class Orc
      * Construtor para objetos da classe Orc
      * 
      * */
-
          public Orc(String nome)
     {
         //vida = 110;
@@ -65,7 +62,6 @@ public class Orc
         }else{
              this.vida -= 10;
         }
-
             /*
             double numeroGerado = gerarNumero();
             
@@ -105,22 +101,7 @@ public class Orc
     }
   
     
-    public Status getStatus() {
-        return this.status;
-    }
-    
-    public void setStatus(Status novoStatus) {
-        this.status = novoStatus;
-    }
-    
-    
-    public void setExperiencia(int experiencia) {
-        this.experiencia = experiencia;
-    }
-    
-    public ArrayList<ItemDoInventario> getItens() {
-        return this.Inventario;
-    }
+ 
     
     /**
      * Adiciona um item ao inventário.
@@ -236,16 +217,17 @@ public class Orc
     }
     
     /**
+       Busca o itemDoInventario com maior quantidade,
+       caso o orc nao tenha item no inventario retorna null
        
        */
         public ItemDoInventario getItemComMaiorQuantidade()
     {
-             int numeroDeItens= this.Inventario.size();
+
              ItemDoInventario maior= new ItemDoInventario(-9000," ");
-               for (int i = 0; i <= this.Inventario.size()-1; i++) {
+               for (int i = 0; i <= this.Inventario.size(); i++) {
                 if(maior.getQuantidade() <= this.Inventario.get(i).getQuantidade() ){
-                 System.out.println("1-"+maior);
-                 maior= this.Inventario.get(i);
+                     maior= this.Inventario.get(i);
                  }  
              }
              
@@ -254,7 +236,8 @@ public class Orc
             } else{
                 return null;
             }
-    }
+            
+      }
     
  
     /**
@@ -307,92 +290,23 @@ public class Orc
        return this.nome;
    }
    
+      public Status getStatus() {
+        return this.status;
+    }
+    
+    public void setStatus(Status novoStatus) {
+        this.status = novoStatus;
+    }
+        
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+    
+    public ArrayList<ItemDoInventario> getItens() {
+        return this.Inventario;
+    }
+   
    
 }
 
-/**
- *  public String getDescricoesItens() {
-        StringBuilder builder = new StringBuilder();
-        
-        /*
-         * Utilizando for tradicional         
-        int numeroDeItens = this.itens.size();
 
-        for (int i = 0; i < numeroDeItens; i++) {
-            ItemDoInventario itemAtual = this.itens.get(i);
-            
-            boolean éÚltimoÍndice = i == numeroDeItens - 1;
-                        
-            builder.append(
-                éÚltimoÍndice ?
-                itemAtual.getDescricao() :
-                itemAtual.getDescricao() + ","
-            );
-        }
-        */
-       
-       // C#
-       //foreach (ItemDoInventario item in this.itens) { }
-       
-       /*
-        * Utilizando FOREACH!!
-       for (ItemDoInventario itemAtual : this.itens) {
-           int i = this.itens.indexOf(itemAtual);
-           int numeroDeItens = this.itens.size();
-           boolean éÚltimoÍndice = i == numeroDeItens - 1;
-           
-           builder.append(
-                éÚltimoÍndice ?
-                itemAtual.getDescricao() :
-                itemAtual.getDescricao() + ","
-            );
-       }
-       */
-      
-      /*
-       * JavaScript
-      for (var i = 0, numeroDeItens = this.itens.size(); i < numeroDeItens; i++) {
-      }
-      */
-      
-     /*
-      * WHILE (ENQUANTO)
-      int i = 0;
-      int numeroDeItens = this.itens.size();    
-
-      while (i < numeroDeItens) {
-          ItemDoInventario itemAtual = this.itens.get(i);
-          boolean éÚltimoÍndice = i == numeroDeItens - 1;
-           
-          builder.append(
-                éÚltimoÍndice ?
-                itemAtual.getDescricao() :
-                itemAtual.getDescricao() + ","
-          );
-          //
-          i++;
-      }
-      
-     
-     int i = 0;
-     int numeroDeItens = this.itens.size();
-     do {
-         if (numeroDeItens > 0) {
-             ItemDoInventario itemAtual = this.itens.get(i);
-              boolean éÚltimoÍndice = i == numeroDeItens - 1;
-               
-              builder.append(
-                    éÚltimoÍndice ?
-                    itemAtual.getDescricao() :
-                    itemAtual.getDescricao() + ","
-              );
-         }
-         i++;
-     } while(i < numeroDeItens);
-     
-       return builder.toString();
-    }
-
-   */
-
-    

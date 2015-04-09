@@ -434,9 +434,21 @@ public class OrcTest
         assertEquals(3, pocao.getQuantidade());
         assertEquals(1, lanca.getQuantidade());
     }
-    
-      @Test
+         @Test
     public void orcItemComMaiorQuantidade() {
+        // Arrange
+        Orc urukhai = new Orc();
+        
+        ItemDoInventario aaa=new ItemDoInventario(3, "Poção de mana");
+        urukhai.adicionarItem(aaa);
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(aaa, urukhai.getItemComMaiorQuantidade());
+    }
+      @Test
+    public void orcItemComMaiorQuantidadeVarios() {
         // Arrange
         Orc urukhai = new Orc();
         
@@ -454,10 +466,30 @@ public class OrcTest
        // ItemDoInventario pocao = urukhai.getItens().get(0);
         assertEquals(aaa, urukhai.getItemComMaiorQuantidade());
     }
+    
+      @Test
+    public void orcItemComMaiorQuantidade2Iguais() {
+        // Arrange
+        Orc urukhai = new Orc();
+        
+        ItemDoInventario aaa=new ItemDoInventario(3, "Poção de mana");
+        urukhai.adicionarItem(aaa);
+        
+        ItemDoInventario aa=new ItemDoInventario(3, "Poção");
+        urukhai.adicionarItem(aa);
+
+        
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(aa, urukhai.getItemComMaiorQuantidade());
+    }
+
 
     
      @Test
-    public void orcItemComMaiorQuantidade2() {
+    public void orcItemComMaiorQuantidadeNegativa() {
         // Arrange
         Orc urukhai = new Orc();
         
@@ -477,7 +509,7 @@ public class OrcTest
     }
     
       @Test
-    public void orcItemComMaiorQuantidade3() {
+    public void orcItemComMaiorQuantidadePerdeMaior() {
         // Arrange
         Orc urukhai = new Orc();
         
@@ -495,6 +527,19 @@ public class OrcTest
         // Assert
        // ItemDoInventario pocao = urukhai.getItens().get(0);
         assertEquals(aa, urukhai.getItemComMaiorQuantidade());
+    }
+    
+        @Test
+    public void orcItemComMaiorQuantidadeNull() {
+        // Arrange
+        Orc urukhai = new Orc();
+        
+      
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(null, urukhai.getItemComMaiorQuantidade());
     }
 }
 
