@@ -434,7 +434,68 @@ public class OrcTest
         assertEquals(3, pocao.getQuantidade());
         assertEquals(1, lanca.getQuantidade());
     }
+    
+      @Test
+    public void orcItemComMaiorQuantidade() {
+        // Arrange
+        Orc urukhai = new Orc();
+        
+        ItemDoInventario aaa=new ItemDoInventario(3, "Poção de mana");
+        urukhai.adicionarItem(aaa);
+        
+        ItemDoInventario aa=new ItemDoInventario(1, "Poção Lança");
+        urukhai.adicionarItem(aa);
 
+        ItemDoInventario a=new ItemDoInventario(0, "Cartas do Pokemon");
+        urukhai.adicionarItem(a);
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(aaa, urukhai.getItemComMaiorQuantidade());
+    }
+
+    
+     @Test
+    public void orcItemComMaiorQuantidade2() {
+        // Arrange
+        Orc urukhai = new Orc();
+        
+        ItemDoInventario aaa=new ItemDoInventario(-11, "Poção de mana");
+        urukhai.adicionarItem(aaa);
+        
+        ItemDoInventario aa=new ItemDoInventario(-1, "Poção Lança");
+        urukhai.adicionarItem(aa);
+
+        ItemDoInventario a=new ItemDoInventario(0, "Cartas do Pokemon");
+        urukhai.adicionarItem(a);
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(a, urukhai.getItemComMaiorQuantidade());
+    }
+    
+      @Test
+    public void orcItemComMaiorQuantidade3() {
+        // Arrange
+        Orc urukhai = new Orc();
+        
+        ItemDoInventario aaa=new ItemDoInventario(-11, "Poção de mana");
+        urukhai.adicionarItem(aaa);
+        
+        ItemDoInventario aa=new ItemDoInventario(1, "Poção Lança");
+        urukhai.adicionarItem(aa);
+
+        ItemDoInventario a=new ItemDoInventario(0, "Cartas do Pokemon");
+        urukhai.adicionarItem(a);
+        urukhai.perderItem(aaa);
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(aa, urukhai.getItemComMaiorQuantidade());
+    }
 }
 
 

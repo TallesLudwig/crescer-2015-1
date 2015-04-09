@@ -182,31 +182,30 @@ public class Orc
         } else {
          this.Numero =this.Numero-60;
         }
-        System.out.println(this.Numero);
+   
         if(this.vida>=30 && this.vida<=60){
             this.Numero =  this.Numero*2;
         }
-        System.out.println(this.Numero);
+       
         if(this.vida<=20){
             this.Numero =  this.Numero*3;
         }
-        System.out.println(this.Numero);
+
          if(this.status==Status.Fugindo){
             this.Numero =  this.Numero/2;
         }
-        System.out.println(this.Numero);
+
         if(this.status==Status.Cacando || this.status==Status.Dormindo){
             this.Numero =  this.Numero +1;
         }
-                
-        System.out.println(this.Numero);
+
          boolean experienciaPar = this.experiencia % 2 == 0;
         if (experienciaPar) {
             Numero = Numero * Numero * Numero;
         } else if (this.experiencia > 2) {
             Numero = Numero * Numero;
         }
-        System.out.println(this.Numero);
+ 
         
         return this.Numero;
         
@@ -235,6 +234,29 @@ public class Orc
         return builder.toString();
        
     }
+    
+    /**
+       
+       */
+        public ItemDoInventario getItemComMaiorQuantidade()
+    {
+             int numeroDeItens= this.Inventario.size();
+             ItemDoInventario maior= new ItemDoInventario(-9000," ");
+               for (int i = 0; i <= this.Inventario.size()-1; i++) {
+                if(maior.getQuantidade() <= this.Inventario.get(i).getQuantidade() ){
+                 System.out.println("1-"+maior);
+                 maior= this.Inventario.get(i);
+                 }  
+             }
+             
+             if (this.Inventario.size()>0){   
+                 return maior;
+            } else{
+                return null;
+            }
+    }
+    
+ 
     /**
      * Caso o Orc tenha sorte, adiciona 1000 quantidades para cada item do inventário.
      */
