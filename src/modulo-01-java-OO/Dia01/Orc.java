@@ -17,6 +17,7 @@ public class Orc
     private int experiencia;
     private Double Numero;
     private ArrayList<ItemDoInventario> Inventario = new ArrayList<ItemDoInventario>();
+   
     private Status status = Status.Vivo;
     private final int NUMERO_SORTE = 3481;
 
@@ -216,6 +217,40 @@ public class Orc
        
     }
     
+    public void ordenarItens(){//ordInventario
+        //ItemDoInventario menor= new ItemDoInventario(9000," ");
+       ItemDoInventario menor= null;
+       ItemDoInventario menor1= null;
+       ArrayList<ItemDoInventario> ordInventario = new ArrayList<ItemDoInventario>();
+        int posicao=-1;
+        int tamanho=this.Inventario.size();
+       
+        
+        while(ordInventario.size() != tamanho){
+            menor = this.Inventario.get(0);
+        
+           
+            for (int i = 0; i <= this.Inventario.size()-1; i++) {
+          
+             if(menor.getQuantidade() >= this.Inventario.get(i).getQuantidade() ){
+                 posicao=i;
+                 menor1= this.Inventario.get(i);
+                    
+                }  
+            }
+            ordInventario.add(menor1);
+                       
+            this.Inventario.remove(this.Inventario.get(posicao));
+            menor=null;
+                                      
+        }
+        
+        this.Inventario=ordInventario;
+    }
+    
+    
+      
+ 
     /**
        Busca o itemDoInventario com maior quantidade,
        caso o orc nao tenha item no inventario retorna null

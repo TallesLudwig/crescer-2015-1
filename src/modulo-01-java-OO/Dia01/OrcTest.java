@@ -227,7 +227,7 @@ public class OrcTest
     public void orcNasceComNomeVazioInformado() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc;
-        String esperado = "";	
+        String esperado = "";   
         // Act - Execução da ação de testes
         umOrc = new Orc(esperado);
         // Assert - Verificação
@@ -241,7 +241,7 @@ public class OrcTest
     public void orcNasceComNomeNuloInformado() {
         // Arrange - Montagem dos dados de teste
         Orc umOrc;
-        String esperado = null;	
+        String esperado = null; 
         // Act - Execução da ação de testes
         umOrc = new Orc(esperado);
         // Assert - Verificação
@@ -413,7 +413,7 @@ public class OrcTest
         // Act
         urukhai.tentarSorte();
         // Assert
-        System.out.println(urukhai.getItens().get(0));
+        
         ItemDoInventario pocao = urukhai.getItens().get(0);
         ItemDoInventario lanca = urukhai.getItens().get(1);
         assertEquals(1003, pocao.getQuantidade());
@@ -541,6 +541,139 @@ public class OrcTest
        // ItemDoInventario pocao = urukhai.getItens().get(0);
         assertEquals(null, urukhai.getItemComMaiorQuantidade());
     }
+    
+    @Test
+    
+    public void orcUmOrdenarItensSemnada() {
+        // Arrange
+        Orc urukhai = new Orc();
+        Orc urukhai2 = new Orc();
+        
+        
+       
+
+       
+                // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(urukhai2.getItens(), urukhai.getItens());
+    }
+    @Test
+    
+    public void orcUmOrdenarItens() {
+        // Arrange
+        Orc urukhai = new Orc();
+        Orc urukhai2 = new Orc();
+        
+        
+       
+
+        ItemDoInventario a=new ItemDoInventario(8, "meio");
+        urukhai.adicionarItem(a);
+        urukhai.ordenarItens();
+        urukhai2.adicionarItem(a);
+                // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(urukhai2.getItens(), urukhai.getItens());
+    }
+    @Test
+    public void orcOrdenarItens() {
+        // Arrange
+        Orc urukhai = new Orc();
+        Orc urukhai2 = new Orc();
+        
+        
+         ItemDoInventario aa=new ItemDoInventario(10, "primero");
+        urukhai.adicionarItem(aa);
+        
+        ItemDoInventario aaa=new ItemDoInventario(1, "ultimo");
+        urukhai.adicionarItem(aaa);
+        
+        
+        urukhai.ordenarItens();
+       
+        urukhai2.adicionarItem(aaa);
+        
+        urukhai2.adicionarItem(aa);
+       
+        
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(urukhai2.getItens(), urukhai.getItens());
+    }
+    
+    @Test
+    public void orcOrdenarItensnegativo() {
+        // Arrange
+        Orc urukhai = new Orc();
+        Orc urukhai2 = new Orc();
+        
+        
+        ItemDoInventario aaa=new ItemDoInventario(-1, "ultimo");
+        urukhai.adicionarItem(aaa);
+        
+        ItemDoInventario aa=new ItemDoInventario(10, "primero");
+        urukhai.adicionarItem(aa);
+
+        ItemDoInventario a=new ItemDoInventario(8, "meio");
+        urukhai.adicionarItem(a);
+        urukhai.ordenarItens();
+       
+        urukhai2.adicionarItem(aaa);
+        urukhai2.adicionarItem(a);
+         urukhai2.adicionarItem(aa);
+       
+        
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(urukhai2.getItens(), urukhai.getItens());
+    }
+    
+      @Test
+    public void orcOrdenarItensnegativo2() {
+        // Arrange
+        Orc urukhai = new Orc();
+        Orc urukhai2 = new Orc();
+        
+        
+        ItemDoInventario aaa=new ItemDoInventario(-1, "ultimo");
+        urukhai.adicionarItem(aaa);
+        
+        ItemDoInventario aa=new ItemDoInventario(10, "primero");
+        urukhai.adicionarItem(aa);
+
+        ItemDoInventario a=new ItemDoInventario(8, "meio");
+        urukhai.adicionarItem(a);
+        
+        ItemDoInventario aaaa=new ItemDoInventario(0, "meio");
+        urukhai.adicionarItem(aaaa);
+        
+        ItemDoInventario aaaaa=new ItemDoInventario(-30, "meio");
+        urukhai.adicionarItem(aaaaa);
+        urukhai.ordenarItens();
+       
+        urukhai2.adicionarItem(aaaaa);
+        urukhai2.adicionarItem(aaa);
+        urukhai2.adicionarItem(aaaa);
+        urukhai2.adicionarItem(a);
+         urukhai2.adicionarItem(aa);
+       
+        
+        // Act
+        
+        // Assert
+       // ItemDoInventario pocao = urukhai.getItens().get(0);
+        assertEquals(urukhai2.getItens(), urukhai.getItens());
+    }
+    
+    
 }
 
 
