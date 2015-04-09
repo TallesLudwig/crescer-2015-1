@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-
-/**
- * Write a description of class ContadorDeNumeros here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class ContadorDeNumeros
-{
-    /**
-     * Constructor for objects of class ContadorDeNumeros
-     */
-    public void ContarAte3()
-    {
-        for(int i=1; i<=100; i++){
-             System.out.println(i);
-            System.out.println(i);
-                   }
-    }
-
-=======
 /**
  * Objeto que sabe contar números em ordem!
  * 
@@ -48,24 +26,15 @@ public class ContadorDeNumeros
     public void contarAte(int numero) {
         for (int i = 0; i < numero; i++) {
             // execute tudo que tem aqui dentro
-            System.out.println(i + 1);
+            //System.out.println(i + 1);
         }
     }
     
     public void contarRegressivamente(int numero) {
         for (int i = numero; i > 0; i--) {
             // execute tudo que tem aqui dentro
-            System.out.println(i);
+            //System.out.println(i);
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
->>>>>>> bcf9db8af29e4bb5e7349f4908238c608d63c1a0
+
 }

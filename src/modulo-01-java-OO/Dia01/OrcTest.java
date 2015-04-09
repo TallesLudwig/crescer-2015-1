@@ -413,6 +413,7 @@ public class OrcTest
         // Act
         urukhai.tentarSorte();
         // Assert
+        System.out.println(urukhai.getItens().get(0));
         ItemDoInventario pocao = urukhai.getItens().get(0);
         ItemDoInventario lanca = urukhai.getItens().get(1);
         assertEquals(1003, pocao.getQuantidade());

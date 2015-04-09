@@ -19,7 +19,7 @@ public class Orc
     private ArrayList<ItemDoInventario> Inventario = new ArrayList<ItemDoInventario>();
    // ArrayList<ItemDoInventario> Inventario = new ArrayList();
     private Status status = Status.Vivo;
-    private ArrayList<ItemDoInventario> itens = new ArrayList<ItemDoInventario>();
+   // private ArrayList<ItemDoInventario> itens = new ArrayList<ItemDoInventario>();
     private final int NUMERO_SORTE = 3481;
 
 
@@ -113,6 +113,7 @@ public class Orc
         this.status = novoStatus;
     }
     
+    
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
     }
@@ -171,12 +172,6 @@ public class Orc
         
         D. Se a experiência do orc for par, eleve o número ao cubo. Se for ímpar e o orc
         tiver mais que 2 de experiência, eleve o número ao quadrado.
-        
-        E. No método receberFlecha(), chame o método gerarNumero(). Caso o
-        resultado seja menor que 0, o Orc não deverá receber a flecha e ainda
-        ganhará 2 pontos de experiência. Senão se o número estiver entre 0 e 100 o
-        Orc não recebe flechas e não recebe experiência. Caso contrário o Orc
-        receberá a flechada (como está hoje).
       *
       *
       */   
@@ -187,26 +182,26 @@ public class Orc
         } else {
          this.Numero =this.Numero-60;
         }
-        
+        System.out.println(this.Numero);
         if(this.vida>=30 && this.vida<=60){
             this.Numero =  this.Numero*2;
         }
-        
+        System.out.println(this.Numero);
         if(this.vida<=20){
             this.Numero =  this.Numero*3;
         }
-        
+        System.out.println(this.Numero);
          if(this.status==Status.Fugindo){
             this.Numero =  this.Numero/2;
         }
-        
+        System.out.println(this.Numero);
         if(this.status==Status.Cacando || this.status==Status.Dormindo){
             this.Numero =  this.Numero +1;
         }
                 
-        
-          boolean experienciaÉPar = this.experiencia % 2 == 0;
-        if (experienciaÉPar) {
+        System.out.println(this.Numero);
+         boolean experienciaPar = this.experiencia % 2 == 0;
+        if (experienciaPar) {
             Numero = Numero * Numero * Numero;
         } else if (this.experiencia > 2) {
             Numero = Numero * Numero;
@@ -248,7 +243,7 @@ public class Orc
         double numeroGerado = gerarNumero();
         
         if (numeroGerado == NUMERO_SORTE) {
-            for (ItemDoInventario item : this.itens) {
+            for (ItemDoInventario item : this.Inventario) {
                 int novaQuantidadeItem = item.getQuantidade() + 1000;
                 item.setQuantidade(novaQuantidadeItem);
             }
