@@ -5,121 +5,62 @@ import java.util.*;
  * 
  * @author CWI Software
  */
-
-import java.util.*;
-
-public class Orc
+public class Orc extends Personagem
 {
-
-    private int vida = 110;
-    private String nome;
-
-    private int experiencia;
-    private Double Numero;
-    private ArrayList<ItemDoInventario> Inventario = new ArrayList<ItemDoInventario>();
-   
-    private Status status = Status.Vivo;
     private final int NUMERO_SORTE = 3481;
-
 
     {
         //vida = 110;
-        Numero=0.0;
-        status= Status.Vivo;
-        
     }
     
     /**
      * Construtor para objetos da classe Orc
-     * 
-     * */
-         public Orc(String nome)
+     */ 
+    public Orc(String nome)
     {
-        //vida = 110;
-        this.nome = nome;
+        super(nome, 110);
     }
     
     public Orc() {
+        this("");
     }
-
     
     /**
-     * chama gerarNumero() para o teste de dano
-     * gerarNumero<=0 nao toma dano e ganha XP
-     * 0>gerarNumero<=100 nao leva dano
-     * 100>gerarNumero leva 10 de dano
+     * Faz o Orc sofrer um ataque.
+     * Atualmente 10 de dano será decrementado.
      */
     public void recebeAtaque() {
-
-       
-         if(vida<=0){
-            status= Status.Morto;
-        }
-         
-       if(gerarNumero()<=0){
-             this.experiencia+=2;
-       } else if (gerarNumero()>0 && gerarNumero()<=100){
         
-        }else{
-             this.vida -= 10;
-        }
-            /*
-            double numeroGerado = gerarNumero();
+        double numeroGerado = gerarNumero();
+        
+        if (numeroGerado < 0) {
+            this.experiencia += 2;
+            return;
+        } else if (numeroGerado >= 0 && numeroGerado <= 100) {
+            return;
+        } else {
+                    
+            int danoVida = 10;
             
-            if (numeroGerado < 0) {
-                this.experiencia += 2;
-                return;
-            } else if (numeroGerado >= 0 && numeroGerado <= 100) {
-                return;
-            } else {
-                        
-                int danoVida = 10;
-                
-                if (this.vida >= danoVida) {
-                    this.vida -= danoVida;
-                    // this.vida = this.vida - 10;
-                    this.status = Status.FERIDO;
-                } 
-                
-                if (this.vida == 0) {
-                    this.status = Status.MORTO;
-                }
+            if (this.vida >= danoVida) {
+                this.vida -= danoVida;
+                // this.vida = this.vida - 10;
+                this.status = Status.Ferido;
+            } 
+            
+            if (this.vida == 0) {
+                this.status = Status.Morto;
             }
-    
         }
-        
-        public String getNome() {
-            return this.nome;
-        }
-        
-        public int getExperiencia() {
-            return this.experiencia;
-        }
-        
-        public int getVida() {
-            return this.vida;
-                */
-    }
-  
-    
- 
-    
-    /**
-     * Adiciona um item ao inventário.
-     * 
-     * @param item Item a ser adicionado.
-     */
-    public void adicionarItem(ItemDoInventario item) {
-        this.Inventario.add(item);
-    }
 
-    /**
-     * Remove o item do inventário do orc.
-     * 
-     * @param item Item a ser perdido do inventário.
-     */
-    public void perderItem(ItemDoInventario item) {
-        this.Inventario.remove(item);
+    }
+    
+    public void setStatus(Status novoStatus) {
+        this.status = novoStatus;
+    }
+    
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
     }
     
     /**
@@ -131,194 +72,13 @@ public class Orc
      */
     public String toString() {
         return "Vida atual: " + this.vida;
-    }
+    } 
     
-
+    public int setVida(int Vida) {
+         this.vida=Vida;
+         return this.vida;
+    } 
     
-    /**
-     * gerarNumero para ver se o numero que o orc recebe dependendo do:
-     * nome
-     * status
-     * vida
-     * XP
-     * Atuais;
-     * 
-     * Se o orc possuir nome e o mesmo tiver mais de 5 letras, some 65 ao número.
-        Caso contrário, subtraia 60.
-        
-        B. Se o orc possuir vida entre 30 e 60, multiple o número por dois, senão se a
-        vida for menor que 20 multiplique por 3.
-        
-        C. Se o orc estiver fugindo, divida o número por 2. Senão se o orc estiver
-        caçando ou dormindo adicione 1 ao número.
-        
-        D. Se a experiência do orc for par, eleve o número ao cubo. Se for ímpar e o orc
-        tiver mais que 2 de experiência, eleve o número ao quadrado.
-      *
-      *
-      */   
-    public Double gerarNumero(){
-        this.Numero=0.0;
-        if(this.nome !=null && this.nome.length()>5){
-            this.Numero =this.Numero+65;
-        } else {
-         this.Numero =this.Numero-60;
-        }
-   
-        if(this.vida>=30 && this.vida<=60){
-            this.Numero =  this.Numero*2;
-        }
-       
-        if(this.vida<=20){
-            this.Numero =  this.Numero*3;
-        }
-
-         if(this.status==Status.Fugindo){
-            this.Numero =  this.Numero/2;
-        }
-
-        if(this.status==Status.Cacando || this.status==Status.Dormindo){
-            this.Numero =  this.Numero +1;
-        }
-
-         boolean experienciaPar = this.experiencia % 2 == 0;
-        if (experienciaPar) {
-            Numero = Numero * Numero * Numero;
-        } else if (this.experiencia > 2) {
-            Numero = Numero * Numero;
-        }
- 
-        
-        return this.Numero;
-        
-    }
-    
-   /**
-    * mostra ex: Adaga,Escudo,Bracelete
-    * sem epaço e sem ponto final
-    * 
-      */
-    
-    public String getDescricaoItens(){           
-        StringBuilder builder= new StringBuilder();
-        int numeroDeItens= this.Inventario.size();
-        
-        
-           for (int i = 0; i <= this.Inventario.size()-1; i++) {
-             builder.append(this.Inventario.get(i).getDescricao());
-            if(i < this.Inventario.size()-1){
-             builder.append(",");
-            }  
-                    
-        }
-        
-             
-        return builder.toString();
-       
-    }
-   
-    
-    
-    
-    /**
-       Busca o ordenarItens Menor para maior,
-       feito pelo bernardo, mais otimizado e simples
-       porem faz a verificao^2(passando pelos dois for)
-       */
-    
-    
-    public void ordenarItens(){//ordInventario
-      /*  for(int i = 0; i < this.Inventario.size(); i++){
-            for(int j = 0; j < this.Inventario.size()-1; j++){
-                ItemDoInventario itemAtual = this.Inventario.get(j);
-                ItemDoInventario proximoItem = this.Inventario.get(j+1);
-                
-                boolean precisaTrocar= itemAtual.getQuantidade()> proximoItem.getQuantidade();
-                
-                if(precisaTrocar){
-                    this.Inventario.set(j,proximoItem);
-                    this.Inventario.set(j+1,itemAtual);
-                }
-             
-            }
-        }*/
-        
-      Collections.sort(this.Inventario, new Comparator<ItemDoInventario>(){
-          public int compare(ItemDoInventario item, ItemDoInventario outroItem){
-                return Integer.compare(item.getQuantidade(), outroItem.getQuantidade());
-            
-            }
-        
-        })  ;
-        
-    }
-    
-     /**
-       Busca o ordenarItens Menor para maior,
-       feito por mim, uma bagunça
-       */
-    public void ordenarItens1(){//ordInventario
-        //ItemDoInventario menor= new ItemDoInventario(9000," ");
-       ItemDoInventario menor= null;
-       ItemDoInventario menor1= null;
-       ArrayList<ItemDoInventario> ordInventario = new ArrayList<ItemDoInventario>();
-        int posicao=-1;
-        int tamanho=this.Inventario.size();
-       
-        
-        while(ordInventario.size() != tamanho){
-            menor = this.Inventario.get(0);
-        
-           
-            for (int i = 0; i <= this.Inventario.size()-1; i++) {
-          
-             if(menor.getQuantidade() >= this.Inventario.get(i).getQuantidade() ){
-                 posicao=i;
-                 menor1= this.Inventario.get(i);
-                 menor=menor1;
-                }  
-            }
-            ordInventario.add(menor1);
-                       
-            this.Inventario.remove(this.Inventario.get(posicao));
-            menor=null;
-                                      
-        }
-        
-        this.Inventario=ordInventario;
-    }
-    
-      
- 
-    /**
-       Busca o itemDoInventario com maior quantidade,
-       caso o orc nao tenha item no inventario retorna null
-       
-       */
-    public ItemDoInventario getItemComMaiorQuantidade() {
-        
-        ItemDoInventario itemMaiorQuantidade = null;
-        
-        boolean temItens = !this.Inventario.isEmpty();       
-        if (temItens) {
-            itemMaiorQuantidade = this.Inventario.get(0);
-            
-            for (int i = 1; i < this.Inventario.size(); i++) {
-                ItemDoInventario itemAtual = this.Inventario.get(i);
-                boolean encontreiAMaiorQuantidade =
-                    itemAtual.getQuantidade() > itemMaiorQuantidade.getQuantidade();
-                
-                if (encontreiAMaiorQuantidade) {
-                    // atualizar a minha referência para o maior parcial
-                    itemMaiorQuantidade = itemAtual;
-                }
-            }
-        }
-        
-        return itemMaiorQuantidade;
-    }
-    
- 
     /**
      * Caso o Orc tenha sorte, adiciona 1000 quantidades para cada item do inventário.
      */
@@ -327,65 +87,53 @@ public class Orc
         double numeroGerado = gerarNumero();
         
         if (numeroGerado == NUMERO_SORTE) {
-            for (ItemDoInventario item : this.Inventario) {
+            for (ItemDoInventario item : this.itens) {
                 int novaQuantidadeItem = item.getQuantidade() + 1000;
                 item.setQuantidade(novaQuantidadeItem);
             }
         }
         
-    }
-
-    /**
-     * setStatus
-     */
+    }  
     
-  
-    
-    
-   /**
-    * Get/sets para testes
-     */
-    
-   public void setXP(int xp){
-        this.experiencia= xp;
-    }
-   public int  getXP(){
-        return experiencia;
-   }     
-   public int getVida() {
-      
-       return this.vida;
-   }
-   public void setVida(int vida){
-       this.vida= vida;
-   }
-   
-   public ArrayList getInventario(){
-       return this.Inventario;
-   }
-
-    public String getNome(){
-       return this.nome;
-   }
-   
-      public Status getStatus() {
-        return this.status;
-    }
-    
-    public void setStatus(Status novoStatus) {
-        this.status = novoStatus;
-    }
-
+    private double gerarNumero() {
         
-    public void setExperiencia(int experiencia) {
-        this.experiencia = experiencia;
+        double numeroGerado = 0.0;
+        
+        // A. Se o orc possuir nome e o mesmo tiver mais de 5 letras, some 65 ao número. Caso contrário, subtraia 60.
+        boolean possuiNome = this.nome != null && this.nome.length() > 5;
+        
+        if (possuiNome && this.nome.length() > 5) {
+            numeroGerado += 65;
+        } else {
+            numeroGerado -= 60;
+        }
+        
+        // B. Se o orc possuir vida entre 30 e 60, multiple o número por dois,
+        // senão se a vida for menor que 20 multiplique por 3.
+        boolean possuiVidaEntre30e60 = this.vida >= 30 && this.vida <= 60;
+        
+        if (possuiVidaEntre30e60) {
+            numeroGerado *= 2;
+        } else if (this.vida < 20) {
+            numeroGerado *= 3;
+        }
+        
+        // C. Se o orc estiver fugindo, divida o número por 2. Senão se o orc estiver caçando ou dormindo adicione 1 ao número.
+        if (this.status == Status.Fugindo) {
+            numeroGerado /= 2;
+        } else if (this.status == Status.Cacando || this.status == Status.Dormindo) { 
+            numeroGerado += 1;
+        }
+        
+        // D. Se a experiência do orc for par, eleve o número ao cubo. 
+        // Se for ímpar e o orc tiver mais que 2 de experiência, eleve o número ao quadrado.
+        boolean experienciaÉPar = this.experiencia % 2 == 0;
+        if (experienciaÉPar) {
+            numeroGerado = numeroGerado * numeroGerado * numeroGerado;
+        } else if (this.experiencia > 2) {
+            numeroGerado = numeroGerado * numeroGerado;
+        }
+                
+        return numeroGerado;
     }
-    
-    public ArrayList<ItemDoInventario> getItens() {
-        return this.Inventario;
-    }
-   
-   
 }
-
-
