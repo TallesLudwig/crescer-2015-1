@@ -197,6 +197,7 @@ public class OrcTest
         assertEquals(esperadoV, resultadoVObtido);
         assertEquals(esperadoXp, resultadoxpObtido);
     }
+
      @Test
     public void orcRecebeAtaquecomDano3() {
         // Arrange
@@ -204,6 +205,7 @@ public class OrcTest
         // Act
         orc.setVida(60);
         orc.setStatus(Status.Dormindo);
+
         
         orc.recebeAtaque();
         orc.recebeAtaque();
@@ -434,6 +436,7 @@ public class OrcTest
         assertEquals(3, pocao.getQuantidade());
         assertEquals(1, lanca.getQuantidade());
     }
+
          @Test
     public void orcItemComMaiorQuantidade() {
         // Arrange
@@ -483,7 +486,7 @@ public class OrcTest
         
         // Assert
        // ItemDoInventario pocao = urukhai.getItens().get(0);
-        assertEquals(aa, urukhai.getItemComMaiorQuantidade());
+        assertEquals(aaa, urukhai.getItemComMaiorQuantidade());
     }
 
 
@@ -674,6 +677,7 @@ public class OrcTest
     }
     
     
+
 }
 
 

@@ -256,27 +256,27 @@ public class Orc
        caso o orc nao tenha item no inventario retorna null
        
        */
-        public ItemDoInventario getItemComMaiorQuantidade()
-    {
-
-             ItemDoInventario maior= new ItemDoInventario(-9000," ");
-               for (int i = 0; i <= this.Inventario.size()-1; i++) {
-                if(maior.getQuantidade() <= this.Inventario.get(i).getQuantidade() ){
+    public ItemDoInventario getItemComMaiorQuantidade() {
+        
+        ItemDoInventario itemMaiorQuantidade = null;
+        
+        boolean temItens = !this.Inventario.isEmpty();       
+        if (temItens) {
+            itemMaiorQuantidade = this.Inventario.get(0);
+            
+            for (int i = 1; i < this.Inventario.size(); i++) {
+                ItemDoInventario itemAtual = this.Inventario.get(i);
+                boolean encontreiAMaiorQuantidade =
+                    itemAtual.getQuantidade() > itemMaiorQuantidade.getQuantidade();
                 
-                 maior= this.Inventario.get(i);
-                 }  
-             }
-             
-             if (this.Inventario.size()>0){   
-                 return maior;
-            } else{
-                return null;
+                if (encontreiAMaiorQuantidade) {
+                    // atualizar a minha referência para o maior parcial
+                    itemMaiorQuantidade = itemAtual;
+                }
             }
-            
-            
-            
-            
-
+        }
+        
+        return itemMaiorQuantidade;
     }
     
  
@@ -295,8 +295,7 @@ public class Orc
         }
         
     }
-    
-    
+
     /**
      * setStatus
      */
@@ -337,6 +336,7 @@ public class Orc
     public void setStatus(Status novoStatus) {
         this.status = novoStatus;
     }
+
         
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
