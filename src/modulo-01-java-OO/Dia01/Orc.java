@@ -216,7 +216,47 @@ public class Orc
         return builder.toString();
        
     }
+   
     
+    
+    
+    /**
+       Busca o ordenarItens Menor para maior,
+       feito pelo bernardo, mais otimizado e simples
+       porem faz a verificao^2(passando pelos dois for)
+       */
+    
+    
+    public void ordenarItens(){//ordInventario
+      /*  for(int i = 0; i < this.Inventario.size(); i++){
+            for(int j = 0; j < this.Inventario.size()-1; j++){
+                ItemDoInventario itemAtual = this.Inventario.get(j);
+                ItemDoInventario proximoItem = this.Inventario.get(j+1);
+                
+                boolean precisaTrocar= itemAtual.getQuantidade()> proximoItem.getQuantidade();
+                
+                if(precisaTrocar){
+                    this.Inventario.set(j,proximoItem);
+                    this.Inventario.set(j+1,itemAtual);
+                }
+             
+            }
+        }*/
+        
+      Collections.sort(this.Inventario, new Comparator<ItemDoInventario>(){
+          public int compare(ItemDoInventario item, ItemDoInventario outroItem){
+                return Integer.compare(item.getQuantidade(), outroItem.getQuantidade());
+            
+            }
+        
+        })  ;
+        
+    }
+    
+     /**
+       Busca o ordenarItens Menor para maior,
+       feito por mim, uma bagunça
+       */
     public void ordenarItens1(){//ordInventario
         //ItemDoInventario menor= new ItemDoInventario(9000," ");
        ItemDoInventario menor= null;
@@ -246,25 +286,6 @@ public class Orc
         }
         
         this.Inventario=ordInventario;
-    }
-    
-    
-    
-    public void ordenarItens(){//ordInventario
-        for(int i = 0; i < this.Inventario.size(); i++){
-            for(int j = 0; j < this.Inventario.size()-1; j++){
-                ItemDoInventario itemAtual = this.Inventario.get(j);
-                ItemDoInventario proximoItem = this.Inventario.get(j+1);
-                
-                boolean precisaTrocar= itemAtual.getQuantidade()> proximoItem.getQuantidade();
-                
-                if(precisaTrocar){
-                    this.Inventario.set(j,proximoItem);
-                    this.Inventario.set(j+1,itemAtual);
-                }
-             
-            }
-        }
     }
     
       
