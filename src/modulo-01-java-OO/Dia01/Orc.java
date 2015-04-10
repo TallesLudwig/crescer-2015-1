@@ -217,7 +217,7 @@ public class Orc
        
     }
     
-    public void ordenarItens(){//ordInventario
+    public void ordenarItens1(){//ordInventario
         //ItemDoInventario menor= new ItemDoInventario(9000," ");
        ItemDoInventario menor= null;
        ItemDoInventario menor1= null;
@@ -235,7 +235,7 @@ public class Orc
              if(menor.getQuantidade() >= this.Inventario.get(i).getQuantidade() ){
                  posicao=i;
                  menor1= this.Inventario.get(i);
-                    
+                 menor=menor1;
                 }  
             }
             ordInventario.add(menor1);
@@ -248,6 +248,24 @@ public class Orc
         this.Inventario=ordInventario;
     }
     
+    
+    
+    public void ordenarItens(){//ordInventario
+        for(int i = 0; i < this.Inventario.size(); i++){
+            for(int j = 0; j < this.Inventario.size()-1; j++){
+                ItemDoInventario itemAtual = this.Inventario.get(j);
+                ItemDoInventario proximoItem = this.Inventario.get(j+1);
+                
+                boolean precisaTrocar= itemAtual.getQuantidade()> proximoItem.getQuantidade();
+                
+                if(precisaTrocar){
+                    this.Inventario.set(j,proximoItem);
+                    this.Inventario.set(j+1,itemAtual);
+                }
+             
+            }
+        }
+    }
     
       
  
