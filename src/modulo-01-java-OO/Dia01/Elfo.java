@@ -9,12 +9,10 @@ public class Elfo extends Personagem
     // Versão correção do tema!!
     
 
-    protected int flechas;
+    protected int flechas= 42;
 
     // type initializer
-    {
-        flechas = 42;
-    }
+    
     
     /**
      * Cria objetos Elfo

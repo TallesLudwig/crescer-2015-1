@@ -1,3 +1,4 @@
+import java.util.*;
 
 /**
  * Write a description of class ElfoVerd here.
@@ -8,24 +9,28 @@
 public class ElfoVerde extends Elfo
 {
     // instance variables - replace the example below with your own
+    
+    //final  ArrayList<ItemDoInventario> itens=new ArrayList<ItemDoInventario>();
 
- 
-    /**
-     * Constructor for objects of class ElfoVerd
-     */
-    public ElfoVerde(String umNome, int flechas)
-    {
-        this(umNome);
-        // this.nome = nome;
-         
-    }
+  
         
+     
+    {
+       
+        
+    }
       /**
      * Constructor for objects of class ElfoVerd
      */
     
-    public ElfoVerde(String nome) {
-        super(nome, 0);
+    public ElfoVerde(String nome , int flechas) {
+        super(nome, flechas);
+
+    }
+    
+    public ElfoVerde(String nome ) {
+        super(nome, 42);
+
     }
     
      /**
@@ -35,11 +40,25 @@ public class ElfoVerde extends Elfo
      */
     public void atirarFlecha(Orc umOrc) {
         //flechas = flechas - 1;
-        //flechas--;
+        flechas--;
         experiencia++;
         experiencia++;
         
         umOrc.recebeAtaque();
     }
+    
+    
+     protected void adicionarItem(ItemDoInventario item) {
+        boolean EspadaOuArco = item.getDescricao() == "Espada de aço valiriano" ||
+         item.getDescricao() =="Arco e Flecha de vidro";
+        if (EspadaOuArco) {
+            System.out.println("a");
+            itens.add(item);
+            
+        }
+    }
 
   }
+  
+  //"Espada de aço valiriano" ou
+  //“Arco e Flecha de vidro".
