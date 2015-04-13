@@ -22,6 +22,13 @@ public class Personagem
         this.vida = vida;
     }
     
+    public void atualizarStatus(){
+        if(this.vida <=0){
+            this.status= Status.Morto;
+        
+        }
+    }
+    
     protected Status getStatus() {
         return status;
     }

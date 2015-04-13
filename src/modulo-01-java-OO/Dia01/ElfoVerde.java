@@ -10,7 +10,7 @@ public class ElfoVerde extends Elfo
 {
     // instance variables - replace the example below with your own
     
-    //final  ArrayList<ItemDoInventario> itens=new ArrayList<ItemDoInventario>();
+    //private final  ArrayList<String> itens=new ArrayList<Strin>();
 
   
         
@@ -39,12 +39,16 @@ public class ElfoVerde extends Elfo
      * @param umOrc Orc que receberá uma flechada.
      */
     public void atirarFlecha(Orc umOrc) {
-        //flechas = flechas - 1;
+        /*/flechas = flechas - 1;
         flechas--;
         experiencia++;
         experiencia++;
         
-        umOrc.recebeAtaque();
+        umOrc.recebeAtaque();*/
+        
+        super.atirarFlecha(umOrc);
+        experiencia++;
+        
     }
     
     
@@ -52,10 +56,21 @@ public class ElfoVerde extends Elfo
         boolean EspadaOuArco = item.getDescricao() == "Espada de aço valiriano" ||
          item.getDescricao() =="Arco e Flecha de vidro";
         if (EspadaOuArco) {
-           
-            itens.add(item);
+            super.adicionarItem(item);
+          //  itens.add(item);
             
         }
+        /*
+        ArrayList<String> itensEsperados = new ArrayList();
+        itensEsperados.add("Arco e Flecha de vidro");
+        itensEsperados.add("Espada de aço valiriano");
+        
+        boolean existe = itenspermitido.contains("Espada de aço valiriano");
+        if(existe){
+            super.adicionarItem(item);
+        }
+        
+        */
     }
 
   }

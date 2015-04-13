@@ -10,7 +10,9 @@ public class Elfo extends Personagem
     
 
     protected int flechas= 42;
-
+{
+    this.vida=100;
+}
     // type initializer
     
     
