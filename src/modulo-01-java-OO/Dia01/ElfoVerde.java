@@ -52,7 +52,7 @@ public class ElfoVerde extends Elfo
         boolean EspadaOuArco = item.getDescricao() == "Espada de aço valiriano" ||
          item.getDescricao() =="Arco e Flecha de vidro";
         if (EspadaOuArco) {
-            System.out.println("a");
+           
             itens.add(item);
             
         }
