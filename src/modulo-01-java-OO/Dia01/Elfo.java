@@ -8,6 +8,7 @@ public class Elfo extends Personagem
 {
     // Versão correção do tema!!
     private int flechas;
+     private static int contadorDeElfos;
 
     // type initializer
     {
@@ -26,6 +27,7 @@ public class Elfo extends Personagem
         this(umNome);
         // this.nome = nome;
         this.flechas = flechas;
+        
     }
     
     /**
@@ -35,6 +37,7 @@ public class Elfo extends Personagem
      */
     public Elfo(String nome) {
         super(nome, 0);
+        contadorDeElfos++;
     }
     
     /**
@@ -122,4 +125,14 @@ public class Elfo extends Personagem
         builder.append(textoNiveis);
         builder.append(" de experiência.");*/
     }
-}
+    
+     public static int getContadorDeElfos(){
+         return contadorDeElfos;
+        }
+        
+    public static void limpaContadorDeElfos(){
+         contadorDeElfos=0;
+        }
+    }
+    
+

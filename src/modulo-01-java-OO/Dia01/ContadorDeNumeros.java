@@ -5,6 +5,18 @@
  */
 public class ContadorDeNumeros
 {
+    private static int x;
+    public static void contarAte5(){
+        /*
+        ContadorDeNumeros.x=10;
+        +++ou+++
+        x=10;
+        */
+        for (int i = 0; i < 5; i++) {
+            
+            System.out.println(i+1);
+        }
+    }
     public void contarAte3() {
         
         for (int i = 0; i < 3; i++) {

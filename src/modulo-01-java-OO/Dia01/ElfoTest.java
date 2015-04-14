@@ -147,16 +147,56 @@ public class ElfoTest
         assertEquals(resultadoEsperado, resultadoObtido);
     }
     
+    @Test
+    public void contadorDeElfos() {
+        // Arrange
+        Elfo.limpaContadorDeElfos();
+        Elfo elfo = new Elfo("Faustão");
+          // Act
+        int resultadoEsperado = 1;
+        // Assert
+        assertEquals(resultadoEsperado, Elfo.getContadorDeElfos());
+    }  
     
+     @Test
+    public void contadorDeElfosComVerde() {
+        // Arrange
+         Elfo.limpaContadorDeElfos();
+        Elfo elfo = new Elfo("Faustão");
+        ElfoVerde elfoV = new ElfoVerde("Faustão não Maduro");
+          // Act
+        int resultadoEsperado = 2;
+        // Assert
+        assertEquals(resultadoEsperado, Elfo.getContadorDeElfos());
+    }
     
+     @Test
+    public void contadorDeElfosComVerdeNoturno() {
+        // Arrange
+         Elfo.limpaContadorDeElfos();
+        Elfo elfo = new Elfo("Faustão");
+        ElfoVerde elfoV = new ElfoVerde("Faustão não Maduro");
+        ElfoNoturno elfoN = new ElfoNoturno("Faustão da Nigth");
+          // Act
+        int resultadoEsperado = 3;
+        // Assert
+        assertEquals(resultadoEsperado, Elfo.getContadorDeElfos());
+    }
     
-    
-    
-    
-    
-    
-    
-    
+     @Test
+    public void contadorDeTresElfosComVerdeNoturno() {
+        // Arrange
+         Elfo.limpaContadorDeElfos();
+        Elfo elfo = new Elfo("Faustão");
+        Elfo elfo2 = new Elfo("Gugu");
+        Elfo elfo3 = new Elfo("Ratinho");
+        ElfoVerde elfoV = new ElfoVerde("Faustão não Maduro");
+        ElfoNoturno elfoN = new ElfoNoturno("Faustão da Nigth");
+          // Act
+        int resultadoEsperado = 5;
+        // Assert
+        assertEquals(resultadoEsperado, Elfo.getContadorDeElfos());
+    }
 }
 
 
