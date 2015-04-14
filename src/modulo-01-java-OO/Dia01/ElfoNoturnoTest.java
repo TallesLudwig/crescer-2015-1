@@ -94,6 +94,7 @@ public class ElfoNoturnoTest
             elfoSuiçida.atirarFlecha(new Orc());
         }
 
+
         Status obtido = elfoSuiçida.getStatus();
 
         assertEquals(statusEsperado, obtido); 
