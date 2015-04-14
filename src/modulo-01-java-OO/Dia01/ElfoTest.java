@@ -1,15 +1,22 @@
+
 import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+
 
 /**
  * Testes unitários para a classe Elfo.
  *
  * @author  CWI Software
  */
+
+
 public class ElfoTest
 {
+    @Before
+    public void setUp(){
+        Elfo.limpaContadorDeElfos();
+    }
+    
     @Test
     public void elfoNasceComNomeInformado() {
         // Arrange
@@ -150,7 +157,7 @@ public class ElfoTest
     @Test
     public void contadorDeElfos() {
         // Arrange
-        Elfo.limpaContadorDeElfos();
+    
         Elfo elfo = new Elfo("Faustão");
           // Act
         int resultadoEsperado = 1;
@@ -161,7 +168,7 @@ public class ElfoTest
      @Test
     public void contadorDeElfosComVerde() {
         // Arrange
-         Elfo.limpaContadorDeElfos();
+        
         Elfo elfo = new Elfo("Faustão");
         ElfoVerde elfoV = new ElfoVerde("Faustão não Maduro");
           // Act
@@ -173,7 +180,7 @@ public class ElfoTest
      @Test
     public void contadorDeElfosComVerdeNoturno() {
         // Arrange
-         Elfo.limpaContadorDeElfos();
+        
         Elfo elfo = new Elfo("Faustão");
         ElfoVerde elfoV = new ElfoVerde("Faustão não Maduro");
         ElfoNoturno elfoN = new ElfoNoturno("Faustão da Nigth");
@@ -186,7 +193,7 @@ public class ElfoTest
      @Test
     public void contadorDeTresElfosComVerdeNoturno() {
         // Arrange
-         Elfo.limpaContadorDeElfos();
+         
         Elfo elfo = new Elfo("Faustão");
         Elfo elfo2 = new Elfo("Gugu");
         Elfo elfo3 = new Elfo("Ratinho");
@@ -197,6 +204,8 @@ public class ElfoTest
         // Assert
         assertEquals(resultadoEsperado, Elfo.getContadorDeElfos());
     }
+    
+    
 }
 
 

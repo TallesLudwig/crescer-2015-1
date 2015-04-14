@@ -14,6 +14,7 @@ public class Elfo extends Personagem
     {
         flechas = 42;
         vida = 100;
+        contadorDeElfos++;
     }
     
     /**
@@ -37,7 +38,7 @@ public class Elfo extends Personagem
      */
     public Elfo(String nome) {
         super(nome, 0);
-        contadorDeElfos++;
+        
     }
     
     /**
@@ -128,6 +129,7 @@ public class Elfo extends Personagem
     
      public static int getContadorDeElfos(){
          return contadorDeElfos;
+         
         }
         
     public static void limpaContadorDeElfos(){
