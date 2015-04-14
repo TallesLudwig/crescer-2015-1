@@ -53,7 +53,9 @@ public class ElfoNoturno extends Elfo
     }
     
     
-  
+    public String toString(){
+        return "Elfo noturno: " + super.toString();
+    }
 
 
 }

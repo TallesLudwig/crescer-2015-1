@@ -72,6 +72,10 @@ public class ElfoVerde extends Elfo
         
         */
     }
+    
+    public String toString(){
+        return "Elfo verde: " + super.toString();
+    }
 
   }
   
