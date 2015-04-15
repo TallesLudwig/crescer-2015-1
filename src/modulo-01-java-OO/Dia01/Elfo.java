@@ -54,7 +54,9 @@ public class Elfo extends Personagem
         flechas--;
         experiencia++;
         umOrc.recebeAtaque();
+
         status=Status.ATACANDO;
+
     }
     
     public String getNome() {
