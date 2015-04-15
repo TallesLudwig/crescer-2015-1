@@ -25,7 +25,16 @@ public class ExercitoDeElfos
    public Elfo buscar(String nome){
        return Exercito.get(nome);
     }
-}
+    
+   public /*HashMap<String, Elfo>*/ Elfo buscarStatus(Elfo elfoNovo){
+      
+       return Exercito.get(elfoNovo.getStatus().getValue(elfoNovo.getStatus()));
+    }
+       
+   }
+    
+    
+
 
 
 //recebe um staus por parametro e agrupa esses
