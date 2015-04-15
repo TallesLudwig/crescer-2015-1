@@ -15,6 +15,7 @@ public class ExercitoDeElfosTest
         HashMap<String, Elfo> exercitoEsperado = new HashMap<>();
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         // Act
+
         try{
          exercito.alistar(elfo);
        } catch(ErrorAlistarException error){ 
@@ -22,6 +23,7 @@ public class ExercitoDeElfosTest
        } finally{
          System.out.println("Adeus BlueJ");
        }
+
         // Assert
         HashMap<String, Elfo> obtido = exercito.getExercito();
         assertEquals(exercitoEsperado, obtido);
@@ -35,6 +37,7 @@ public class ExercitoDeElfosTest
         HashMap<String, Elfo> exercitoEsperado = new HashMap<>();
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         // Act
+
            
           try{
         exercito.alistar(elfo);
@@ -45,6 +48,7 @@ public class ExercitoDeElfosTest
          System.out.println("Adeus BlueJ");
        }
        
+
         // Assert
         HashMap<String, Elfo> obtido = exercito.getExercito();
         assertEquals(exercitoEsperado, obtido);
@@ -58,6 +62,7 @@ public class ExercitoDeElfosTest
         exercitoEsperado.put(elfo.getNome(), elfo);
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         // Act
+
        try{
         exercito.alistar(elfo);
         
@@ -66,6 +71,7 @@ public class ExercitoDeElfosTest
        } finally{
          System.out.println("Adeus BlueJ");
        }
+
         // Assert
         HashMap<String, Elfo> obtido = exercito.getExercito();
         assertEquals(exercitoEsperado, obtido);
@@ -80,6 +86,7 @@ public class ExercitoDeElfosTest
         exercitoEsperado.put(elfo.getNome(), elfo);
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         // Act
+
            try{
         exercito.alistar(elfo);
         
@@ -88,6 +95,7 @@ public class ExercitoDeElfosTest
        } finally{
          System.out.println("Adeus BlueJ");
        }
+
         // Assert
         HashMap<String, Elfo> obtido = exercito.getExercito();
         assertEquals(exercitoEsperado, obtido);
@@ -104,6 +112,7 @@ public class ExercitoDeElfosTest
         exercitoEsperado.put(elfo2.getNome(), elfo2);
         exercitoEsperado.put(elfo3.getNome(), elfo3);
         ExercitoDeElfos exercito = new ExercitoDeElfos();
+
         // Act       
            try{
         exercito.alistar(elfo);
@@ -114,6 +123,7 @@ public class ExercitoDeElfosTest
        } finally{
          System.out.println("Adeus BlueJ");
        }
+
         // Assert
         HashMap<String, Elfo> obtido = exercito.getExercito();
         assertEquals(exercitoEsperado, obtido);
@@ -132,6 +142,7 @@ public class ExercitoDeElfosTest
         exercitoEsperado.put(elfo3.getNome(), elfo3);
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         // Act
+
      
         
             try{
@@ -144,6 +155,7 @@ public class ExercitoDeElfosTest
        } finally{
          System.out.println("Adeus BlueJ");
        }
+
         // Assert
         HashMap<String, Elfo> obtido = exercito.getExercito();
         assertEquals(exercitoEsperado, obtido);
@@ -166,6 +178,7 @@ public class ExercitoDeElfosTest
         String nomeElfo = "Legolas II";
         Elfo esperado = new ElfoVerde(nomeElfo);
         ExercitoDeElfos exercito = new ExercitoDeElfos();
+
         
         try{
           exercito.alistar(esperado);
@@ -174,6 +187,7 @@ public class ExercitoDeElfosTest
        } finally{
          System.out.println("Adeus BlueJ");
        }
+
         // Act
         Elfo obtido = exercito.buscar(nomeElfo);
         // Assert
@@ -186,6 +200,7 @@ public class ExercitoDeElfosTest
         String nomeElfo = "Legolas II";
         Elfo esperado = new ElfoVerde(nomeElfo);
         ExercitoDeElfos exercito = new ExercitoDeElfos();
+
         try{
           exercito.alistar(esperado);
         exercito.alistar(new ElfoVerde("green elf"));
@@ -196,6 +211,7 @@ public class ExercitoDeElfosTest
          System.out.println("Adeus BlueJ");
        }
         
+
         // Act
         Elfo obtido = exercito.buscar(nomeElfo);
         // Assert
@@ -221,6 +237,7 @@ public class ExercitoDeElfosTest
             Arrays.asList(elfoVivo2, elfoVivo3, elfoVivo1)
         ));
         ExercitoDeElfos exercito = new ExercitoDeElfos();
+
      
          try{
              exercito.alistar(elfoAtacando1);
@@ -235,6 +252,7 @@ public class ExercitoDeElfosTest
          System.out.println("Adeus BlueJ");
        }
         
+
         // Act
         exercito.agruparPorStatus();
         HashMap<Status, ArrayList<Elfo>> resultado = exercito.getExercitoPorStatus();
@@ -256,6 +274,7 @@ public class ExercitoDeElfosTest
             Arrays.asList(elfoAtacando1, elfoAtacando2)
         );
         ExercitoDeElfos exercito = new ExercitoDeElfos();
+
        
         
          try{
@@ -270,16 +289,13 @@ public class ExercitoDeElfosTest
        } finally{
          System.out.println("Adeus BlueJ");
        }
+
         // Act
         ArrayList<Elfo> resultado = exercito.buscar(Status.ATACANDO);
         // Assert
         assertEquals(esperado, resultado);
     }
     
-    
-    
-    
-    
-    
+
 }
 

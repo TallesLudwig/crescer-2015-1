@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * Write a description of interface EstrategiaDeAtaque here.
  * 
@@ -7,5 +8,6 @@ import java.util.*;
  */
 public interface EstrategiaDeAtaque
 {
-       void atacar(ArrayList<Elfo> elfos, ArrayList<Orc> orcs);
+
+    void atacarOrcs(ArrayList<Elfo> elfos, ArrayList<Orc> orcs);
 }
