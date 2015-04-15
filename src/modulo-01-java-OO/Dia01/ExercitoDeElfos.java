@@ -77,11 +77,11 @@ public class ExercitoDeElfos
         }
     }
     
-   public void atacarHorda(ArrayList<Orc> orcs) {
+   public void atacarHorda(ArrayList<Orc> hordaOrcs) {
         
-        ArrayList<Elfo> elfosQueVãoPraPeleia = buscar(Status.VIVO);
+        ArrayList<Elfo> elfosQueVãoAtacar = buscar(Status.VIVO);
         
-        estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
+        estrategia.atacarOrcs(elfosQueVãoAtacar, hordaOrcs);
     }
      /**
      * tentativa do exerc, baseado no que o gabriel tenha mostrado.
