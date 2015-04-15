@@ -26,10 +26,28 @@ public class ExercitoDeElfos
        return Exercito.get(nome);
     }
     
-   public /*HashMap<String, Elfo>*/ Elfo buscarStatus(Elfo elfoNovo){
-      
-       return Exercito.get(elfoNovo.getStatus().getValue(elfoNovo.getStatus()));
+    /**
+     * tentativa do exerc, baseado no que o gabriel tenha mostrado.
+     * 
+    */
+  public  HashMap<Status, Elfo> buscarStatus(Status status){
+        HashMap<Status, Elfo> statusExercito= new HashMap<>();  
+        
+        for(String nome : Exercito.keySet()){
+            Status statusAtual = Exercito.get(nome).getStatus();
+            boolean teste = statusAtual == status;
+            if(teste){
+               statusExercito.put(statusAtual, Exercito.get(nome));
+                
+            }
+        
+        }
+        return statusExercito;
     }
+    
+    
+      
+   
        
    }
     
