@@ -22,13 +22,16 @@ public class ExercitoDeElfos
      * 
      * @param elfo Elfo a ser alistado no exército. Deve ser apenas do tipo ElfoVerde ou ElfoNoturno
      */
-    public void alistar(Elfo elfo) {
+    public void alistar(Elfo elfo) throws ErrorAlistarException{
         
         boolean podeAlistar = elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno;
         
         if (podeAlistar) {
             exercito.put(elfo.getNome(), elfo);
-        }   
+        } else{
+            throw new ErrorAlistarException();
+        }  
+        
     }
     
     /**
