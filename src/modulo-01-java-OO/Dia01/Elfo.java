@@ -153,6 +153,10 @@ public class Elfo extends Personagem
     public boolean equals(Object outro) {
         return ((Elfo)outro).getNome().equals(this.nome);
     }
+    
+    public void imprimeNome() {
+        // TODO: System.out.println...
+    }
 }
     
   

@@ -77,7 +77,13 @@ public class ExercitoDeElfos
         }
     }
     
-   public void atacarHorda(ArrayList<Orc> hordaOrcs) {
+
+    public void mudaDeEstrategia(EstrategiaDeAtaque novaEstrategia) {
+        estrategia = novaEstrategia;
+    }    
+    
+    public void atacarHorda(ArrayList<Orc> hordaOrcs) {
+
         
         ArrayList<Elfo> elfosQueVãoAtacar = buscar(Status.VIVO);
         
