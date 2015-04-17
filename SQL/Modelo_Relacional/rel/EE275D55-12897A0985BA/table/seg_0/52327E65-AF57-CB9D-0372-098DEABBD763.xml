@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="52327E65-AF57-CB9D-0372-098DEABBD763" name="Contratante">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>B7B57AE6-6C35-3D2F-358D-355376A2118D</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDContratante" id="2305BCDF-31D4-50EA-F312-E45E0D45B145">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>50A9F343-8BDA-5976-D1D1-95946DC4FF4B</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDPessoa" id="D951C8D6-DCBA-1E79-5901-EA4D05A597FA">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>AA3044BE-2E8A-1C0F-4D96-463E3699CB97</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>5398BCFC-3982-DF84-FA50-703708C0B1CD</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5EB3C78C-E0BF-5BC2-0F62-A27D7E7C232B" referredColumn="5398BCFC-3982-DF84-FA50-703708C0B1CD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0B8C7358-FB79-634C-56D0-47863251E236" name="Contratante_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>71166C0A-82F8-FE5E-629F-F4675A31A3F1</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2305BCDF-31D4-50EA-F312-E45E0D45B145"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1B21C9B-AE44-FF05-1FD5-E602931DC74C" name="Contratante_Pessoa_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>99C4CB3B-8E14-C7D2-215E-0D51638DBE06</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D951C8D6-DCBA-1E79-5901-EA4D05A597FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

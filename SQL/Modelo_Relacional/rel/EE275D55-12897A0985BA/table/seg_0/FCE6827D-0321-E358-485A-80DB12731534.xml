@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FCE6827D-0321-E358-485A-80DB12731534" name="Beneficiario">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>93884806-46B3-2896-A52C-3E2047115DE1</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDBenificiario" id="C06A2A6B-ACB3-9735-804A-242D34073B8B">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>85B8A051-B1F3-F207-0BFC-5C100BB170DE</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDPessoa" id="73C8C53A-936E-0C3D-4201-EBA1DE2A0DB9">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>2CA651BA-271F-3585-C76E-49FDA12FB446</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>5398BCFC-3982-DF84-FA50-703708C0B1CD</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="10E8B550-5AAF-539C-7F3D-67EB7B2C6DDF" referredColumn="5398BCFC-3982-DF84-FA50-703708C0B1CD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CF9097B6-FB10-A73C-531E-1D832534A534" name="Beneficiario_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>64C1E604-CC85-CE15-7F84-6454E9C43C22</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C06A2A6B-ACB3-9735-804A-242D34073B8B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5EC5066C-BA03-F5A8-8A88-06074802BF30" name="Beneficiario_Pessoa_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>F61E9968-AEA4-C032-4962-E8EF22F0F9AC</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73C8C53A-936E-0C3D-4201-EBA1DE2A0DB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

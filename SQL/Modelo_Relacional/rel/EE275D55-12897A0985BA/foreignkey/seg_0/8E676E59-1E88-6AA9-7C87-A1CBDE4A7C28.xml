@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8E676E59-1E88-6AA9-7C87-A1CBDE4A7C28" name="Contrato_Contratante_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>4EFBA622-B567-FEC1-05E8-3D394E8C5D7C</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<containerWithKeyObject>50041B6A-4D52-A17E-AD8B-24FDE624A13E</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>9E588B7E-05FC-9901-DD2D-904941168359</localFKIndex>
+<keyObject>0B8C7358-FB79-634C-56D0-47863251E236</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

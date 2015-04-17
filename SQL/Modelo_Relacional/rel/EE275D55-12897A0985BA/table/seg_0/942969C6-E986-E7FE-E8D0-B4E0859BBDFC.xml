@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="942969C6-E986-E7FE-E8D0-B4E0859BBDFC" name="Pessoa">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>6CBF1453-85AA-FE02-2979-37936B976A59</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDPessoa" id="5398BCFC-3982-DF84-FA50-703708C0B1CD">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>1EC5066C-5E62-9F60-B35B-8902CC05E91E</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="EE13ADAF-5D70-FFC0-66C6-2B003B8F8FDA">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>B566AE49-FD76-0534-8B07-328967B358BA</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefone" id="B6E03501-25FA-7D7D-3257-493262C8E69E">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>FF48115D-29FE-0BB5-5756-02E519BF3324</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="E9872795-6E58-8505-53CF-10793AA2E0FC">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>6EFB27FA-6A93-27B9-439A-5C293E935C35</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Sexo" id="A2F4ED2B-7F9D-D503-9FE3-F5AFECAA92A0">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>21E9C40A-3F2B-8733-39AF-41EAB8999951</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<constraintName>CK_Contratantev1_Sexo</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDEndereco" id="1359DC30-DC6C-B6F2-B606-4BAAB5C80A85">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:27:08 UTC</createdTime>
+<generatorID>A8F01E8D-C182-B6D2-7B80-6CCF3D10E177</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>3DEF77F1-9E30-7E71-B524-94916B0E40C1</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="81C8A066-953A-02CA-7D7F-99B6C6D9D3AD" referredColumn="3DEF77F1-9E30-7E71-B524-94916B0E40C1"/>
+</associations>
+</Column>
+<Column name="Endereco" id="5DC41481-4F81-BF8C-8F56-AA8F06391FB4">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:36:14 UTC</createdTime>
+<generatorID>71BD8EEA-7AC9-4670-504A-E88FEA0B452F</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cidade" id="9FA24913-20AD-8C9F-46D2-463A41C57977">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:36:14 UTC</createdTime>
+<generatorID>B3EB4644-45F7-12CE-2A98-29ACD3B8DBE1</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E1FCCA8E-2727-B484-B1B7-EEA3BF6D0ECC" name="Pessoa_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>797877E7-3DAE-E16C-9FAF-D2B7AFDAE578</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5398BCFC-3982-DF84-FA50-703708C0B1CD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38B2899D-17DA-FE11-EB55-70FEC5C5251A" name="Pessoa__IDX">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:27:08 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>256D1A9C-C815-5ED2-3324-07D5F801E25C</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="1359DC30-DC6C-B6F2-B606-4BAAB5C80A85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F9717468-C0E8-E433-109C-F5023D9CD4B6" name="Pessoa_Endereço_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:27:08 UTC</createdTime>
+<generatorID>256D1A9C-C815-5ED2-3324-07D5F801E25C</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1359DC30-DC6C-B6F2-B606-4BAAB5C80A85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

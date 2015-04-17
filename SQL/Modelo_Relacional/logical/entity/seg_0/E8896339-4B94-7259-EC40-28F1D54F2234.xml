@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E8896339-4B94-7259-EC40-28F1D54F2234" name="Entrega">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:57:44 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDEntrega" id="684FC1C4-9238-3654-30FE-9483E937E828">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:57:58 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Endereço Entrega" id="451C064A-CCE2-D5CB-7DC7-CA4770CD5414">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:58:14 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+</Attribute>
+<Attribute name="Endereço Cobranca" id="2CBB03D9-0E0F-4C11-F38E-7367974C106D">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:58:30 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+</Attribute>
+<Attribute name="Boleto" id="CF7573D5-E261-CC87-D61E-C943BE601976">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:58:56 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+</Attribute>
+<Attribute name="Contrato IDContrato" id="9B60B7F7-3C1A-C7C5-6F1F-96D6EB2ACC3F">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:59:46 UTC</createdTime>
+<generatorID>12AC72F4-71C6-546D-EF12-337B3744031B</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>76A16AE2-8A1E-312F-8E18-6ABBF5F7BB4E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="IDEndereco Entrega" id="49332283-4AA3-AC13-40CA-B5823D1ED8FE">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:25:01 UTC</createdTime>
+<generatorID>00FEF771-2AB2-951E-2A3E-7AC13E849BA9</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>D63A4ADC-F39F-169C-7EF0-6E2E0FA6EA3A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="IDEndereco Cobranca" id="4B7CD7C4-832E-5D4D-A0B5-90D8B8461E75">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:25:54 UTC</createdTime>
+<generatorID>AF90CFD7-6DE3-72DC-B9F0-365B9DEEB92B</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>D63A4ADC-F39F-169C-7EF0-6E2E0FA6EA3A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1AD5D02C-2AD0-D2D2-C32C-809827075D66" name="Entrega_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:58:11 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>684FC1C4-9238-3654-30FE-9483E937E828</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

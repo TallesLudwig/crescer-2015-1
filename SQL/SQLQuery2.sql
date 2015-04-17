@@ -3,6 +3,10 @@
 	Criar Tabelas 
 
 */
+
+
+	-- +++++++Tabela Cidade+++++++
+
 	Create table Cidade( 
 		IDCidade	int not null,
 		Nome		varchar(30) NOT NULL,
@@ -23,7 +27,7 @@
 
 
 
-
+	-- +++++++Tabela Cliente+++++++
 
 	Create table Cliente
 	(
@@ -38,7 +42,7 @@
 
 
 
-
+	-- +++++++Tabela Empregados+++++++
 
 
 	Create table Empregado
@@ -63,6 +67,12 @@
 	constraint FK_Empregado_Cidade Foreign Key (IDCidade)
 	References Cidade (IDCidade)
 	);
+
+/*
+	Alterar Tabelas 
+
+*/
+
 
 
 

@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9D457D40-4294-933F-784C-F179595A084D" name="Endereço">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>16D5136D-AC97-A0DF-2197-ABF3E93F07F7</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDEndereco" id="D63A4ADC-F39F-169C-7EF0-6E2E0FA6EA3A">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>121C15FB-0FE1-082F-DCF0-797F34F68F57</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Rua" id="E1242254-7E99-44BC-2F4D-E847ECF90CC2">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>2C38580B-1E0A-AEFF-7251-8CC099EE88A0</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+</Attribute>
+<Attribute name="Cidade" id="F3AE2411-5BDE-A1BC-EA37-E9D59F59CD98">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>93C42DCF-E2E7-490F-FDF8-4ECFAD022AB3</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+</Attribute>
+<Attribute name="Bairro" id="C11F0AE4-7EFD-A1E9-E677-C2E91B19AA89">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>1E3903FC-22E8-257D-8E8C-C07E9DA62ACD</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>75</dataTypeSize>
+</Attribute>
+<Attribute name="CEP" id="753C1860-561B-5ED6-3914-C1D311A36B93">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>7A5067FA-3417-6A0F-A5FF-EC5331077203</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Complemento" id="D3A915AC-2DA2-BC09-E749-CA9AF1EC1728">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>A6A527F5-DC7B-6F1A-96A0-3637D12C01B8</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+</Attribute>
+<Attribute name="IDCidade" id="217EF8EE-168E-6086-F67A-F0F0B38B5939">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:36:04 UTC</createdTime>
+<generatorID>8AC8ABD0-63EE-A1E2-02CE-C6DDDE8516D5</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>20F8903F-DB39-6850-CFC1-CC17056C726E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F4602FC0-E75B-B436-DD67-5863FA24AC20" name="Endereço PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>95831643-C1A3-72AB-3C1C-F25078212AF8</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D63A4ADC-F39F-169C-7EF0-6E2E0FA6EA3A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,145 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="50041B6A-4D52-A17E-AD8B-24FDE624A13E" name="Contrato">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>A1B79EC7-A18E-9ACC-C159-91D4F2F92512</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDContrato" id="9C6F8318-331E-3C65-197A-C158B916EA09">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>76A16AE2-8A1E-312F-8E18-6ABBF5F7BB4E</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Data_Inicio" id="FB9B6691-9FEC-F0FE-4390-E33B88DA3175">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>BD1300FF-A64A-08DB-8CFF-C834EA956B17</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Data_Fim" id="1B7B1640-FFF2-A268-B3A4-206DEB16B950">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>B1D96365-AA01-9B08-2373-348F681D79CC</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDContratante" id="D48CC940-1788-85AB-4B92-FF99506223D6">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>11B2543C-4F06-13D3-58CE-B1AADB9EBDC4</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>2305BCDF-31D4-50EA-F312-E45E0D45B145</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E676E59-1E88-6AA9-7C87-A1CBDE4A7C28" referredColumn="2305BCDF-31D4-50EA-F312-E45E0D45B145"/>
+</associations>
+</Column>
+<Column name="IDSeguros" id="941B3A42-644A-4C9F-1782-051B5CC6EA3E">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>122411F4-1C24-8D80-7CE5-3C40E9FA4373</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>DF272542-3CF4-5F9D-9072-92B5C96C96C5</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EFAE5ECC-CEBC-6C18-CD67-108760A5027F" referredColumn="DF272542-3CF4-5F9D-9072-92B5C96C96C5"/>
+</associations>
+</Column>
+<Column name="Beneficiario_IDBenificiario" id="8BB304CE-ED7E-08B0-89BF-7A59CEE73348">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>C716772C-8F17-7A58-3B81-C82F9211BB1E</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>C06A2A6B-ACB3-9735-804A-242D34073B8B</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9AD46868-2F38-6F49-D9AE-289242B8176B" referredColumn="C06A2A6B-ACB3-9735-804A-242D34073B8B"/>
+</associations>
+</Column>
+<Column name="Valor" id="BF29A5D5-DB96-FE63-5E4F-22E0776C238C">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>D20B9909-1528-BE4B-B167-8AD9C4B3486A</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1CE21F74-DDB9-0238-B435-8D88E90B30E6" name="Contrato_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>1F5462EC-7BCB-1FB1-ADDA-36BAB0D10516</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C6F8318-331E-3C65-197A-C158B916EA09"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6DB1D113-35DF-85FF-5C0B-D7F01E2B859F" name="Contrato_Beneficiario_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>7CA9E763-1B2D-20E2-ED33-C92B878D4307</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BB304CE-ED7E-08B0-89BF-7A59CEE73348"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E588B7E-05FC-9901-DD2D-904941168359" name="Contrato_Contratante_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>4EFBA622-B567-FEC1-05E8-3D394E8C5D7C</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D48CC940-1788-85AB-4B92-FF99506223D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B9E07C4B-BCFA-370D-5FF4-B162FB9E8FB1" name="Contrato_Seguros_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>1817EC0D-BEB0-00A6-D3AC-707B0F8929DD</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="941B3A42-644A-4C9F-1782-051B5CC6EA3E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

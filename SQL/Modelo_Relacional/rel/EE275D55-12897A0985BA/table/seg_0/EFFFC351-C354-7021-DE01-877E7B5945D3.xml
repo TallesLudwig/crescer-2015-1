@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EFFFC351-C354-7021-DE01-877E7B5945D3" name="Endereço">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>9D457D40-4294-933F-784C-F179595A084D</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEndereco" id="3DEF77F1-9E30-7E71-B524-94916B0E40C1">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>D63A4ADC-F39F-169C-7EF0-6E2E0FA6EA3A</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rua" id="ECA4BD99-A91E-39F7-1300-9ACA4373268D">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>E1242254-7E99-44BC-2F4D-E847ECF90CC2</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bairro" id="98E65C57-1135-D85B-1496-1FB32257BA1F">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>C11F0AE4-7EFD-A1E9-E677-C2E91B19AA89</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>75</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CEP" id="65729BD3-5BBA-F35F-7CA2-A3C42AAC1B1D">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>753C1860-561B-5ED6-3914-C1D311A36B93</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Complemento" id="DEB68AF8-9D90-1D02-CA0C-8C29F3EF654C">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>D3A915AC-2DA2-BC09-E749-CA9AF1EC1728</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDCidade" id="3A60B6D7-6485-F0DC-BCBF-9150C8D243DD">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:36:14 UTC</createdTime>
+<generatorID>217EF8EE-168E-6086-F67A-F0F0B38B5939</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>204CAEED-61AE-1919-EA95-F4A7742D8CBD</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="06303F3A-F7E9-CA8F-99D2-4BCAAF2060F4" referredColumn="204CAEED-61AE-1919-EA95-F4A7742D8CBD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="95968BB6-175B-7903-E168-703ED9DD4ACF" name="Endereço_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>F4602FC0-E75B-B436-DD67-5863FA24AC20</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DEF77F1-9E30-7E71-B524-94916B0E40C1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F634EC3C-231E-AB83-3963-B718F20D0F03" name="Endereço_Cidade_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:36:14 UTC</createdTime>
+<generatorID>8AC8ABD0-63EE-A1E2-02CE-C6DDDE8516D5</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3A60B6D7-6485-F0DC-BCBF-9150C8D243DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

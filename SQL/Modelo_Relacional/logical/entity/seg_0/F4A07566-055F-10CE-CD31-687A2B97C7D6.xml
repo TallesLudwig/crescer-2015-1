@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F4A07566-055F-10CE-CD31-687A2B97C7D6" name="Cidade">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:35:09 UTC</createdTime>
+<generatorID>3E9562CD-4614-F9AE-4655-8CD0443F5252</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDCidade" id="20F8903F-DB39-6850-CFC1-CC17056C726E">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:35:09 UTC</createdTime>
+<generatorID>204CAEED-61AE-1919-EA95-F4A7742D8CBD</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Nome" id="FF0A013D-F17E-668C-56C7-6FDCAE8A0E0C">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:35:09 UTC</createdTime>
+<generatorID>891355F5-7843-2328-E914-AE637F6B3554</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+</Attribute>
+<Attribute name="Estado" id="D8B7F3E3-1975-94A1-3961-8F586481F47B">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:35:09 UTC</createdTime>
+<generatorID>C4542F75-1873-C273-DCBA-786DE588A76E</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B32B9AF9-0162-DB48-52A8-B7E8522B92E6" name="Cidade PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:35:09 UTC</createdTime>
+<generatorID>8E677951-A886-8228-2EAC-C61A742F9A19</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>20F8903F-DB39-6850-CFC1-CC17056C726E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

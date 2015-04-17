@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="93884806-46B3-2896-A52C-3E2047115DE1" name="Beneficiario">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:52:11 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDBenificiario" id="85B8A051-B1F3-F207-0BFC-5C100BB170DE">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:52:11 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="IDPessoa" id="2CA651BA-271F-3585-C76E-49FDA12FB446">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:12:04 UTC</createdTime>
+<generatorID>F61E9968-AEA4-C032-4962-E8EF22F0F9AC</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>1EC5066C-5E62-9F60-B35B-8902CC05E91E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="64C1E604-CC85-CE15-7F84-6454E9C43C22" name="Beneficiario_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:52:11 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>85B8A051-B1F3-F207-0BFC-5C100BB170DE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

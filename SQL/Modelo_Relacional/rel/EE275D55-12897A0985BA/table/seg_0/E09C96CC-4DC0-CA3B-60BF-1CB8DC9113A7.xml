@@ -1,0 +1,182 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E09C96CC-4DC0-CA3B-60BF-1CB8DC9113A7" name="Entrega">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>E8896339-4B94-7259-EC40-28F1D54F2234</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEntrega" id="1479948E-E519-2678-F1C6-7EE3E8E18ABD">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>684FC1C4-9238-3654-30FE-9483E937E828</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Boleto" id="2331EAD5-F681-AEDE-1AB7-3AC19D1D257F">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>CF7573D5-E261-CC87-D61E-C943BE601976</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Contrato_IDContrato" id="E45ADB3D-3F15-4A73-D23A-52914D698812">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>9B60B7F7-3C1A-C7C5-6F1F-96D6EB2ACC3F</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>9C6F8318-331E-3C65-197A-C158B916EA09</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="63594EAA-7B40-74EB-C64A-4DA3BF793691" referredColumn="9C6F8318-331E-3C65-197A-C158B916EA09"/>
+</associations>
+</Column>
+<Column name="IDEndereco_Entrega" id="622B6F44-517F-53C5-B82D-01B4B773159B">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:25:13 UTC</createdTime>
+<generatorID>49332283-4AA3-AC13-40CA-B5823D1ED8FE</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>3DEF77F1-9E30-7E71-B524-94916B0E40C1</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25BADE9C-0C27-1E15-897F-2E7E6F049794" referredColumn="3DEF77F1-9E30-7E71-B524-94916B0E40C1"/>
+</associations>
+</Column>
+<Column name="IDEndereco_Cobranca" id="9BCF14C2-5510-4724-A423-9617EA04FCEB">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:26:00 UTC</createdTime>
+<generatorID>4B7CD7C4-832E-5D4D-A0B5-90D8B8461E75</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>3DEF77F1-9E30-7E71-B524-94916B0E40C1</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1AC459EB-3B4D-A72A-9169-F6A1053BC08E" referredColumn="3DEF77F1-9E30-7E71-B524-94916B0E40C1"/>
+</associations>
+</Column>
+<Column name="Endereço_Entrega" id="9657EDA0-20D6-DC79-B711-3496EF0CB870">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:36:14 UTC</createdTime>
+<generatorID>451C064A-CCE2-D5CB-7DC7-CA4770CD5414</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Endereço_Cobranca" id="E78822EC-DA08-C61B-86B3-12F4B3E7E657">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:36:14 UTC</createdTime>
+<generatorID>2CBB03D9-0E0F-4C11-F38E-7367974C106D</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C4C6DFF8-3C49-B5E7-0CEC-6F8A8BF797A6" name="Entrega_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>1AD5D02C-2AD0-D2D2-C32C-809827075D66</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1479948E-E519-2678-F1C6-7EE3E8E18ABD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="574D9132-AB80-1D7A-D59C-5FDB47A1242B" name="Entrega__IDX">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>12AC72F4-71C6-546D-EF12-337B3744031B</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="E45ADB3D-3F15-4A73-D23A-52914D698812"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF3B1C1E-DCD3-D661-BEDE-C335A36661DD" name="Entrega__IDXv1">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:25:13 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>00FEF771-2AB2-951E-2A3E-7AC13E849BA9</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="622B6F44-517F-53C5-B82D-01B4B773159B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8CC213C-ED67-B85B-BCCC-A42320EE4A67" name="Entrega__IDXv2">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:26:00 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>AF90CFD7-6DE3-72DC-B9F0-365B9DEEB92B</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="9BCF14C2-5510-4724-A423-9617EA04FCEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1A9DF26F-D02D-6BDB-A7C5-E714C0AFB0B5" name="Entrega_Contrato_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>12AC72F4-71C6-546D-EF12-337B3744031B</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E45ADB3D-3F15-4A73-D23A-52914D698812"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2216078-0EA9-63D4-3F77-1EB4304D3100" name="Entrega_Endereço_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:25:13 UTC</createdTime>
+<generatorID>00FEF771-2AB2-951E-2A3E-7AC13E849BA9</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="622B6F44-517F-53C5-B82D-01B4B773159B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D7C7322-A77B-2539-A008-793D0E20D62D" name="Entrega_Endereço_FKv1">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:26:00 UTC</createdTime>
+<generatorID>AF90CFD7-6DE3-72DC-B9F0-365B9DEEB92B</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BCF14C2-5510-4724-A423-9617EA04FCEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Entrega Contrato FK" directorySegmentName="seg_0" id="12AC72F4-71C6-546D-EF12-337B3744031B">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:59:46 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<sourcePk>1F5462EC-7BCB-1FB1-ADDA-36BAB0D10516</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A1B79EC7-A18E-9ACC-C159-91D4F2F92512</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>E8896339-4B94-7259-EC40-28F1D54F2234</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

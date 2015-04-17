@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6CBF1453-85AA-FE02-2979-37936B976A59" name="Pessoa">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>25A4128F-911F-73D7-4BC3-7BDEC26D519D</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDPessoa" id="1EC5066C-5E62-9F60-B35B-8902CC05E91E">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>4E0E4A2C-293B-7B6C-E76E-92FD931251AA</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Nome" id="B566AE49-FD76-0534-8B07-328967B358BA">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>C7878EC8-F9EF-7F01-77DD-549A5FCB96DF</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+</Attribute>
+<Attribute name="Endereco" id="71BD8EEA-7AC9-4670-504A-E88FEA0B452F">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>EC3A54E1-6C4D-5D34-298D-83A2CBAAC16D</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+</Attribute>
+<Attribute name="Telefone" id="FF48115D-29FE-0BB5-5756-02E519BF3324">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>01591134-F3ED-6280-157C-87491D226AFB</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+</Attribute>
+<Attribute name="Email" id="6EFB27FA-6A93-27B9-439A-5C293E935C35">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>26F9EDD0-3190-D3B5-80BA-52C15466571A</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+</Attribute>
+<Attribute name="Cidade" id="B3EB4644-45F7-12CE-2A98-29ACD3B8DBE1">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>8E899C34-D689-E9AE-C191-2F13E4DD7CE1</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+</Attribute>
+<Attribute name="Sexo" id="21E9C40A-3F2B-8733-39AF-41EAB8999951">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>4516E92D-00A6-2F17-6BF8-2664918EF111</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<constraintName>CK_Contratantev1_Sexo</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+</Attribute>
+<Attribute name="IDEndereco" id="A8F01E8D-C182-B6D2-7B80-6CCF3D10E177">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:27:02 UTC</createdTime>
+<generatorID>256D1A9C-C815-5ED2-3324-07D5F801E25C</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>D63A4ADC-F39F-169C-7EF0-6E2E0FA6EA3A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="797877E7-3DAE-E16C-9FAF-D2B7AFDAE578" name="Pessoa_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>B7B76827-0337-0B68-CDDB-0FE8F9EB795C</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1EC5066C-5E62-9F60-B35B-8902CC05E91E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

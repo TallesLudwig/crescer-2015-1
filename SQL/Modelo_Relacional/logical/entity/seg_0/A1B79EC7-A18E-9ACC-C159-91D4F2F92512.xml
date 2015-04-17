@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A1B79EC7-A18E-9ACC-C159-91D4F2F92512" name="Contrato">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:34:17 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDContrato" id="76A16AE2-8A1E-312F-8E18-6ABBF5F7BB4E">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:34:26 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Data Inicio" id="BD1300FF-A64A-08DB-8CFF-C834EA956B17">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:34:49 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Attribute>
+<Attribute name="Data Fim" id="B1D96365-AA01-9B08-2373-348F681D79CC">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:35:44 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Attribute>
+<Attribute name="IDContratante" id="11B2543C-4F06-13D3-58CE-B1AADB9EBDC4">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:36:44 UTC</createdTime>
+<generatorID>4EFBA622-B567-FEC1-05E8-3D394E8C5D7C</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>50A9F343-8BDA-5976-D1D1-95946DC4FF4B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="IDSeguros" id="122411F4-1C24-8D80-7CE5-3C40E9FA4373">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:36:56 UTC</createdTime>
+<generatorID>1817EC0D-BEB0-00A6-D3AC-707B0F8929DD</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>B3852649-1006-9697-BC48-F52643F92CE6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Beneficiario IDBenificiario" id="C716772C-8F17-7A58-3B81-C82F9211BB1E">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:53:00 UTC</createdTime>
+<generatorID>7CA9E763-1B2D-20E2-ED33-C92B878D4307</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<referedAttribute>85B8A051-B1F3-F207-0BFC-5C100BB170DE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Valor" id="D20B9909-1528-BE4B-B167-8AD9C4B3486A">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:11:17 UTC</createdTime>
+<generatorID>45031EA5-ACBC-9B9A-3731-DC5DC8183ED8</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1F5462EC-7BCB-1FB1-ADDA-36BAB0D10516" name="Contrato_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:34:47 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EE275D55-382D-9CB8-00F5-12897A0985BA" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>76A16AE2-8A1E-312F-8E18-6ABBF5F7BB4E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

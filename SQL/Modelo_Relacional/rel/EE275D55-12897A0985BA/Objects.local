@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="FCE6827D-0321-E358-485A-80DB12731534" name="Beneficiario" seqName="seg_0"/>
+   <object objectType="Table" objectID="3E9562CD-4614-F9AE-4655-8CD0443F5252" name="Cidade" seqName="seg_0"/>
+   <object objectType="Table" objectID="52327E65-AF57-CB9D-0372-098DEABBD763" name="Contratante" seqName="seg_0"/>
+   <object objectType="Table" objectID="50041B6A-4D52-A17E-AD8B-24FDE624A13E" name="Contrato" seqName="seg_0"/>
+   <object objectType="Table" objectID="EFFFC351-C354-7021-DE01-877E7B5945D3" name="Endereço" seqName="seg_0"/>
+   <object objectType="Table" objectID="E09C96CC-4DC0-CA3B-60BF-1CB8DC9113A7" name="Entrega" seqName="seg_0"/>
+   <object objectType="Table" objectID="942969C6-E986-E7FE-E8D0-B4E0859BBDFC" name="Pessoa" seqName="seg_0"/>
+   <object objectType="Table" objectID="FB3AE0DA-2023-8BFD-3158-0162F1A29B9D" name="Seguros" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="10E8B550-5AAF-539C-7F3D-67EB7B2C6DDF" name="Beneficiario_Pessoa_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="5EB3C78C-E0BF-5BC2-0F62-A27D7E7C232B" name="Contratante_Pessoa_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="9AD46868-2F38-6F49-D9AE-289242B8176B" name="Contrato_Beneficiario_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="8E676E59-1E88-6AA9-7C87-A1CBDE4A7C28" name="Contrato_Contratante_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="EFAE5ECC-CEBC-6C18-CD67-108760A5027F" name="Contrato_Seguros_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="06303F3A-F7E9-CA8F-99D2-4BCAAF2060F4" name="Endereço_Cidade_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="63594EAA-7B40-74EB-C64A-4DA3BF793691" name="Entrega_Contrato_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="25BADE9C-0C27-1E15-897F-2E7E6F049794" name="Entrega_Endereço_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="1AC459EB-3B4D-A72A-9169-F6A1053BC08E" name="Entrega_Endereço_FKv1" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="81C8A066-953A-02CA-7D7F-99B6C6D9D3AD" name="Pessoa_Endereço_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

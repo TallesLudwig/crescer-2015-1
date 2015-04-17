@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9AD46868-2F38-6F49-D9AE-289242B8176B" name="Contrato_Beneficiario_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 18:15:02 UTC</createdTime>
+<generatorID>7CA9E763-1B2D-20E2-ED33-C92B878D4307</generatorID>
+<ownerDesignName>Modelo_Relacional</ownerDesignName>
+<containerWithKeyObject>50041B6A-4D52-A17E-AD8B-24FDE624A13E</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>6DB1D113-35DF-85FF-5C0B-D7F01E2B859F</localFKIndex>
+<keyObject>CF9097B6-FB10-A73C-531E-1D832534A534</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
