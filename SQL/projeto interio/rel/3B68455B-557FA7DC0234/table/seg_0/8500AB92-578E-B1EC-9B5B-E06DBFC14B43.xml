@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8500AB92-578E-B1EC-9B5B-E06DBFC14B43" name="Pedido">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>D36C6E18-8671-29E6-184C-1CFCCCEE321C</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDPedido" id="B3454353-3422-068B-261D-DE31F382354A">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>1A9A6619-9197-7AA1-17F9-090082220AD2</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Data_Pedido" id="4790F3DB-90BC-8151-918F-5AFF90A81880">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>34116262-F18F-AADA-98B4-0CFB8878F367</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente" id="FC7B739F-3D7A-C89F-6D97-95622ECA33F7">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>6BB7C598-57A1-370A-1A71-405250154A3E</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Valor_Pedido" id="494419A0-2D4D-05BB-9607-DD5B2F889206">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>423F5742-46A2-70A3-5779-4C50101D1DC2</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D914994E-BB6B-F20A-F218-60EC2FBB246E" name="Pedido_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>45FC05C5-A7C5-B9BE-DFF7-3EE812921CA1</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B3454353-3422-068B-261D-DE31F382354A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

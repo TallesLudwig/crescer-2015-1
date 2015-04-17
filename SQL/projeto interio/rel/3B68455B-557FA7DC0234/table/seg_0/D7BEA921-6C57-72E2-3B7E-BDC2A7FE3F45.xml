@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D7BEA921-6C57-72E2-3B7E-BDC2A7FE3F45" name="Produto">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>735A6891-86FB-45DC-BC7F-7361C5DEE5F7</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDProduto" id="B9AEF709-E737-ECA0-8DF5-41FF48A47C3A">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>013A5AA0-AC69-6788-CC92-76534CF1480C</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descricao" id="3B8BFF8A-FCC1-8404-C009-9D09491083C2">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>FD06BBD8-0B0E-C5F1-10E5-36E21CAE5AB4</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Valor_Venda" id="79A8C1FF-DB73-4AC2-C440-360161E0C7B1">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>A8FFEECD-66B2-68B5-101E-FC8CDF191470</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FE8B3129-FA2E-1DF5-51F0-7BCC09E19951" name="Produto_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>684884CE-A2EE-2A27-0875-BFF58051A7E9</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9AEF709-E737-ECA0-8DF5-41FF48A47C3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

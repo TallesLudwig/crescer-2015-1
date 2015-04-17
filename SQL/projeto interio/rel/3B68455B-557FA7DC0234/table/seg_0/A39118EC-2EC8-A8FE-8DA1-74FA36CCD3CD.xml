@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A39118EC-2EC8-A8FE-8DA1-74FA36CCD3CD" name="Item">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>3A71AB38-7816-F8D2-71C8-486B5E3795B5</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDItem" id="3B5F36AE-9EB6-239D-031D-AA4DBA28EB33">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>F3CBB2DB-47E7-4E28-C7F4-47610915484D</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Quantidade" id="E66F24C6-44D4-4C2E-4F3A-929297769D7E">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>64169763-556F-9A24-7BB1-682C1095C362</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Valor_Item" id="1AC3DF71-9971-5AE4-F339-B798BD47B07D">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>51C982A3-4B79-3471-3E0C-B5A8A54D31DC</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDProduto" id="E1B814B8-BBF5-AA27-6456-7DB0F212C28E">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>7294C02E-24B1-3E04-EB3F-2291C267269C</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>B9AEF709-E737-ECA0-8DF5-41FF48A47C3A</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C76F6287-2205-ADAF-AAAD-FA495513F835" referredColumn="B9AEF709-E737-ECA0-8DF5-41FF48A47C3A"/>
+</associations>
+</Column>
+<Column name="IDPedido" id="01ACD002-6916-E559-1FE6-74D4239A75C0">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>4F2F8065-103C-F066-4602-B90F713D7421</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>B3454353-3422-068B-261D-DE31F382354A</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A5A05E4D-3FB4-A0F6-1E00-7B6E20D67BC3" referredColumn="B3454353-3422-068B-261D-DE31F382354A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="22EE6437-9D70-226A-47CC-88D1894E10EE" name="Item_PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>512A2387-E606-00AC-7575-2D9BFBB8A4A0</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B5F36AE-9EB6-239D-031D-AA4DBA28EB33"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CBBBB64A-DB59-18C0-0B0B-743182DA980F" name="Item_Pedido_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>07254B83-FB24-5F1A-FEE5-485C12258C22</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01ACD002-6916-E559-1FE6-74D4239A75C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CB1835AD-8FBA-762E-4360-028DC6A0D566" name="Item_Produto_FK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:11:00 UTC</createdTime>
+<generatorID>FFC412EE-0202-85BC-88F5-8D5C9C92AB90</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1B814B8-BBF5-AA27-6456-7DB0F212C28E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3A71AB38-7816-F8D2-71C8-486B5E3795B5" name="Item">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:04:27 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<engineerTo>
+<item key="3B68455B-B638-BE03-D8E7-557FA7DC0234" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDItem" id="F3CBB2DB-47E7-4E28-C7F4-47610915484D">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:04:34 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<engineerTo>
+<item key="3B68455B-B638-BE03-D8E7-557FA7DC0234" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Quantidade" id="64169763-556F-9A24-7BB1-682C1095C362">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:05:02 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<engineerTo>
+<item key="3B68455B-B638-BE03-D8E7-557FA7DC0234" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+</Attribute>
+<Attribute name="Valor_Item" id="51C982A3-4B79-3471-3E0C-B5A8A54D31DC">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:05:35 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<engineerTo>
+<item key="3B68455B-B638-BE03-D8E7-557FA7DC0234" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+</Attribute>
+<Attribute name="IDProduto" id="7294C02E-24B1-3E04-EB3F-2291C267269C">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:09:08 UTC</createdTime>
+<generatorID>FFC412EE-0202-85BC-88F5-8D5C9C92AB90</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<engineerTo>
+<item key="3B68455B-B638-BE03-D8E7-557FA7DC0234" value="true"/>
+</engineerTo>
+<referedAttribute>013A5AA0-AC69-6788-CC92-76534CF1480C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="IDPedido" id="4F2F8065-103C-F066-4602-B90F713D7421">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:10:26 UTC</createdTime>
+<generatorID>07254B83-FB24-5F1A-FEE5-485C12258C22</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<engineerTo>
+<item key="3B68455B-B638-BE03-D8E7-557FA7DC0234" value="true"/>
+</engineerTo>
+<referedAttribute>1A9A6619-9197-7AA1-17F9-090082220AD2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="512A2387-E606-00AC-7575-2D9BFBB8A4A0" name="{entity} PK">
+<createdBy>0152067</createdBy>
+<createdTime>2015-04-17 17:04:51 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>projeto interio</ownerDesignName>
+<engineerTo>
+<item key="3B68455B-B638-BE03-D8E7-557FA7DC0234" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F3CBB2DB-47E7-4E28-C7F4-47610915484D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
