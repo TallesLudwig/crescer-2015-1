@@ -9,15 +9,13 @@ public class Elfo extends Personagem
     // Versão correção do tema!!
     private int flechas;
     private static int contadorDeElfos;
-
+    private int x ;
 
     // type initializer
     {
         flechas = 42;
         vida = 100;
-
-        contadorDeElfos++;
-
+        Elfo.contadorDeElfos++;
     }
     
     /**
@@ -31,7 +29,6 @@ public class Elfo extends Personagem
         this(umNome);
         // this.nome = nome;
         this.flechas = flechas;
-        
     }
     
     /**
@@ -41,7 +38,6 @@ public class Elfo extends Personagem
      */
     public Elfo(String nome) {
         super(nome, 0);
-
     }
     
     /**
@@ -54,9 +50,8 @@ public class Elfo extends Personagem
         flechas--;
         experiencia++;
         umOrc.recebeAtaque();
-
-        status=Status.ATACANDO;
-
+        status = Status.ATACANDO;
+          
     }
     
     public String getNome() {
@@ -66,6 +61,16 @@ public class Elfo extends Personagem
     public int getFlechas() {
         return this.flechas;
     }
+    
+    public static int getContadorDeElfos(){
+       return  Elfo.contadorDeElfos;
+         
+     }
+        
+    public static void limpaContadorDeElfos(){
+         Elfo.contadorDeElfos=0;
+        }
+    
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
             flechas = novaQtdFlechas;
@@ -132,17 +137,7 @@ public class Elfo extends Personagem
         builder.append(" de experiência.");*/
     }
     
-
-     public static int getContadorDeElfos(){
-         return contadorDeElfos;
-         
-        }
-        
-    public static void limpaContadorDeElfos(){
-         contadorDeElfos=0;
-        }
-        
-         /**
+    /**
      * Verifica se dois elfos são iguais.
      * Critério atual: ter o mesmo nome.
      * 
@@ -158,5 +153,3 @@ public class Elfo extends Personagem
         // TODO: System.out.println...
     }
 }
-    
-  

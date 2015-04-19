@@ -23,8 +23,11 @@ public class ElfoVerde extends Elfo
      * @param orc Orc que receberá a flechada.
      */
     public void atirarFlecha(Orc orc) {
+        
+        System.out.println(getFlechas());
         super.atirarFlecha(orc);
         this.experiencia++;
+        System.out.println(getFlechas());
     }
     
     /**

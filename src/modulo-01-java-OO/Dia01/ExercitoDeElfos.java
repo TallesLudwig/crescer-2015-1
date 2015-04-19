@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * Abstração para um exército de Elfos.
  * 
@@ -23,20 +24,15 @@ public class ExercitoDeElfos
      * 
      * @param elfo Elfo a ser alistado no exército. Deve ser apenas do tipo ElfoVerde ou ElfoNoturno
      */
-
-    public void alistar(Elfo elfo) throws ErrorAlistarException{
-
+    public void alistar(Elfo elfo) throws ErrorAlistarException {
         
         boolean podeAlistar = elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno;
         
         if (podeAlistar) {
             exercito.put(elfo.getNome(), elfo);
-
-        } else{
-            throw new ErrorAlistarException();
-        }  
-        
-
+        } else {
+            ErrosDoJogo.naoPodeAlistar();
+        }
     }
     
     /**
@@ -77,19 +73,36 @@ public class ExercitoDeElfos
         }
     }
     
-
     public void mudaDeEstrategia(EstrategiaDeAtaque novaEstrategia) {
-        estrategia = novaEstrategia;
+        this.estrategia = novaEstrategia;
     }    
     
-    public void atacarHorda(ArrayList<Orc> hordaOrcs) {
-
+    public void atacarHorda(ArrayList<Orc> orcs) {
         
-        ArrayList<Elfo> elfosQueVãoAtacar = buscar(Status.VIVO);
+        ArrayList<Elfo> elfosQueVãoPraPeleia = buscar(Status.VIVO);
         
-        estrategia.atacarOrcs(elfosQueVãoAtacar, hordaOrcs);
+        estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
     }
-     /**
+    
+    public ArrayList<Elfo> getOrdemDoUltimoAtaque() {
+        return this.estrategia.getOrdemDoUltimoAtaque();
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /**
      * tentativa do exerc, baseado no que o gabriel tenha mostrado.
      * 
     *
@@ -107,13 +120,6 @@ public class ExercitoDeElfos
         }
         return statusExercito;
      }*/
-
-    
-
-}
-
-
-
 
 
 

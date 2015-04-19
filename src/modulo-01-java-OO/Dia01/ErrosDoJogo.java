@@ -1,6 +1,6 @@
 public class ErrosDoJogo
 {
-    public static NaoPodeAlistarException naoPodeAlistar() throws NaoPodeAlistarException {
-        throw new NaoPodeAlistarException();
+    public static ErrorAlistarException naoPodeAlistar() throws ErrorAlistarException {
+        throw new ErrorAlistarException();
     }
 }
