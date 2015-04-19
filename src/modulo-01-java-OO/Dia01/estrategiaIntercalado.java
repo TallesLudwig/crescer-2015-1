@@ -5,7 +5,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class estrategiaIntercalado
+public class estrategiaIntercalado implements EstrategiaDeAtaque
 {
    private ArrayList<Elfo> ordemAtaque = new ArrayList<>();
     
