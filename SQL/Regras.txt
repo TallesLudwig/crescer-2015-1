@@ -1,0 +1,7 @@
+Regras:
+1-Chave Primária. 
+2-Maximo de 23 colunas por tabale.
+3-Nunca ter numeros no final da coluna(ex.: Cliente1, Cliente2,...).
+4-30% de colunas opcionais
+5-Não salvar arquivos em Banco
+
