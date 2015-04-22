@@ -16,7 +16,10 @@ from Associado
 
 select NomeEmpregado, FLOOR(DATEDIFF(MONTH, DataAdmissao, ('2000-12-31')))
 from empregado
-where DataAdmissao between '01/05/1980' and '20/01/1982' 
+where DataAdmissao between CONVERT(datetime, '01/05/1980', 103) and CONVERT(datetime, '20/01/1982' , 103)
+
+
+
 
 --4)Qual o cargo (tabela empregado) possuir mais empregados?
 
@@ -54,12 +57,57 @@ group by UF
 
 --8)Liste as cidades que possuem o mesmo nome e UF.
 
-select nome, count(1)
+select nome
 from cidade
---having count(count(1)) >1
-group by nome
-order by count(1) desc
+GROUP by nome, uf
+HAVING count(1)>1
+
 
 
 --9)Identifique qual deve ser o próximo ID para a criação de um novo registro na tabela Associado (maior + 1).
---10)Limpe a tabela CidadeAux, e insira somente as cidades com nomes e UF’s distintos, considere somente o menor código ID das cidades duplicadas.
+
+select (COUNT(IDAssociado) +1) 
+from associado
+
+--10)Limpe a tabela CidadeAux, e insira somente as cidades com nomes e UF’s distintos, considere somente o
+-- menor código ID das cidades duplicadas.
+
+Truncate table CidadeAux;
+
+INSERT into CidadeAux 
+
+
+SELECT *
+from cidade
+where nome  in (select Nome
+				from cidade
+				GROUP by Nome
+				having count(UF)=1)
+
+
+or			
+--apartir daqui travei
+
+select idcidade,  nome from cidade 
+where nome in(
+				select  Nome
+				from cidade
+				GROUP by  Nome
+				having count( UF)!=1
+				)
+
+order by nome
+
+
+--11)Altere todas cidades duplicadas (nome e uf iguais), acrescente no ínicio do nome um asterisco (*).
+
+--12)Faça uma consulta que liste o nome do Associado e a descrição da coluna Sexo, informando: Masculino ou Feminino.
+
+--13)Faça uma consulta que mostre o nome do empregado, o Salario e percentual a ser descontado do Imposto de Renda, 
+--considerando a tabela abaixo:
+--Até R$ 1.164,00 = 0%De R$ 1.164,00 a R$ 2.326,00 = 15%
+--Acima de R$ 2.326,00 = 27,5%.
+
+--14)Elimine as cidades duplicadas (mantendo 1 registro para cada).
+
+--15)Adicione uma regra que impeça exista mais de uma cidade com o mesmo nome em um estado.
