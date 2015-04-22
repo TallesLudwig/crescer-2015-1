@@ -42,18 +42,19 @@ where len(nome) = (select max(len(nome)) from Associado );
 -- liste também o dia da semana.
 
 
-select nome, year(DataNascimento)+50 as aniversario_50, datename(dw,(year(DataNascimento)+50)) as DiaAniversario_50
+select nome, 
+		 year(DataNascimento)+50 as aniversario_50, -- poderia ser DATEADD(year,50, DataNascimento )
+		 datename(dw,(year(DataNascimento)+50)) as DiaAniversario_50 -- datepart(weekday, *data*)
 from Associado
 
 
 
 --7)Liste a quantidade de cidades agrupando por UF.
 
-select count(nome), uf
+select uf, count(nome)
 from cidade
 group by UF
-
-
+order by uf
 
 --8)Liste as cidades que possuem o mesmo nome e UF.
 
@@ -66,48 +67,88 @@ HAVING count(1)>1
 
 --9)Identifique qual deve ser o próximo ID para a criação de um novo registro na tabela Associado (maior + 1).
 
-select (COUNT(IDAssociado) +1) 
+select isnull(max(IDAssociado),0)+1  -- se for null retornaria 1 como o proximo valor par ID  <--
 from associado
+
+
 
 --10)Limpe a tabela CidadeAux, e insira somente as cidades com nomes e UF’s distintos, considere somente o
 -- menor código ID das cidades duplicadas.
 
 Truncate table CidadeAux;
 
+
 INSERT into CidadeAux 
-
-
-SELECT *
+select  min(IDCIDADE), nome, UF
 from cidade
-where nome  in (select Nome
-				from cidade
-				GROUP by Nome
-				having count(UF)=1)
+GROUP by nome, uf
+--HAVING count(1)>1
 
 
-or			
---apartir daqui travei
 
-select idcidade,  nome from cidade 
-where nome in(
-				select  Nome
-				from cidade
-				GROUP by  Nome
-				having count( UF)!=1
-				)
 
-order by nome
+
 
 
 --11)Altere todas cidades duplicadas (nome e uf iguais), acrescente no ínicio do nome um asterisco (*).
 
+update cidade 
+set nome='*'+nome
+ where nome in (
+select nome
+from cidade
+GROUP by nome, uf
+HAVING count(1)>1 
+ )
+
+
 --12)Faça uma consulta que liste o nome do Associado e a descrição da coluna Sexo, informando: Masculino ou Feminino.
+
+select nome, CASE SEXO      
+         WHEN 'F' THEN 'FEMININO'      
+         WHEN 'M' THEN 'MASCULINO'      
+         WHEN 'U' THEN ''      
+         ELSE 'NENHUM'      
+      END AS SEXO
+from Associado
+
 
 --13)Faça uma consulta que mostre o nome do empregado, o Salario e percentual a ser descontado do Imposto de Renda, 
 --considerando a tabela abaixo:
 --Até R$ 1.164,00 = 0%De R$ 1.164,00 a R$ 2.326,00 = 15%
 --Acima de R$ 2.326,00 = 27,5%.
 
+
+
+
+
+select NomeEmpregado, salario, 
+	CASE 
+	when empregado.salario < 1164.00  then 0    
+	when (salario between 1164.00 and 2326.00) then salario*0.15
+	when (salario > 2326.00)  then salario*0.275
+	end  as impostos
+from empregado
+
+
+
+
 --14)Elimine as cidades duplicadas (mantendo 1 registro para cada).
 
+BEGIN TRANSACTION
+go
+
+Delete Cidade
+Where IDCidade in (select  max(IDCIDADE)
+from cidade
+GROUP by nome, uf
+HAVING count(1)>1
+)
+
+select * from cidade 
+commit
+
 --15)Adicione uma regra que impeça exista mais de uma cidade com o mesmo nome em um estado.
+
+
+--triggers?
