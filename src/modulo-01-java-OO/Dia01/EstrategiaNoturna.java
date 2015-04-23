@@ -20,11 +20,13 @@ public class EstrategiaNoturna implements EstrategiaDeAtaque
                 
                 qtdElfosNoturnosQueJáAtacaram++;
                 ordemAtaque.add(elfoQueVaiAtacar);
+
             }
             
             if (éElfoVerde) {
                                 
                   ordemAtaque.add(elfoQueVaiAtacar);
+
             }
             
             for (Orc orc : orcs) {
@@ -38,6 +40,5 @@ public class EstrategiaNoturna implements EstrategiaDeAtaque
     public ArrayList<Elfo> getOrdemDoUltimoAtaque() {
         return ordemAtaque;
     }
-    
-   
+
 }

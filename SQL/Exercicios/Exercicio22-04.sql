@@ -98,13 +98,14 @@ group by d.NomeDepartamento
 --9)Faça uma consulta para exibir o nome de cada associado e sua cidade e juntamente com os empregados
 --(nome) e a cidade (localidade) de seu departamento, isto deve ser exibido em uma consulta.
 
-select a.Nome as Nome_Associado, c.Nome as Cidade_Associado, e.NomeEmpregado as Nome_Empregado, c.Nome Cidade_Empregado
+select a.Nome as Nome_Associado, c.Nome as Cidade_Associado 
 from Associado as a
 left join Cidade as c on c.IDCidade = a.IDCidade
-left join Departamento as d on d.Localizacao = c.Nome 
-left join Empregado as e on e.IDDepartamento= d.IDDepartamento
-
-
+union
+select e.NomeEmpregado as Nome_Empregado, cc.Nome as Cidade_Empregado
+from Empregado as e
+left join Departamento as d  on d.IDDepartamento = e.IDDepartamento
+left join Cidade as cc on cc.Nome = d.Localizacao 
 
 --10)Lista as cidades que tenham associado relacionado.
 

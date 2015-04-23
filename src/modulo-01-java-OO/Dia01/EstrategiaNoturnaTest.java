@@ -9,7 +9,9 @@ public class EstrategiaNoturnaTest
     private final double DELTA = 0.05;
     
     @Test
+
     public void tresElfosNoturnosEm9AtaquesApenasDoisAtacam() throws ErrorAlistarException {
+
         // Arrange
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         exercito.mudaDeEstrategia(new EstrategiaNoturna());
@@ -21,6 +23,7 @@ public class EstrategiaNoturnaTest
         exercito.alistar(night3);        
         // Act
         exercito.atacarHorda(new ArrayList<>(
+
             Arrays.asList(new Orc("a"), new Orc("aa"), new Orc("aaa"))
         ));
         // Assert
@@ -53,6 +56,7 @@ public class EstrategiaNoturnaTest
       
         // Act
         exercito.atacarHorda(new ArrayList<>(
+
             Arrays.asList(new Orc(), new Orc(), new Orc())
         ));
         // Assert
@@ -61,10 +65,12 @@ public class EstrategiaNoturnaTest
         assertEquals(39, night2.getFlechas()); // perdeu 1 flecha por orc
         assertEquals(85.73, night2.getVida(), DELTA); // perdendo 5% para cada um dos 3 orcs
         // este elfo não atacou pois estourou 30% dos ataques
+
         assertEquals(39, night3.getFlechas());
         assertEquals(85.73, night3.getVida(), DELTA); // perdendo 5% para cada um dos 3 orcs
        
         
        
+
     }
 }
