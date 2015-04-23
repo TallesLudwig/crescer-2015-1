@@ -83,11 +83,31 @@ where d.Localizacao = 'SAO PAULO'
 
 
 --8)Liste o departamento que possui o empregado de maior salário.
-----PARAI AQUI _____
+
 
 
 select d.NomeDepartamento
 from Departamento as d
+left join Empregado as e on  e.Salario in (select MAX(ee.Salario) from Empregado as ee where ee.IDEmpregado !=7839 ) 
+where d.IDDepartamento = e.IDDepartamento
+group by d.NomeDepartamento
+
+
+
+
+--9)Faça uma consulta para exibir o nome de cada associado e sua cidade e juntamente com os empregados
+--(nome) e a cidade (localidade) de seu departamento, isto deve ser exibido em uma consulta.
+
+select a.Nome as Nome_Associado, c.Nome as Cidade_Associado, e.NomeEmpregado as Nome_Empregado, c.Nome Cidade_Empregado
+from Associado as a
+left join Cidade as c on c.IDCidade = a.IDCidade
+left join Departamento as d on d.Localizacao = c.Nome 
 left join Empregado as e on e.IDDepartamento= d.IDDepartamento
-group by d.NomeDepartamento,  e.Salario,e.NomeEmpregado
-having  e.NomeEmpregado!= 'KING' and e.Salario= (select MAX(e.Salario) from Empregado as e ) 
+
+
+
+--10)Lista as cidades que tenham associado relacionado.
+
+select c.nome
+from Cidade as c
+inner join Associado as a on a.IDCidade= c.IDCidade

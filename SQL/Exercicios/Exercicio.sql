@@ -140,15 +140,16 @@ go
 
 Delete Cidade
 Where IDCidade in (select  max(IDCIDADE)
-from cidade
-GROUP by nome, uf
-HAVING count(1)>1
-)
+					from cidade
+					GROUP by nome, uf
+					HAVING count(1)>1
+					)
+
 
 select * from cidade 
 commit
 
 --15)Adicione uma regra que impeça exista mais de uma cidade com o mesmo nome em um estado.
 
-
---triggers?
+ALTER TABLE Cidade add constraint UK_Cidade_NomeUF 
+unique(nome, UF)
