@@ -60,24 +60,102 @@ where p.Nome not in (select p.Nome
 -- liste também qual o Estado possuí o menor número de clientes.
 --Dica: pode (não é obrigatório) ser utilizado subquery, e também UNION.
 
-select c.UF
+select c.UF, count(1) as Numero_clientes
 from Cidade as c
 left join Cliente as cl on cl.IDCidade= c.IDCidade
 group by c.UF
-union
+HAVING count(1)=  (select top 1 count(1) as Numero_clientes
+					from Cidade as c
+					left join Cliente as cl on cl.IDCidade= c.IDCidade
+					group by c.UF
+					order by count(1) desc)
 
-
-select max( select count(1) 
-		from Cidade as c
-		left join Cliente as cl on cl.IDCidade= c.IDCidade
-		group by c.UF) as sdasdsa
+UNION
+select c.UF, count(1) as Numero_clientes
 from Cidade as c
 left join Cliente as cl on cl.IDCidade= c.IDCidade
-
-select max(count(1)) as sdasdsa
-from Cidade as c
-inner join Cliente as cl on cl.IDCidade= c.IDCidade
 group by c.UF
+HAVING count(1)=  (select top 1 count(1) as Numero_clientes
+					from Cidade as c
+					left join Cliente as cl on cl.IDCidade= c.IDCidade
+					group by c.UF
+					order by count(1))
+
+
 
 --6) Liste o total de cidades (distintas) que possuem clientes que realizaram algum pedido.
 --Dica: será preciso relacionar Cidade com Cliente, e Cliente com Pedido.
+
+select count(c.Nome)
+from Cidade as c
+where c.IDCidade in ( select distinct c.IDCidade
+					from Cidade as c
+					inner join Cliente as cl on cl.IDCidade= c.IDCidade
+					inner join Pedido as p on p.IDCliente=cl.IDCliente)
+
+
+
+--7) Dentro da atual estrutura, cada produto é composto por 1 ou vários materiais (tabela ProdutoMaterial).
+-- Identifique se existe algum produto sem material relacionado.
+--Obs.: o produto criado anteriormente deverá ser listado.
+
+select p.Nome
+from Produto as p
+left join ProdutoMaterial as pm on pm.IDProduto=p.IDProduto
+where  pm.IDProduto is null
+
+
+
+--8) Liste os produtos, com seu preço de custo, e relacione com seus os materiais (ProdutoMaterial),
+-- e liste também o somatório do PrecoCusto de todos seus materiais.
+--------------------Rever----------------------
+
+select p.IDProduto, p.Nome, p.PrecoCusto, sum(m.PrecoCusto * pm.Quantidade) Preco_materiais 
+from Produto as p
+left join ProdutoMaterial as pm on pm.IDProduto = p.IDProduto
+left join Material as m on m.IDMaterial = pm.IDMaterial
+
+group by p.IDProduto, p.Nome, p.PrecoCusto
+having p.PrecoCusto< sum(m.PrecoCusto * pm.Quantidade)
+
+--9) Após identificar o preço de custo dos produtos e seus materiais será preciso acertar os produtos 
+--que estão com o valor de custo inferior ao custo dos materiais. Pra isso faça uma alteração (update)
+-- na tabela de Produtos, definindo o PrecoCusto, para que fique igual ao custo dos seus materiais.
+
+begin transaction
+go
+
+rollback
+select * from Produto
+
+update Produto
+SET PrecoCusto  = ( select sum(m.PrecoCusto * pm.Quantidade) 
+						from Produto as p
+						left join ProdutoMaterial as pm on pm.IDProduto = p.IDProduto
+						left join Material as m on m.IDMaterial = pm.IDMaterial
+						group by p.IDProduto, p.Nome, p.PrecoCusto)
+where PrecoCusto  < ( select sum(m.PrecoCusto * pm.Quantidade) 
+						from Produto as p
+						left join ProdutoMaterial as pm on pm.IDProduto = p.IDProduto
+						left join Material as m on m.IDMaterial = pm.IDMaterial
+						group by p.IDProduto, p.Nome, p.PrecoCusto)
+
+--------------------ATE AQUI----------------------
+
+
+--10) Liste os clientes que tenham o mesmo nome (Tabela Cliente, registros com o nome (apenas) duplicado).
+
+select c.Nome, count(c.Nome)
+from Cliente as c
+group by c.nome
+having count(c.Nome) >1
+
+
+--11) Lista qual o primeiro nome mais popular entre os clientes, considere apenas o primeiro nome.
+--12) Liste qual o produto é mais vendido (considere a informação da quantidade).
+
+
+select top 1 p.nome
+from Produto as p
+left join  PedidoItem as pi on pi.IDProduto = p.IDProduto
+order by pi.Quantidade desc
