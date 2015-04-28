@@ -126,15 +126,21 @@ begin transaction
 go
 
 rollback
+commit
 select * from Produto
 
 update Produto
-SET PrecoCusto  = ( select sum(m.PrecoCusto * pm.Quantidade) 
+SET Produto.PrecoCusto  = ( select sum(m.PrecoCusto * pm.Quantidade) 
 						from Produto as p
 						left join ProdutoMaterial as pm on pm.IDProduto = p.IDProduto
 						left join Material as m on m.IDMaterial = pm.IDMaterial
 						group by p.IDProduto, p.Nome, p.PrecoCusto)
-where PrecoCusto  < ( select sum(m.PrecoCusto * pm.Quantidade) 
+where Produto.PrecoCusto  < ( select sum(m.PrecoCusto * pm.Quantidade) 
+						from Produto as p
+						left join ProdutoMaterial as pm on pm.IDProduto = p.IDProduto
+						left join Material as m on m.IDMaterial = pm.IDMaterial
+						group by p.IDProduto, p.Nome, p.PrecoCusto)
+and Produto.IDProduto = ( select p.IDProduto
 						from Produto as p
 						left join ProdutoMaterial as pm on pm.IDProduto = p.IDProduto
 						left join Material as m on m.IDMaterial = pm.IDMaterial
@@ -152,6 +158,16 @@ having count(c.Nome) >1
 
 
 --11) Lista qual o primeiro nome mais popular entre os clientes, considere apenas o primeiro nome.
+
+select  top 1 SUBSTRING(c.nome,1 ,charindex( ' ', c.nome,1) ) as nome, count(1) Frequencia_do_nome
+from Cliente as c
+group by SUBSTRING(c.nome,1 ,charindex( ' ', c.nome,1) )
+order by count(1) desc
+
+
+
+
+
 --12) Liste qual o produto é mais vendido (considere a informação da quantidade).
 
 
