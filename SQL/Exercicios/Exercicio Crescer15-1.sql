@@ -144,6 +144,15 @@ select p.Nome
 from Produto as p
 left join ProdutoMaterial as pm on pm.IDProduto=p.IDProduto
 where  pm.IDProduto is null
+-----2-----
+
+select p.Nome
+from Produto as p
+where not exists ( select 1
+					from ProdutoMaterial pm
+					where pm.IDProduto = p.IDProduto
+					)
+
 
 
 
@@ -151,7 +160,7 @@ where  pm.IDProduto is null
 -- e liste também o somatório do PrecoCusto de todos seus materiais.
 --------------------Rever----------------------
 
-select p.IDProduto, p.Nome, p.PrecoCusto, sum(m.PrecoCusto * pm.Quantidade) Preco_materiais 
+select p.IDProduto, p.Nome, p.PrecoCusto, sum(m.PrecoCusto * isnull(pm.Quantidade,1)) Preco_materiais 
 from Produto as p
 left join ProdutoMaterial as pm on pm.IDProduto = p.IDProduto
 left join Material as m on m.IDMaterial = pm.IDMaterial
