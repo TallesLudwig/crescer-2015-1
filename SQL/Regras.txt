@@ -4,4 +4,11 @@ Regras:
 3-Nunca ter numeros no final da coluna(ex.: Cliente1, Cliente2,...).
 4-30% de colunas opcionais
 5-Não salvar arquivos em Banco
+6-Toda a chave estrangeira(FK) deve ter índice
 
+
+
+
+não usar 
+ is null
+ == nul

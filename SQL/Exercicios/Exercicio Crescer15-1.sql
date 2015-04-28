@@ -1,7 +1,8 @@
-select IDCliente , Nome
-from Cliente
 --1) Identifique e liste quantos valores diferentes estão definidos para a coluna Situacao da tabela Produto 
 --(somente os distintos valores).
+
+select count(distinct p.Situacao)
+from Produto as p
 
 select p.Situacao, count(p.situacao)
 from Produto as p
@@ -51,14 +52,29 @@ from Produto as p
 where p.Nome not in (select p.Nome
 						from Produto as p
 						inner join PedidoItem as ip on ip.IDProduto=p.IDProduto
-						inner join Pedido as pe on pe.IDPedido= ip.IDProduto
-)
+					)
 
+--2
+
+select p.IDProduto, p.Nome
+from Produto as p
+where not exists (select 1
+						from PedidoItem
+						where PedidoItem.IDProduto = p.IDProduto
+						);
+			
+			
+			--IDEX--
+create index IX_PedidoItem_Produto on PedidoItem(IDProduto)
+drop index PedidoItem.IX_PedidoItem_Produto
 
 
 --5) Identifique qual o estado (coluna UF da tabela Cidade) possuí o maior número de clientes (tabela Cliente),
 -- liste também qual o Estado possuí o menor número de clientes.
 --Dica: pode (não é obrigatório) ser utilizado subquery, e também UNION.
+
+
+
 
 select c.UF, count(1) as Numero_clientes
 from Cidade as c
@@ -81,17 +97,42 @@ HAVING count(1)=  (select top 1 count(1) as Numero_clientes
 					group by c.UF
 					order by count(1))
 
+----2------
+create view vwEstados as 
+select c.UF, count(1) as Numero_clientes
+from Cidade as c
+left join Cliente as cl on cl.IDCidade= c.IDCidade
+group by c.UF;
+
+
+select *
+from vwEstados 
+where Numero_clientes = (select max(vwEstados.Numero_clientes) from vwEstados)
+or Numero_clientes = (select Min(vwEstados.Numero_clientes) from vwEstados)
+
+
 
 
 --6) Liste o total de cidades (distintas) que possuem clientes que realizaram algum pedido.
 --Dica: será preciso relacionar Cidade com Cliente, e Cliente com Pedido.
 
-select count(c.Nome)
+select count(c.IDCidade)
 from Cidade as c
 where c.IDCidade in ( select distinct c.IDCidade
 					from Cidade as c
 					inner join Cliente as cl on cl.IDCidade= c.IDCidade
 					inner join Pedido as p on p.IDCliente=cl.IDCliente)
+
+
+		--------2---------
+
+
+select count(c.IDCidade)
+from Cidade as c
+where exists ( select 1
+					from Cliente as cl
+					inner join Pedido as p on p.IDCliente=cl.IDCliente
+					where cl.IDCidade = c.IDCidade)
 
 
 
