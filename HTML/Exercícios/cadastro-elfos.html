@@ -1,0 +1,122 @@
+<!doctype>
+<html>
+	<head>
+		<title>Cadastro Elfos</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	
+		
+		<h2>Cadastro Elfos</h2>
+		
+		<form>
+		
+		<div style="height:50px;">
+			<label for="nome">Nome:</label>	
+				<input id="nome" name="nome" type="text" placeholder="Nome" pattern=".{6,}" required>	
+			 
+		</div>
+		<div style="height:50px;">
+			<label for="sexo">Sexo:</label>	
+			
+			<td><input name="sexo" type="radio" value="Masculino"  required/>
+				Masculino 
+			<input name="sexo" type="radio" value="Feminino"  />
+				Feminino <span class="style1"></span> </td>
+			
+			
+		</div>
+		<div style="height:50px;">
+			<label for="flechas">Quantidade de flechas:</label>	
+				<input id="flechas" name="flechas" type="number" value="42">	
+			
+		</div>
+		
+		
+		<div style="height:50px;">
+		<tr>
+		   <td>
+			<label>Nascimento: </label>
+		   </td>
+		   <td align="left">
+			<input type="text" name="dia" size="2" maxlength="2" placeholder="dd" required> 
+		   <input type="text" name="mes" size="2" maxlength="2" placeholder="mm" required> 
+		   <input type="text" name="ano" size="4" maxlength="4" placeholder="aaaa" required>
+		   </td>
+		  </tr>
+		 
+
+		 </div>
+		
+
+		<div style="height:50px;">
+		  <tr>
+			   <td>
+				<label for="status">Status:</label>
+			   </td>
+			   <td align="left">
+				<select name="status"> 
+				<option value="dr">Dormindo</option> 
+				<option value="ca">Caçando</option> 
+				<option value="cp">Contando piada</option> 
+
+			   </select>
+			  </td>
+		 </tr>
+		
+		 </div>
+
+		 
+		 <div style="height:50px;">
+			<label for="itens">Itens:</label>
+
+			<input type="checkbox" id="itens" name="itens" value="Arco e Flecha" checked="true">Arco e Flecha
+			<input type="checkbox" id="itens" name="itens" value="Espada de aço Porto-alegrense">Espada de aço Porto-alegrense
+			<input type="checkbox" id="itens" name="itens" value="Escudo de amburana" checked="true"> Escudo de amburana
+			<input type="checkbox" id="itens" name="itens" value="Poção HP">Poção HP
+			
+			
+		
+		
+		 </div>
+		 
+		 
+		 
+		 
+		 
+		 
+		
+		<div style="height:50px;">
+			<tr>
+			   <td>
+					<label for="imagem">Imagem de perfil:</label>
+			   </td>
+			   
+			   <td>
+					<input type="file" name="imagem"  accept="image/jpeg, image/png"  >
+
+			   </td>
+			 </tr>
+		
+		</div >
+		
+	
+		
+		
+		</div>
+		<div style="height:50px;">	
+			<input type="submit" value="Cadastrar">		
+		</div>
+		
+		
+		</form>
+
+	</body>
+</html>
+
+
+
+
+
+
+
