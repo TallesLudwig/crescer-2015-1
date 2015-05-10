@@ -185,9 +185,7 @@ apenasOsMelhores(times);
  
  
   function apenasOsMelhoresParaJSON(array){
-	var filtered = array.filter(function(i) { return i.titulos[0].qtd > 18; });
-
-	return 	JSON.stringify(filtered);
+		return 	JSON.stringify(apenasOsMelhores(array));
  }
 
 
