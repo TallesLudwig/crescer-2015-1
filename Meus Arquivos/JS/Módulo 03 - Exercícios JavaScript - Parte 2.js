@@ -48,8 +48,8 @@
 		var b = 1/ Math.pow( 1+this.juros ,this.quantidadeParcelas);	
 		
 		var final1 = a/(1-b);
-		return final1.toFixed(2);
-		//return Math.Round(final1, 2);
+		//return final1.toFixed(2); MUITO DEMORADO. FAZER O .ROUND *100 / 100
+		return Math.round(final1* 100)/100;
 	}
 	
 		this.valorTotalJuros =function(){
@@ -90,14 +90,14 @@
 		var b = 1/ Math.pow( 1+this.juros ,this.quantidadeParcelas);	
 		
 		var final1 = a/(1-b);
-		return final1.toFixed(2);
+		return Math.round(final1* 100)/100;
 		
 	}
 	
 	this.valorTotalJuros =function(){
 		
 		var total=(this.valorParcela()-this.valorTotal/this.quantidadeParcelas)*this.quantidadeParcelas;
-		 return total.toFixed(2);
+		return Math.round(total* 100)/100;
 		 
 	}	
 	
