@@ -148,6 +148,36 @@
 	</div>
 
 <script src="libs/jquery-1.5.0.js"></script>
+
+<script>
+/*A1*/
+	var A1= $('.module');
+/*A2 Faça uma instrução jQuery que selecione o terceiro elemento da lista não ordenada myList.*/
+
+	var A2=	$( "#myList li:nth-child(3)").text();
+	
+/*A3  Faça uma instrução jQuery que selecione o label para o input de busca usando um seletor de atributo.*/
+
+	var A3 =  $( "label[for='q']").text();
+	
+/*A4 Escreva uma instrução jQuery que encontre quantos elementos na página tem um atributo alt.*/
+
+var A4= $( "[alt=]" ).length;
+
+
+/*A5 Faça uma instrução jQuery que selecione todas as linhas pares da tabela com exceção do cabeçalho.*/
+
+var A5 = $('table  tbody  tr:even') 
+var A5 = $('table  tbody  tr:even:not(:first-child)')  
+
+
+/*A6 Faça uma instrução jQuery que encontre quantos elementos h2 possuem as letras "B", "e" NO MESMO texto.*/
+
+var A6 = $('h2:contains("B" , "e")')
+
+
+:contains("three")
+</script>
 <!--
 <script src="js/sandbox.js"></script>
 <script src="js/hoverClass.js"></script>
