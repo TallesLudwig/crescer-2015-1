@@ -175,9 +175,20 @@ var A5 = $('table  tbody  tr:even:not(:first-child)')
 
 var A6 = $('h2:contains("B"):contains("e")')
 
-li:contains("john")
+/*A7*/
+var A7 = $("#myList li:[class!='current bar']" )
+/*A8*/
 
-:contains("three")
+var A8 = $( "HTML body img:last ,  html body h3:last" )
+
+/*A9*/
+var A9 = $('#myList li.[class="current bar"] ~ li').text().length
+
+
+
+
+
+
 </script>
 <!--
 <script src="js/sandbox.js"></script>
