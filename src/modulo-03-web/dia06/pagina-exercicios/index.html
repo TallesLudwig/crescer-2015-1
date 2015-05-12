@@ -162,19 +162,69 @@
 	
 /*A4 Escreva uma instrução jQuery que encontre quantos elementos na página tem um atributo alt.*/
 
-var A4= $( "[alt=]" ).length;
+var A4= $( "[alt]" ).length;
 
 
 /*A5 Faça uma instrução jQuery que selecione todas as linhas pares da tabela com exceção do cabeçalho.*/
 
 var A5 = $('table  tbody  tr:even') 
+
 var A5 = $('table  tbody  tr:even:not(:first-child)')  
 
 
 /*A6 Faça uma instrução jQuery que encontre quantos elementos h2 possuem as letras "B", "e" NO MESMO texto.*/
 
 var A6 = $('h2:contains("B"):contains("e")')
+
 var A6 = $('h2:contains("B"):h2:contains("e")')
+
+/*A7 Faça uma instrução jQuery que selecione todos os li dentro de #myList que não estão vermelhos.*/
+var A7 = $("#myList li:[class!='current bar']" )
+
+/*A8 Faça uma instrução jQuery que selecione todos os elementos que são os últimos filhos no HTML do tipo img OU que são os últimos filhos no HTML do tipo h3*/
+
+var A8 = $( "HTML body img:last ,  html body h3:last" )
+
+/*A9*/
+var A9 = $('#myList li.[class="current bar"] ~ li').text().length
+
+
+
+/*B2 Faça uma instrução jQuery que selecione o input text pelo atributo, depois navegue até seu elemento pai e adicione a classe template nele.*/
+
+
+var B2 = $( "input:text" ).parent().addClass( "template" );
+
+
+/*B3 Faça uma instrução jQuery que selecione o item de lista dentro de #myList que possui uma classe "current" e:
+
+Remova esta classe dele.
+Adicione uma classe "current" no próximo item de lista.*/
+
+
+var b3 = $('#myList li.[class="current bar"]').removeClass( "current" ).next().addClass( "current" );
+
+
+/*B4 Faça uma instrução jQuery que selecione o elemento h2 dentro de #specials, altere seu texto para "Promoções", depois atravesse
+ e altere o texto da opção "Friday" para "Dimitri".*/
+ 
+ $("#specials").find("h2").text("Promoções").end().find('option[value="friday"]').text("Dimitri");
+ 
+ 
+/*3C*/
+$('div.module ')
+	.last()
+	.after(
+	$('<div/>').addClass('module')
+	.append(
+		$('img:eq(0)').clone()
+		) 
+	);
+
+
+
+
+
 
 
 </script>
