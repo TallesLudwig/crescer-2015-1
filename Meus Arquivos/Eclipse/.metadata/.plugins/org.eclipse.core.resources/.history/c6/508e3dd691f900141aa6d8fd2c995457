@@ -1,0 +1,12 @@
+package Listator;
+
+public class Teste {
+		
+	public static void main(String[] args) {
+		String empresa = "cwi software";
+		
+		System.out.println(empresa.toLowerCase());
+		
+	}
+	
+}

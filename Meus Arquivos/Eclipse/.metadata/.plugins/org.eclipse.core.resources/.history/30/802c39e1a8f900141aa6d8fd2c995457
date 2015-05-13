@@ -1,0 +1,9 @@
+package atorFilme;
+
+public enum Genero {
+	Comédia, 
+	Ação,
+	Aventura,
+	Terror;
+
+}

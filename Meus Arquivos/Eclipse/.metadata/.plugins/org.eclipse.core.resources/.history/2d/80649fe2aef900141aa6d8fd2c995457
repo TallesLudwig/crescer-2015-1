@@ -1,0 +1,56 @@
+package atorFilme;
+
+import java.util.ArrayList;
+
+public class Netflox {
+	
+	private ArrayList<Filme> ListaFilmes= new ArrayList<>();
+	private int Comédia;
+	private int acao;
+	private int Aventura;
+	
+
+	public void adicionarFilme(Filme filme){ 
+		this.ListaFilmes.add(filme);  
+	}
+
+	
+	
+	public boolean reproduzirFilme(Filme filme){ 
+		boolean estaNoAcervo = false ;
+		for (int i = 0; i < ListaFilmes.size(); i++) {
+		
+			if (this.ListaFilmes.get(i) == filme ){
+			
+				estaNoAcervo= true;	
+				
+				if(this.ListaFilmes.get(i).getGenero() == Genero.Comédia ){Comédia++;}
+				if(this.ListaFilmes.get(i).getGenero() == Genero.Acao ){acao++;}
+				if(this.ListaFilmes.get(i).getGenero() == Genero.Aventura ){Aventura++;}
+				
+				
+			}	
+		
+			
+		}
+		return estaNoAcervo;
+		
+	}
+	private String geraRelatorio() {
+		return "Filmes de comedia : "+this.Comédia + "\nFilmes de acao : "+ acao+ "\nFilmes de Aventura : "+ Aventura;
+
+	}
+
+	
+	public ArrayList<Filme> getListaFilmes() {
+		return this.ListaFilmes;
+		
+	}
+	
+
+	
+	
+
+}
+
+

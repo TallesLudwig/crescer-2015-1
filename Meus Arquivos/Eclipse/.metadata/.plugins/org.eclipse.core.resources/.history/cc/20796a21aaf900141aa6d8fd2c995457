@@ -1,0 +1,45 @@
+package atorFilme;
+
+import java.util.ArrayList;
+
+public class Netflox {
+	
+	private ArrayList<Filme> ListaFilmes= new ArrayList<>();
+	
+	public void adicionarFilme(Filme filme, Genero genero){ 
+		this.ListaFilmes.add(filme);  
+	}
+
+	
+	
+	public void reproduzirFilme(Filme filme){ 
+		for (int i = 0; i < ListaFilmes.size(); i++) {
+		
+			if (this.ListaFilmes.get(i) == filme ){
+			
+				System.out.println("Carregando filme"+ filme.getNome());
+				
+				
+			}	
+			else {
+				
+				System.out.println("Filme não encontrado"+ filme.getNome());
+				
+			}
+			
+		}
+		
+	}
+	
+	public void geraRelatorio()	{
+		
+		
+	}
+	
+
+	
+	
+
+}
+
+

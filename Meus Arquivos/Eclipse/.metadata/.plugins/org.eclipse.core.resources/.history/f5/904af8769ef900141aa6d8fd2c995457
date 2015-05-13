@@ -1,0 +1,39 @@
+package atorFilme;
+
+import java.util.ArrayList;
+
+
+public class Filme {
+	
+	private String NomeFilme;
+	private ArrayList<Ator> ListaAtores ;
+	  
+	
+	public Filme(String Nome)
+	    {
+		   this.NomeFilme= Nome;
+	        
+	    }
+
+	  
+
+	public void novoAtor(Ator ator){
+			ListaAtores.add(ator);    
+		}
+	   
+	   
+	   
+	public String getNome() {
+		return NomeFilme;
+	}
+	
+	public ArrayList<Ator> ListaAtores() {
+		return ListaAtores;
+	}
+
+}
+
+
+
+
+

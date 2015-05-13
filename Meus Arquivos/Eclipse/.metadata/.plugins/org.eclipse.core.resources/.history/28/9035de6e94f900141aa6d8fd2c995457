@@ -1,0 +1,18 @@
+package listator;
+
+import java.util.ArrayList;
+
+public class Teste {
+		
+	public static void main(String[] args) {
+		String empresa = "cwi software";
+		
+		System.out.println(empresa.toUpperCase());
+		
+		
+		ArrayList<String> teste = new ArrayList<>();
+		
+		
+	}
+	
+}

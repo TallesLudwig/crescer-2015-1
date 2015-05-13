@@ -1,0 +1,41 @@
+package atorFilme;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+public class TestAtorFilm {
+
+	@Test
+	public void testCriaAdicionaFilme() throws Exception {
+		Ator ator1 = new Ator("Scarlett Johansson ");
+		Ator ator2 = new Ator("Robert Downey Jr");
+		Filme avengers = new Filme("avengers");
+		System.out.println(ator1.getNome());
+		
+		ArrayList<Ator> a= new ArrayList<Ator>(); 
+		
+        // Act
+
+		avengers.novoAtor(ator1);
+
+		
+		a.add(ator1);
+
+    
+       
+
+        // Assert
+		System.out.println("AAAAAAAA");
+        assertEquals(avengers.getListaAtores(), a);
+		
+		
+		
+		
+		
+	}
+	
+
+}
