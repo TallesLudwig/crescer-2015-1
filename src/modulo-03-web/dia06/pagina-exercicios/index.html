@@ -211,6 +211,25 @@ var b3 = $('#myList li.[class="current bar"]').removeClass( "current" ).next().a
  $("#specials").find("h2").text("Promoções").end().find('option[value="friday"]').text("Dimitri");
  
  
+ 
+ /*B5 Faça uma instrução jQuery que selecione o primeiro item de lista no elemento #slideshow; adicione a classe "current" a ele e então adicione a classe "disabled" para seus elementos sibling.*/
+ 
+$("#slideshow :first-child").first().addClass("current").siblings().addClass("disabled");
+ 
+/*Faça uma instrução JavaScript + jQuery que adicione cinco novos itens de lista no fim da lista não ordenada #myList.
+ Os itens devem seguir o padrão de texto dos itens já existentes na lista e devem continuar a contagem (que parou em 7).*/
+ 
+for (var i = 8; i < 13; i++) {
+  $('li').last().text('List item ' + i).appendTo("#myList");
+}
+ 
+ /*3b Faça uma instrução jQuery que remova os itens com texto par da lista #myList.*/
+ 
+ 
+ 
+ $('#myList :odd').remove() 
+ 
+ 
 /*3C*/
 $('div.module ')
 	.last()
