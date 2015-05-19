@@ -9,11 +9,12 @@ import org.junit.Test;
 
 public class TestReceita {
 
+	private static final double DELTA = 1e-15;
 	@Test	
 	public void criarReceita()throws Exception{
 		
-		Ingredientes Ingredientes= new Ingredientes("Sal", 2, Unidade.COLHER);
-		Ingredientes Ingredientes2= new Ingredientes("Farinha", 1, Unidade.XICARAS);
+		Ingredientes Ingredientes= new Ingredientes("Sal", 2, Unidade.COLHER, 5);
+		Ingredientes Ingredientes2= new Ingredientes("Farinha", 1, Unidade.XICARAS, 10.5);
 		
 		Instrucao Instrucao= new Instrucao("Vai la campeao");
 		
@@ -29,9 +30,11 @@ public class TestReceita {
 		esperadoIngredientes.add(Ingredientes2);
 		
 		
+		
 		assertEquals(receita.getInstrucao().getInstrucao(), esperadadoInstrucao.getInstrucao() );		
 		assertEquals(receita.getIngredientes(), esperadoIngredientes );		
 		assertEquals(receita.getIngredientes().get(0).getUnidade(), Unidade.COLHER );
+		assertEquals(receita.getValorTotal(), 15.5 , DELTA);
 		
 		
 	}

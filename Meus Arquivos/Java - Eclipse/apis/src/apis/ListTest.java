@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.Test;
 
 public class ListTest {
-	
+
 
 	@Test	
 	public void listGetInt()throws Exception{
@@ -59,7 +59,7 @@ public class ListTest {
 		lista.add("CWI");
 		lista.add("Software");
 
-		lista.set(2, "hardware");
+		
 		
 		
 		

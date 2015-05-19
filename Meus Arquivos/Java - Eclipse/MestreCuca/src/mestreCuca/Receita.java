@@ -8,6 +8,7 @@ public class Receita {
 	private String Nome;
 	private List<Ingredientes> Ingredientes = new ArrayList<>();
 	private Instrucao instrucao ;
+	private double ValorTotal ;
 	
 	public Receita(String nome,  Instrucao instrucao){
 		if(nome =="" || nome==null){
@@ -23,6 +24,17 @@ public class Receita {
 		 
 		 Ingredientes.add(ingredientes);
 		 
+	 }
+	 
+	 public double getValorTotal(){
+		 
+		 for (int i = 0;i < Ingredientes.size(); i++){			
+			 
+			 ValorTotal += Ingredientes.get(i).getValor();
+				
+			}
+		 	
+		 return ValorTotal;
 	 }
 
 	public String getNome() {
