@@ -1,0 +1,155 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ecletico</title>
+
+</head>
+
+<body>
+	<form class="form" method="get" action="javascript:void(0)">
+				<input type="submit" class="button" value="Buscar album">
+	</form>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	
+	<script>
+	
+	///http://illuminati.instaweb.com.br:6789/autentica
+//http://illuminati.instaweb.com.br:6789/exercicios?token=6c33f1507275
+
+//{ "nome": "Exercício 1", "instrucoes": "Faça um POST /exercicios para enviar a resposta correta, no formato {resposta: RESPOSTA }.", "dados": "A resposta é 8" }
+	'use strict';
+
+	
+	var eu={
+	nome:'talles'
+	}
+
+
+	$.ajax({
+		url:'http://illuminati.instaweb.com.br:6789/autentica',
+		type:'POST',
+		contentType: 'json',
+		dataType: 'json',
+		data :JSON.stringify(eu)
+	}).done(function(){
+		console.log("deu");
+});		
+2--
+
+var RESPOSTA{
+resposta: "A resposta é 8"
+}
+
+var RESPOSTA{
+resposta: 8
+}
+var RESPOSTA{
+resposta: 10
+}
+
+
+	
+	$.ajax({
+		url:'http://illuminati.instaweb.com.br:6789/exercicios?token=6c33f1507275',
+		type:'POST',
+		contentType: 'json',
+		dataType: 'json',
+		data :JSON.stringify(resposta)
+	}).done(function(){
+		console.log("deu");
+});		
+
+
+//Não foi tão difícil né? Faça um GET /exercicios para obter o próximo desafio.
+				
+				
+$.ajax({
+		url:'http://illuminati.instaweb.com.br:6789/exercicios?token=6c33f1507275',
+		type:'GET',
+		contentType: 'json',
+		dataType: 'json',
+		data :JSON.stringify(resposta1)
+	}).done(function(){
+		console.log("deu");
+});	
+				
+				
+
+
+var soma={
+	resposta	:  186
+	}
+
+
+	$.ajax({
+		url:'http://illuminati.instaweb.com.br:6789/exercicios?token=6c33f1507275',
+		type:'GET',
+		contentType: 'json',
+		data :JSON.stringify(soma)
+	}).done(function(){
+		console.log("deu");
+	});
+
+	
+  var total = 0;
+	for (var i = 0; i < dados.length; i++) {
+		total += dados[i];
+	}
+	
+	total = 4973;
+	
+
+  
+ 
+ var total = 0;
+	for (var i = 0; i < dados.length; i++) {
+	if(jQuery.type( dados[i] ) !== "string"){
+		total += dados[i];}
+	}
+	
+
+   var total = 0;
+	for (var i = 0; i < dados.length; i++) {
+	
+	if(dados[i] % 3 == 0){
+		total += dados[i];
+		}
+		
+	}
+
+  
+   var total = 0;
+	for (var i = 0; i < dados.length; i++) {
+		total += dados[i].data;
+	}
+ 
+ 
+ // eu usei isso como rascunho. apagava/substituia/ fazia no console não tenho tudo
+ 
+ //ultima
+ var total = 0;
+	for (var i = 0; i < dados.length; i++) {
+		if( dados[i].status === "INCLUIDO")
+			total += dados[i].data;	
+	}
+	
+	
+ //CASA SUJA, CHÃO SUJO
+     
+	var soma={
+	resposta	:  total
+	}
+
+	
+	
+	</script>
+</body>
+</html>
