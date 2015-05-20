@@ -24,9 +24,10 @@
 			var albums = [];
 			var id = [];
 
+			var ul = $('#img-album');
 			function procuraAlbums(){
 				var banda = $('input[id="pesquisa"]').val();
-				var ul = $('#img-album');
+				
 							
 				$.ajax({
 					url: 'https://api.spotify.com/v1/search?q='+banda+'&type=artist',
@@ -40,6 +41,7 @@
 						type: 'GET'
 					})
 					.done(function(data) {
+						
 							data.items.forEach(function(i) {
 							ul.append(
 								$("<img>").attr('src', i.images[1].url)
@@ -55,7 +57,8 @@
 			
 
 			$(function(){
-				$('.button').click(function(){
+				 ul.click(function(){
+					$('#img-album').empty();
 					procuraAlbums();
 				});	
 			})

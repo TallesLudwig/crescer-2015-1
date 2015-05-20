@@ -27,7 +27,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -59,7 +59,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		
 		Livro.atualizar("Pao", receita2);
@@ -91,7 +91,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 				
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -126,7 +126,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -157,7 +157,7 @@ public class TestLivroReceita {
 
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 	
 		
@@ -186,7 +186,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -217,7 +217,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -248,7 +248,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -280,7 +280,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -314,7 +314,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -349,7 +349,7 @@ public class TestLivroReceita {
 		receita2.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -388,7 +388,7 @@ public class TestLivroReceita {
 		
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		
@@ -430,7 +430,7 @@ public class TestLivroReceita {
 		receita3.addIngredientes(Ingredientes);
 		
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(receita);
 		Livro.inserir(receita2);
 		Livro.inserir(receita3);
@@ -484,7 +484,7 @@ public class TestLivroReceita {
 		
 	
 		
-		LivroReceita Livro = new LivroReceita();
+		Livro Livro = new Livro();
 		Livro.inserir(Arrozdeforno);
 		Livro.inserir(Arrozdoce);
 		Livro.inserir(CarneDePanela);
@@ -503,6 +503,72 @@ public class TestLivroReceita {
 		esperado.add("2.0 COLHERdeSOPA Sal");
 		esperado.add("1.0 LATA leite condensado");
 		esperado.add("1.0 KILOS carne");
+
+		
+		assertEquals(Livro.listaDeCompras(Compras), esperado  );		
+
+		
+		
+	}
+	
+	
+	
+	@Test	
+	public void testListaDeCompras2()throws Exception{
+		
+		Ingredientes Sal= new Ingredientes("Sal", 1, Unidade.COLHERdeSOPA, 20);
+		Ingredientes arroz3= new Ingredientes("arroz", 3, Unidade.XICARAS, 10.5);
+		Ingredientes condensado= new Ingredientes("leite condensado", 1, Unidade.LATA, 10.5);
+		
+		
+		Ingredientes arroz1= new Ingredientes("arroz", 1, Unidade.XICARAS, 10.5);
+		
+		Ingredientes Carne= new Ingredientes("carne", 1, Unidade.KILOS, 10.5);
+		
+		Ingredientes Carne2= new Ingredientes("carne", 500.51, Unidade.GRAMAS, 10.5);
+
+
+		Instrucao Instrucao= new Instrucao("Vai la campeao");
+		
+		Receita Arrozdeforno = new Receita("Arroz de forno", Instrucao);
+		Arrozdeforno.addIngredientes(Sal);
+		Arrozdeforno.addIngredientes(arroz3);
+		
+		
+		
+		Receita Arrozdoce  = new Receita("Arroz doce", Instrucao);
+		Arrozdoce.addIngredientes(arroz1);
+		Arrozdoce.addIngredientes(condensado);
+		
+		
+		
+		Receita CarneDePanela = new Receita("CarneDePanela", Instrucao);
+	
+		CarneDePanela.addIngredientes(Carne);
+		CarneDePanela.addIngredientes(Carne2);
+		CarneDePanela.addIngredientes(Sal);
+		
+	
+		
+		Livro Livro = new Livro();
+		Livro.inserir(Arrozdeforno);
+		Livro.inserir(Arrozdoce);
+		Livro.inserir(CarneDePanela);
+		
+		List<Receita> Compras = new ArrayList<>();
+		Compras.add(Arrozdeforno);
+		Compras.add(Arrozdoce);
+		Compras.add(CarneDePanela);
+		
+		
+		
+		
+		List<String> esperado = new ArrayList<>();
+		esperado.add("4.0 XICARAS arroz");
+		esperado.add("2.0 COLHERdeSOPA Sal");
+		esperado.add("1.0 LATA leite condensado");
+		esperado.add("1.0 KILOS carne");
+		esperado.add("500.51 GRAMAS carne");
 
 		
 		assertEquals(Livro.listaDeCompras(Compras), esperado  );		
