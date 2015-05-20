@@ -495,14 +495,17 @@ public class TestLivroReceita {
 		Compras.add(CarneDePanela);
 		
 		
-		Livro.listaDeCompras(Compras);
 		
-		//List<> esperado = new ArrayList<>();
-		//esperado
 		
+		List<String> esperado = new ArrayList<>();
+		esperado.add("3.0 KILOS arroz");
+		esperado.add("1.0 XICARAS arroz");
+		esperado.add("2.0 COLHERdeSOPA Sal");
+		esperado.add("1.0 LATA leite condensado");
+		esperado.add("1.0 KILOS carne");
 
 		
-		//assertEquals(Livro.ProtecaoAlergicos(alergicos), esperado  );		
+		assertEquals(Livro.listaDeCompras(Compras), esperado  );		
 
 		
 		

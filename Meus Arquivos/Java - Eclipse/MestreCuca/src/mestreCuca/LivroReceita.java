@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+
 
 
 
@@ -14,7 +14,7 @@ public class LivroReceita implements LivroReceitas {
 	private List<Receita> LivroReceitas = new ArrayList<>();
 	private List<Receita> AlergicosFree = new ArrayList<>();
 	
-	private Map<Unidade, Map<String, Double>> Lista = new HashMap<>();
+	
 
 	private double valorTotalRecitas ;
 	
@@ -116,63 +116,65 @@ public class LivroReceita implements LivroReceitas {
 	 
 	 
 	 
-	 // métodos devem iniciar com letra minuscula; nomes de parametro também
+	
 	 
-	 public Map<String, Double> listaDeCompras(List<Receita> listaDeCompras){
-		 // variaveis com letra minuscula
+	 public List<String> listaDeCompras(List<Receita> listaDeCompras){
+		
 		 
 		 Map<String, Double> listaUnidades = new HashMap<>();
-		 
-		 // substituir for por for each
+		 List<String> novaString =  new ArrayList<>();;
 	
 	
-		for(int i = 0;i < listaDeCompras.size(); i++){
-    		// substituir for por for each
-			 for (int j = 0; j <listaDeCompras.get(i).getIngredientes().size(); j++) {
-				
-				//Unidade UnidadeDoIngrediente = ListaDeCompras.get(i).getIngredientes().get(j).getUnidade();				 				
-				
-				String nomeDoIngrediente = listaDeCompras.get(i).getIngredientes().get(j).getNome();	
-				Unidade unidade = listaDeCompras.get(i).getIngredientes().get(j).getUnidade();
-				
-				String chaveMap = nomeDoIngrediente + "_" + unidade;
-				Double QuantidadeDoIngrediente = listaDeCompras.get(i).getIngredientes().get(j).getQuantidade();
-				
-			
-				 
-				
-				 if(!listaUnidades.containsKey(chaveMap)){
-					 listaUnidades.put( chaveMap, QuantidadeDoIngrediente);
+		 for (Receita receita : listaDeCompras) {
+			 for (Ingredientes ingredientes : receita.getIngredientes()) {
+				 	String nomeDoIngrediente = ingredientes.getNome();	
+					Unidade unidade = ingredientes.getUnidade();
 					
-				 }else{
+					String chaveMap = nomeDoIngrediente + "_" + unidade;
+					Double QuantidadeDoIngrediente = ingredientes.getQuantidade();
+					
 				
-					 double novoValor = listaUnidades.get(chaveMap) + QuantidadeDoIngrediente;
 					 
-					 listaUnidades.put( chaveMap, novoValor);
-				 }
+					
+					 if(!listaUnidades.containsKey(chaveMap)){
+						 listaUnidades.put( chaveMap, QuantidadeDoIngrediente);
+						
+					 }else{
+					
+						 double novoValor = listaUnidades.get(chaveMap) + QuantidadeDoIngrediente;
+						 
+						 listaUnidades.put( chaveMap, novoValor);
+					 }
+			}
+		}
+		 
 			
-			 }
-				 	
+		for (String receita : listaUnidades.keySet()) {
 			
-				// indentação (tabs, e espaçamentos)
-		 }
+			
+			
+			
+			String splits[]= receita.split("_");
+			
+	
+			 novaString.add(listaUnidades.get(receita)+ " " + splits[1] + " "+ splits[0]);
+			//System.out.println(novaString);
+			
+			
+			
+		}
+		
+		
+		return novaString;
+		
 			 
-			
-			 System.out.println(listaUnidades);
-			 System.out.println(Lista);
-			 return listaUnidades;
 		
 	 }
 		
 	
 	 
 	 
-	 
-	 @Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
-	}
+
 
 	
 	
@@ -180,7 +182,8 @@ public class LivroReceita implements LivroReceitas {
 
 }
 	
-	
+
+
 	
 	
 	
