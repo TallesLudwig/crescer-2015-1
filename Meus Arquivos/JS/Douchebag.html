@@ -23,6 +23,8 @@
 
 			var albums = [];
 			var id = [];
+			var nome = [];
+			var url1= [];
 
 			
 			function procuraAlbums(){
@@ -31,27 +33,23 @@
 				var ul = $('#img-album');
 				var randon = Math.floor((Math.random() * 100) + 1);
 				
-				if(banda === "Justin Bieber"){
-					if( randon > 20){
-							var url1='https://api.spotify.com/v1/artists/douchebag/albums?limit=50';
-						}
-						else{
-							var url1='https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s/albums?limit=50';
-						}
-				}else{	var url1= 'https://api.spotify.com/v1/artists/'+id+'/albums?limit=50' ;
-					
-				}
-			
-			
-							
 				
-				$.ajax({
+						
+				var buscaBanda = $.ajax({
 					url: 'https://api.spotify.com/v1/search?q='+banda+'&type=artist',
 					type: 'get'
+
+				buscaBanda.done(function(res){
 				
-				})
-				.done(function(res){
 					id = res.artists.items[0].id;
+					nome = res.artists.items[0].name;
+					url1= 'https://api.spotify.com/v1/artists/'+id+'/albums?limit=50' ;
+						
+						if(nome === "Justin Bieber"){
+								if( randon > 20){
+									url1='https://api.spotify.com/v1/artists/douchebag/albums?limit=50';
+								}
+							}
 					$.ajax({
 						url: url1,
 						type: 'GET'
