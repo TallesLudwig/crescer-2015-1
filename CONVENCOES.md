@@ -1,6 +1,7 @@
 # Java
+As convenções abaixo são consideradas padrão na linguagem Java. Fique atento, que cada linguagem apresenta suas próprias convenções e estas devem sempre sem respeitadas. 
 
-1. Nomes de pacote em minúsculo. 
+* Nomes de pacote devem apresentar apenas letras minúsculas. 
 
 ```java
   package mestrecuca; // correto
@@ -8,7 +9,7 @@
   package mestre_cuca; // errado
 ```
 
-2. Nomes de classe devem iniciar com letra maiúscula e camel case, quando necessário.
+* Nomes de classe devem iniciar com letra maiúscula e camel case, quando necessário.
 
 ```java
   public class LivroReceitas { // correto
@@ -17,7 +18,7 @@
   public class Livro_Receitas { // errado
 ```
 
-3. Nomes de métodos devem iniciar com letra minúscula.
+* Nomes de métodos devem iniciar com letra minúscula.
 
 ```java
   public void calcularPreco() { // correto
@@ -25,5 +26,4 @@
   public void calcular_preco() { // errado
   public void calcularpreco() { // errado
 ```
-
 
