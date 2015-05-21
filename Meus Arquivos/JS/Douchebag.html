@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Douchebag</title>
+
+</head>
+
+<body>
+	<form class="form" method="get" action="javascript:void(0)">
+		<label for="pesquisa">Pesquisar albuns:</label>	
+		<input type="text" id="pesquisa"  required>
+		<input type="submit" class="button" value="Buscar album">
+	</form>
+	
+	
+	<div id="img-album"></div>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	
+	<script>
+	
+	'use strict';
+
+			var albums = [];
+			var id = [];
+
+			
+			function procuraAlbums(){
+				var banda = $('input[id="pesquisa"]').val();
+				var Douchebag = "Justin Bieber"
+				var ul = $('#img-album');
+				var randon = Math.floor((Math.random() * 100) + 1);
+				
+				if(banda === "Justin Bieber"){
+					if( randon > 20){
+							var url1='https://api.spotify.com/v1/artists/douchebag/albums?limit=50';
+						}
+						else{
+							var url1='https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s/albums?limit=50';
+						}
+				}else{	var url1= 'https://api.spotify.com/v1/artists/'+id+'/albums?limit=50' ;
+					
+				}
+			
+			
+							
+				
+				$.ajax({
+					url: 'https://api.spotify.com/v1/search?q='+banda+'&type=artist',
+					type: 'get'
+				
+				})
+				.done(function(res){
+					id = res.artists.items[0].id;
+					$.ajax({
+						url: url1,
+						type: 'GET'
+					})
+					.done(function(data) {
+						
+							data.items.forEach(function(i) {
+							ul.append(
+								$("<img>").attr('src', i.images[1].url)
+							);
+							});
+					
+					}).fail(function(error) {
+						alert( "Caro usuário, devido a um erro "+ error.status +", não foi possível pesquisar por "+ banda);
+					  });
+					
+				});
+				
+			}
+			
+			
+
+			$(function(){
+				 $('.button').click(function(){
+
+					$('#img-album').empty();
+					procuraAlbums();
+				});	
+			})
+				
+				
+						
+	
+	
+	
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+ <!--'https://api.spotify.com/v1/search?q=%C3%A9%20o%20tchan&type=artist'-->
