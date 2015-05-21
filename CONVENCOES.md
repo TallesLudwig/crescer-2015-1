@@ -1,5 +1,5 @@
 # Java
-As convenções abaixo são consideradas padrão na linguagem Java. Fique atento, que cada linguagem apresenta suas próprias convenções e estas devem sempre sem respeitadas. 
+As convenções abaixo são consideradas padrão na linguagem Java. Fique atento: cada linguagem apresenta suas próprias convenções e estas devem sempre sem respeitadas. 
 
 * Nomes de pacote devem apresentar apenas letras minúsculas. 
 
@@ -27,3 +27,9 @@ As convenções abaixo são consideradas padrão na linguagem Java. Fique atento
   public void calcularpreco() { // errado
 ```
 
+* Não esqueça de definir os modificadores de acesso nos métodos e atributos. Tente reduzir a visiblidade dos atributos sempre que possível. Em outras palavras: prefira atributos privados à atributos publicos. Reduzir a visiblidade facilita a manutenção, pois não estamos expondo detalhes internos da implementação de nossas classes.
+
+```java
+  private String nome; // possivelmente correto
+  public String nome; // possivelmente uma má prática
+```
