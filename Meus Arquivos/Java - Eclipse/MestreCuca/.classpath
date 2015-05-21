@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="Lib/jackson-databind-2.1.1.jar"/>
 	<classpathentry kind="lib" path="Lib/com.fasterxml.jackson.core.jar"/>
 	<classpathentry kind="lib" path="Lib/jackson-annotations-2.1.2.jar"/>
+	<classpathentry kind="lib" path="Lib/h2-1.4.187.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

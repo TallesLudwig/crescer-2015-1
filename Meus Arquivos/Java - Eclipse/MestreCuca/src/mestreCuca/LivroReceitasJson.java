@@ -11,8 +11,6 @@ public class LivroReceitasJson implements LivroReceitas {
 	
 	private List<Receita> livroReceitas = new ArrayList<>();
 	private File arquivo;
-	
-	private String caminho;
 	private ObjectMapper mapper = new ObjectMapper();
 
 	public LivroReceitasJson(String caminho, String nome) {
@@ -25,47 +23,43 @@ public class LivroReceitasJson implements LivroReceitas {
 		
 			e.printStackTrace();
 		}
-			
-
-			
-		
-		
-	System.out.println(arquivo);
-		
 	}
 
 	@Override
 	public void inserir(Receita receita) {
 		
 		livroReceitas.add(receita);
-		
-		try {
-			 
-			// convert user object to json string, and save to a file
-			mapper.writeValue(arquivo, livroReceitas);
-	 
-			// display to console
-			System.out.println(mapper.writeValueAsString(livroReceitas));
-	 
-		}catch (IOException e) {
-		
-			e.printStackTrace();
-		}
-		
-	 
-		
-		
+		escreve();
+			
 	}
 
 	@Override
 	public void atualizar(String nome, Receita novaReceita) {
+	
+		for (int i = 0; i < livroReceitas.size(); i++) {
+
+			if (livroReceitas.get(i).getNome() == nome) {
+
+				livroReceitas.set(i, novaReceita);
+			}
+		}
+		
+		escreve();
+		
 		
 		
 	}
 
 	@Override
 	public void excluir(String nome) {
-		
+		for (int i = 0; i < livroReceitas.size(); i++) {
+
+			if (livroReceitas.get(i).getNome() == nome) {
+
+				livroReceitas.remove(i);
+			}
+		}
+		escreve();
 		
 	}
 
@@ -81,4 +75,14 @@ public class LivroReceitasJson implements LivroReceitas {
 		return null;
 	}
 
+	
+	private void escreve(){
+		
+		try {
+			mapper.writeValue(arquivo, livroReceitas); 
+		}catch (IOException e) {
+		
+			e.printStackTrace();
+		}
+	}
 }

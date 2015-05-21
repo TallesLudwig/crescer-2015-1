@@ -29,11 +29,8 @@ public class TesteLivroReceitasJson {
 	
 		
 		Livro.inserir(receita);
-		Livro.inserir(receita2);
-		
-		LivroReceitasJson Livro2 = new LivroReceitasJson(caminho, "receitas2");
-		
-		Livro2.inserir(receita2);
+		Livro.atualizar("Pao", receita2);
+
 		
 	}
 
