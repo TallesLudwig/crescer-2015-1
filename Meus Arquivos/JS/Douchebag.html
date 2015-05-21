@@ -20,12 +20,10 @@
 	<script>
 	
 	'use strict';
-
 			var albums = [];
 			var id = [];
 			var nome = [];
 			var url1= [];
-
 			
 			function procuraAlbums(){
 				var banda = $('input[id="pesquisa"]').val();
@@ -38,14 +36,14 @@
 				var buscaBanda = $.ajax({
 					url: 'https://api.spotify.com/v1/search?q='+banda+'&type=artist',
 					type: 'get'
-
+					});
 				buscaBanda.done(function(res){
 				
 					id = res.artists.items[0].id;
 					nome = res.artists.items[0].name;
 					url1= 'https://api.spotify.com/v1/artists/'+id+'/albums?limit=50' ;
 						
-						if(nome === "Justin Bieber"){
+						if(nome ===Douchebag ){
 								if( randon > 20){
 									url1='https://api.spotify.com/v1/artists/douchebag/albums?limit=50';
 								}
@@ -71,10 +69,8 @@
 			}
 			
 			
-
 			$(function(){
 				 $('.button').click(function(){
-
 					$('#img-album').empty();
 					procuraAlbums();
 				});	
@@ -89,9 +85,3 @@
 	</script>
 </body>
 </html>
-
-
-
-
-
- <!--'https://api.spotify.com/v1/search?q=%C3%A9%20o%20tchan&type=artist'-->
