@@ -14,3 +14,41 @@ a nossa lista de receitas que armazenamos na memória).
 6. O desafio do exercício será o de descobrir como utilizar a biblioteca e converter um objeto para JSON (e um JSON para objeto). Google it!
 7. Para deixar claro: toda vez que inserirmos, excluirmos ou atualizarmos uma receita, o arquivo json (ex.: `c:\tmp\receitas.json` ou `/Users/eu/receitas.json`) deverá ser atualizado.
 
+### Solução
+
+**Carregando as receitas a partir de um arquivo:**
+```java
+  public LivroReceitaJson(String caminho) throws IOException {
+		this.caminho = caminho;
+		carregaReceitasDeArquivoJson(caminho);
+	}
+  private void carregaReceitasDeArquivoJson(String caminho) throws IOException{
+		File arquivo = new File(caminho);
+		if(arquivo.exists()){
+			receitas =  mapper.readValue(arquivo, List.class);
+		}
+	}
+	//-> LivroReceitaJson livro = new LivroReceitaJson("/Users/marlon/Desktop/receitas.json");
+```
+
+**Salvando as receitas em arquivo:**
+```java
+@Override
+public void inserir(Receita receita) {
+		receitas.add(receita);
+		salvaReceitasEmArquivoJson();
+}
+
+// chamar este método em inserir, atualizar e excluir	
+private void salvaReceitasEmArquivoJson() {
+		try {
+			mapper.writeValue(new File(caminho), receitas);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+```
+
+### JDBC 
+
