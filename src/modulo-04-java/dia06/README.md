@@ -18,37 +18,64 @@ a nossa lista de receitas que armazenamos na memória).
 
 **Carregando as receitas a partir de um arquivo:**
 ```java
-  public LivroReceitaJson(String caminho) throws IOException {
-		this.caminho = caminho;
-		carregaReceitasDeArquivoJson(caminho);
+public LivroReceitaJson(String caminho) throws IOException {
+	this.caminho = caminho;
+	carregaReceitasDeArquivoJson(caminho);
+}
+
+private void carregaReceitasDeArquivoJson(String caminho) throws IOException{
+	File arquivo = new File(caminho);
+	if(arquivo.exists()){
+		receitas =  mapper.readValue(arquivo, List.class);
 	}
-  private void carregaReceitasDeArquivoJson(String caminho) throws IOException{
-		File arquivo = new File(caminho);
-		if(arquivo.exists()){
-			receitas =  mapper.readValue(arquivo, List.class);
-		}
-	}
-	//-> LivroReceitaJson livro = new LivroReceitaJson("/Users/marlon/Desktop/receitas.json");
+}
+
+//-> LivroReceitaJson livro = new LivroReceitaJson("/Users/marlon/Desktop/receitas.json");
 ```
 
 **Salvando as receitas em arquivo:**
 ```java
 @Override
 public void inserir(Receita receita) {
-		receitas.add(receita);
-		salvaReceitasEmArquivoJson();
+	receitas.add(receita);
+	salvaReceitasEmArquivoJson();
 }
 
 // chamar este método em inserir, atualizar e excluir	
 private void salvaReceitasEmArquivoJson() {
-		try {
-			mapper.writeValue(new File(caminho), receitas);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+	try {
+		mapper.writeValue(new File(caminho), receitas);
+	} catch (Exception e) {
+		throw new RuntimeException(e);
 	}
+}
 
 ```
 
 ### JDBC 
+JDBC é a tecnologia utilizada para conectar em um banco de dados usando Java. É uma solução de baixo nível, um pouco burocrática e trabalhosa - mas relativamente simples de entender. Não é a melhor solução, mas usaremos inicialmente nas nossas atividades de persistência. Nem tudo na vida é mamatinha™. 
 
+Os exemplos abaixo são apenas didáticos! Há uma série de problemas no tratamento de exceções e controle transacional que não estão implementados de forma correta nos trechos de código abaixo. 
+
+**Executando uma query:**
+```java
+Connection connection = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/mestrecuca", "sa", "");
+PreparedStatement preparedStatement = connection.prepareStatement("SELECT nome FROM Receita WHERE nome like ?");
+preparedStatement.setString(1, "bolo de %");
+ResultSet result = preparedStatement.executeQuery();
+		
+while(result.next()){
+	System.out.println(result.getString("nome"));
+}
+connection.close();
+```
+
+**Inserindo um registro:**
+```java
+Connection connection = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/mestrecuca", "sa", "");
+PreparedStatement preparedStatement = connection.preparedStatement("INSERT INTO Receita (nome, preco) VALUES (?, ?)");
+preparedStatement.setString(1, "bolo de fubá");
+preparedStatement.setDouble(2, 40.20);
+preparedStatement.executeUpdate();
+connection.close();
+```
