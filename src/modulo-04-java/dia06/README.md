@@ -53,7 +53,7 @@ private void salvaReceitasEmArquivoJson() {
 ```
 
 ### JDBC 
-JDBC é a tecnologia utilizada para conectar em um banco de dados usando Java. É uma solução de baixo nível, um pouco burocrática e trabalhosa - mas relativamente simples de entender. Não é a melhor solução, mas usaremos inicialmente nas nossas atividades de persistência. Nem tudo na vida é mamatinha™. 
+JDBC é a tecnologia utilizada para conectar em um banco de dados usando Java. É uma solução de baixo nível, um pouco burocrática e trabalhosa - mas relativamente simples de entender. Não é a melhor solução, mas é a que usaremos inicialmente nas nossas atividades de persistência. Nem tudo na vida é mamatinha™. 
 
 Os exemplos abaixo são apenas didáticos! Há uma série de problemas no tratamento de exceções e controle transacional que não estão implementados de forma correta nos trechos de código abaixo. 
 
