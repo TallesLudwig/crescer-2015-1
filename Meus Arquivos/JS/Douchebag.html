@@ -53,16 +53,19 @@
 	<script>
 	
 	'use strict';
-			var albums = [];
 			var id = [];
-			var nome = [];
-			var url1= [];
-			
+		
 			function procuraAlbums(){
+
+				
+				var nome = [];
+				var url= [];
 				var banda = $('input[id="pesquisa"]').val();
 				var Douchebag = "Justin Bieber"
 				var ul = $('#img-album');
 				var randon = Math.floor((Math.random() * 100) + 1);
+				
+				
 				
 				
 						
@@ -70,26 +73,31 @@
 					url: 'https://api.spotify.com/v1/search?q='+banda+'&type=artist',
 					type: 'get'
 					});
+					
+					
 				buscaBanda.done(function(res){
 				
 					id = res.artists.items[0].id;
 					nome = res.artists.items[0].name;
-					url1= 'https://api.spotify.com/v1/artists/'+id+'/albums?limit=50' ;
+					url= 'https://api.spotify.com/v1/artists/'+id+'/albums?limit=50' ;
 						
 						if(nome ===Douchebag ){
 								if( randon > 20){
-									url1='https://api.spotify.com/v1/artists/douchebag/albums?limit=50';
+									url='https://api.spotify.com/v1/artists/douchebag/albums?limit=50';
 								}
 							}
+							
 					$.ajax({
-						url: url1,
+						url: url,
 						type: 'GET'
-					})
-					.done(function(data) {
+					}).done(function(data) {
 						
 							data.items.forEach(function(i) {
+							
 							ul.append(
-								$('<img class="imagem">').attr('src', i.images[1].url)
+
+			
+								$('<img class="imagem" title="'+ i.name +'">').attr('src', i.images[1].url)
 							);
 							});
 					
@@ -102,16 +110,14 @@
 			}
 			
 			
+			
+			
 			$(function(){
 				 $('.button').click(function(){
 					$('#img-album').empty();
 					procuraAlbums();
 				});	
 			})
-				
-				
-						
-	
 	
 	
 	

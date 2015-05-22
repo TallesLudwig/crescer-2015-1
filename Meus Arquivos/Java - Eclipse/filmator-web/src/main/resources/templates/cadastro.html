@@ -1,0 +1,28 @@
+<html>
+	<body>
+	<formaction="/cadastro-filmes" ></form>
+		
+		
+		<form action="/salvar" method="POST">
+			<label>Nome</label>
+			<input name='nome'>
+			<br><br>
+			<label>Ano</label>
+			<input name='nome'>
+			<br><br>
+			
+			<label>Genero</label>		
+			<select name="genero">
+				{{#genero}}
+				<option >{{genero}}</option>
+				{{/genero}}
+			
+			</select>
+				
+				
+			
+			<button>Salvar</button>
+		</form>
+		<input type="button"  onclick="location.href='/'" value="Voltar" >
+	</body>
+</html>
