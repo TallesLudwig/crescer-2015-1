@@ -3,14 +3,47 @@
 <head>
 	<meta charset="utf-8">
 	<title>Douchebag</title>
+<style>
 
+		body{
+			background-color: darkslateblue;
+		}
+		.letra{
+			font-family: arial;
+		font-weight: bold;
+		
+		}
+
+		.button{
+		background: #ECECEC;
+		border-radius: 30px;
+		padding: 10px 20px;
+		font-family: arial;
+		border:1px solid #a7a7a7;
+		width: 145px;
+		}
+		.imagem{
+			  border-radius: 30x;
+			  padding: 10px 10px;
+		}
+		.pesquisa{
+		border-radius: 4px;
+		}
+		.form{
+		  width: 463px;
+		  margin-right: auto;
+		  margin-left: auto;
+		}
+
+
+</style>
 </head>
 
 <body>
 	<form class="form" method="get" action="javascript:void(0)">
-		<label for="pesquisa">Pesquisar albuns:</label>	
-		<input type="text" id="pesquisa"  required>
-		<input type="submit" class="button" value="Buscar album">
+		<label for="pesquisa" class="letra">Pesquisar albuns:</label>	
+		<input type="text" id="pesquisa" class=" letra pesquisa"  required>
+		<input type="submit" class=" letra button " value="Buscar album">
 	</form>
 	
 	
@@ -56,7 +89,7 @@
 						
 							data.items.forEach(function(i) {
 							ul.append(
-								$("<img>").attr('src', i.images[1].url)
+								$('<img class="imagem">').attr('src', i.images[1].url)
 							);
 							});
 					
