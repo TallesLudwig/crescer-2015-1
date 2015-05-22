@@ -81,4 +81,4 @@ connection.close();
 ```
 
 ### Material para Estudo
-[Apostila Caelum - JDBC](www.caelum.com.br/apostila-java-web/bancos-de-dados-e-jdbc/)
+[Apostila Caelum - JDBC](http://www.caelum.com.br/apostila-java-web/bancos-de-dados-e-jdbc/)
