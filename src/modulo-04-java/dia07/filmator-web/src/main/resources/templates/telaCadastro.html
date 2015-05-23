@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<form action="/salvar" method="post">
+			<fieldset>
+				<label>Nome</label>
+				<input name="nome">
+				
+				<label>Gênero</label>
+				<select name="genero">
+					{{#generos}}
+					<option value="{{.}}">{{descricao}}</option>
+					{{/generos}}
+				</select>
+				
+				<button>Salvar</button>
+			</fieldset>
+		</form>
+		<ul>
+			{{#listaFilmes}}
+				<li>{{nome}} - {{genero.descricao}}</li>
+			{{/listaFilmes}}
+		</ul>
+	</body>
+</html>
