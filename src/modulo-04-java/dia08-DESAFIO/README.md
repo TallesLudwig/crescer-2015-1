@@ -17,3 +17,17 @@
 Foto do carro do Mestre Miyagi:
 
 ![image](https://cloud.githubusercontent.com/assets/2975955/7783555/704df822-011c-11e5-8347-f75a6d90f09c.png)
+
+### Exemplo de ajax
+O ajax para fazer um GET ou POST ficou bem simples, vocês só precisam passar os atributos abaixo:
+
+```js
+$.ajax({
+  url: 'http://localhost:4567/apresentar?nome=' /* aqui vai o nome de vocês */,
+  type: 'POST'
+});
+```
+
+A dificuldade do exercício não está na construção do ajax, mas na organização de vocês para vencer o timer de 24 segundos!
+
+Boa sorte!
