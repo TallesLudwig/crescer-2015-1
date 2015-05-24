@@ -19,9 +19,9 @@ public class CadastroController {
 
 	@RequestMapping(value = "/cadastro-filmes", method=RequestMethod.GET)
 	public String abreTelaCadastro(Filme filme, Model model) {
-		model.addAttribute("generos",Genero.values());
+		model.addAttribute("generos", Genero.values());
 				
-		model.addAttribute("mensagem", "Filme"+ filme.getNome() +" Cadastrado com sucesso!!");
+	
 
 		return "cadastro";
 	}
@@ -30,11 +30,13 @@ public class CadastroController {
 	
 	
 	@RequestMapping(value = "/salvar", method=RequestMethod.POST)
-	public String salvar(Filme filme, Model model) {
-			System.out.println(filme.getNome());
+	public String salvar(Filme filme, Model model) {		
 			bibli.adicionarFilme(filme);
 			
-			model.addAttribute("mensagem", "Filme"+ filme.getNome() +" Cadastrado com sucesso!!");
+			System.out.println(filme.getNome() );
+			System.out.println(filme.getAno() );
+			System.out.println(filme.getSinopse() );
+			System.out.println(filme.getImagem() );
 			System.out.println(bibli.getLista());
 			
 		return "redirect:/cadastro-filmes";

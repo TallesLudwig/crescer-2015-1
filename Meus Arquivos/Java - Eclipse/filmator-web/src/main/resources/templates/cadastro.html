@@ -8,20 +8,28 @@
 			<input name='nome'>
 			<br><br>
 			<label>Ano</label>
-			<input name='nome'>
+			<input name='ano'>
 			<br><br>
 			
-			<label>Genero</label>		
+			<label>Genero</label>
 			<select name="genero">
-				{{#genero}}
-				<option >{{genero}}</option>
-				{{/genero}}
-			
+				{{#generos}}
+				<option value="{{.}}">{{descricao}}</option>
+				{{/generos}}
 			</select>
-				
-				
+			<br><br>
+			<label >Sinopse:</label>
+				<textarea name="sinopse" cols="30" rows="4">	</textarea>
+			<br><br>		
 			
+			<label>Linck Imagem</label>
+			<input name='imagem'>
+				
+		
 			<button>Salvar</button>
+			
+				https://nerdgeekfeelings.files.wordpress.com/2015/05/mad-max-inspired-artists-back-cover-image.jpg	
+			
 		</form>
 		<input type="button"  onclick="location.href='/'" value="Voltar" >
 	</body>

@@ -12,12 +12,27 @@ import filmator.model.Genero;
 
 @Controller
 public class RegistrosController {
+
+	public Biblioteca bibli = new Biblioteca();
 	
 	@RequestMapping(value = "/filmesSalvos", method=RequestMethod.GET)
-	public String abreTelaCadastro(Biblioteca c, Model mode) {
-		model.addAttribute("nome", c. ));
-		model.addAttribute("ano", ));		
-		return "cadastro";
+	public String mostraCadastrados( Model model) {
+		
+		for (Filme a : bibli.getLista()) {
+		
+			model.addAttribute("nome", a.getNome() );
+			model.addAttribute("ano", a.getAno() );
+			
+			model.addAttribute("listaFilmes", bibli.getLista());
+			
+			model.addAttribute("sinopse", a.getSinopse() );
+			model.addAttribute("imagem", a.getImagem() );
+			
+			
+		}
+	
+	
+		return "registroDeFilmes";
 	}
 
 

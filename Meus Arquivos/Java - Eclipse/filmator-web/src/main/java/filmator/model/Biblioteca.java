@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class Biblioteca {
-	private ArrayList<Filme> lista = new ArrayList<>();
+	private static ArrayList<Filme> lista = new ArrayList<>();
 	
 	public Biblioteca(){
 		

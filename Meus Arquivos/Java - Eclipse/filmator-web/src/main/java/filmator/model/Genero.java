@@ -1,5 +1,19 @@
 package filmator.model;
 
+
+
 public enum Genero {
-	Comédia, Acao, Aventura;
+	COMEDIA("Comédia"),
+	ACAO("Ação"),
+	FICCAO_CIENTIFICA("Ficção Científica");
+	
+	private String descricao;
+
+	private Genero(String descricao){
+		this.descricao = descricao;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	
 }
