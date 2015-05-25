@@ -47,21 +47,10 @@ public class RegistrosController {
 	public String mostraCadastrados(Model model) {
 		
 		
-		for (Filme a : filmeDao.buscaTodosFilmesJava8()) {
+	
+		model.addAttribute("listafilmes", filmeDao.buscaTodosFilmesJava8());	
+	
 			
-			model.addAttribute("nome", a.getNome() );
-			System.out.print(a.getAno());
-			model.addAttribute("ano", a.getAno() );
-			System.out.print(a.getGenero().getDescricao());
-			model.addAttribute("genero.descricao", a.getGenero().getDescricao());	
-			System.out.print(a.getSinopse());
-			model.addAttribute("sinopse", a.getSinopse() );
-			System.out.print(a.getImagem());
-			model.addAttribute("imagem", a.getImagem() );
-			System.out.println("-");
-			
-			
-		}
 		
 		return "registroDeFilmes";
 	

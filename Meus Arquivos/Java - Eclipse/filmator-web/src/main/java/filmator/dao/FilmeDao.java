@@ -41,11 +41,8 @@ public class FilmeDao {
 	
 	
 	public List<Filme> buscaTodosFilmesJava8(){
-		
-		List<Filme> a= new ArrayList<>();
-		
-		
-		return a = jdbcTemplate.query("SELECT nome, ano, genero, sinopse, imagem FROM Filme", new RowMapper<Filme>(){
+
+		return jdbcTemplate.query("SELECT nome, ano, genero, sinopse, imagem FROM Filme", new RowMapper<Filme>(){
 			
 			
 				
