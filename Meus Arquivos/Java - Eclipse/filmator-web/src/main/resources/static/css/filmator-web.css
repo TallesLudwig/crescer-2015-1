@@ -1,0 +1,93 @@
+		body{
+		 background-color: 6633CC;
+		}
+		div{
+		  color: aliceblue;
+		  position: fixed;
+		  top: 50%;
+		  left: 50%;
+		  margin-top: -25em;
+		  margin-left: -15em;
+		  background-color: 6600CC;
+		  box-shadow: 0px 2px 61px #8887E7;
+  		  border-radius: 10px
+		
+		
+		}
+		form{
+		  position: relative;
+		  top: 10px;
+		  left: 10px;
+		  width: 250;
+		}
+		
+		input, select, textarea, button{
+		    color: black;
+		}
+		
+		table {
+			border-collapse: collapse;
+			 
+		}
+		
+		table td, table th{
+			border: 1px solid #ccc;
+			padding: 5px;
+			color: black
+			
+		}
+		
+		table th {
+			background-color: #ccc;
+			font-weight: bold;
+		}
+		ul {
+			margin: 20px 15px;
+			list-style-type: disc;
+		}
+		
+		li {
+			margin: 5px 0;
+		}
+		
+		li.checkbox {
+			margin: 0 0 15px 0;
+		}
+		
+		li.checkbox label {
+			display: inline;
+		}
+
+	
+		form{
+		  position: relative;
+		  top: 10px;
+		  left: 10px;
+		  width: 250;
+		}
+		
+		th, td, tr {
+	    border: 1px solid black;
+	    overflow: hidden;
+	    width: 75px;
+	    
+		}
+		
+		thead td{
+		border-radius: 10px;
+		}
+			
+		button, .botao{
+		background: #ECECEC;
+		border-radius: 30px;
+		padding: 10px 20px;
+		font-family: arial;
+		border:1px solid #a7a7a7;
+		width: 0 auto;
+		margin: 0 auto;
+		<!--display: flex; -->
+		
+		
+		}
+	
+		

@@ -1,41 +1,13 @@
 <html>
 
 	<head>
-	<style>
-		table {
-		border-collapse: collapse;
-		}
-		
-		table td, table th{
-			border: 1px solid #ccc;
-			padding: 5px;
-		}
-		
-		table th {
-			background-color: #ccc;
-			font-weight: bold;
-		}
-		ul {
-			margin: 20px 15px;
-			list-style-type: disc;
-		}
-		
-		li {
-			margin: 5px 0;
-		}
-		
-		li.checkbox {
-			margin: 0 0 15px 0;
-		}
-		
-		li.checkbox label {
-			display: inline;
-		}
-	</style>
+		<meta charset="utf-8">
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+				<link rel="stylesheet" type="text/css" href="/css/filmator-web.css">
 	</head>
 	<body>
 	<form action="/filmesSalvos" method="GET">
-		
+		<div>
 	<table >
 	<thead>
 				<tr>
@@ -74,12 +46,14 @@
 			</tbody>
 		
 	</table>
+		<input type="button"  class="botao" onclick="location.href='/'" value="Voltar" >	
+	<div>
 		
 		
-	<td></td>
+	
 	
 		
-		<input type="button"  onclick="location.href='/'" value="Voltar" >	
+	
 	</body>
 	
 </html>

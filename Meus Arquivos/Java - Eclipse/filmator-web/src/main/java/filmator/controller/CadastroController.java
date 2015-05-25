@@ -33,11 +33,6 @@ public class CadastroController {
 	public String salvar(Filme filme, Model model) {		
 			bibli.adicionarFilme(filme);
 			
-			System.out.println(filme.getNome() );
-			System.out.println(filme.getAno() );
-			System.out.println(filme.getSinopse() );
-			System.out.println(filme.getImagem() );
-			System.out.println(bibli.getLista());
 			
 		return "redirect:/cadastro-filmes";
 	}
