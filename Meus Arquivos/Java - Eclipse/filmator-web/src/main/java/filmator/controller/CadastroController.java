@@ -27,9 +27,6 @@ public class CadastroController {
 	@RequestMapping(value = "/cadastro-filmes", method=RequestMethod.GET)
 	public String abreTelaCadastro(Filme filme, Model model) {
 		model.addAttribute("generos", Genero.values());
-				
-	
-
 		return "cadastro";
 	}
 

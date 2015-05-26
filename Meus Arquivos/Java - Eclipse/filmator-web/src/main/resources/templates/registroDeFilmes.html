@@ -2,58 +2,86 @@
 
 	<head>
 		<meta charset="utf-8">
-				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-				<link rel="stylesheet" type="text/css" href="/css/filmator-web.css">
+			{{> scripts}}
+				
 	</head>
 	<body>
-	<form action="/filmesSalvos" method="GET">
-		<div>
-	<table >
-	<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Ano de Lancamento</th>
-					<th>Genero</th>
-					<th>Sinopse</th>
-					<th>Imagem</th>
-				</tr>
-		</thead>
-		  
-		  <tbody>
-		  {{#listafilmes}}
-		  				<tr>
-						<td>
-							{{nome}}
-						</td> 
-						<td>
-							{{ano}}
-						</td> 
-						<td> 
-							{{genero.descricao}}
-						</td>
-						<td >
-							{{sinopse}}
-						</td>
-						<td>
-							
-						<img src="{{imagem}}" height="100" width="70" class="imagem"> </img>
-						</td>
-					</tr>
-				 {{/listafilmes}}	
+	
+	
+	 <div id="wrapper">
+	
+	 
+		 {{> navigation}}
+		 
+
+		
+		<div id="page-wrapper">
+
+				<div class="container-fluid">
+
 					
-				
-			
-			</tbody>
-		
-	</table>
-		<input type="button"  class="botao" onclick="location.href='/'" value="Voltar" >	
-	<div>
-		
-		
+
+					<div class="row">
+						<div class="col-lg-6">
+								<form action="/filmesSalvos" method="GET">
+							
+
+											<h2>Filmes</h2>
+											<div class="table-responsive minhaTable">
+												<table class="table table-bordered table-hover table-striped ">
+													<thead>
+														<tr>
+															<th>Nome</th>
+															<th>Ano de Lancamento</th>
+															<th>Genero</th>
+															<th>Sinopse</th>
+															<th>Imagem</th>
+														</tr>
+													</thead>
+													<tbody>
+																  
+														{{#listafilmes}}
+															<tr>
+															<td>
+																{{nome}}
+															</td> 
+															<td>
+																{{ano}}
+															</td> 
+															<td> 
+																{{genero.descricao}}
+															</td>
+															<td class="minhaTD" >
+																{{sinopse}}
+															</td>
+															<td>
+																
+															<img src="{{imagem}}" height="100" width="70" class="imagem"> </img>
+															</td>
+															</tr>
+														 {{/listafilmes}}	
+													</tbody>
+												</table>
+											</div>
+											
+								</form>
+						 </div>
+					</div>
+					
+
+				<!-- /.container-fluid -->
+
+			</div>
 	
 	
 		
-	
+		</div>
+		
+	</div>
 	</body>
 	
 </html>
+
+
+
+ 
