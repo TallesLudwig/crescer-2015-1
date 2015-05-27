@@ -19,6 +19,7 @@ import filmator.dao.FilmeDao;
 import filmator.model.Biblioteca;
 import filmator.model.Filme;
 import filmator.model.Genero;
+import filmator.model.Usuario;
 
 @Controller
 public class HomeController {
@@ -28,7 +29,9 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpSession session) {
 
+		Boolean isAdmin =  (Boolean) session.getAttribute("usuarioAdmin");
 		
+		model.addAttribute("isAdmin", isAdmin != null && isAdmin);
 		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
 		model.addAttribute("mensagem", "Bem vindo.");
 		model.addAttribute("texto", "	Lorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus.");

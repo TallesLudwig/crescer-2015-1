@@ -29,7 +29,8 @@ public class CadastroFilmesController {
 	public String abreTelaCadastro(Model model, HttpSession session) {
 		
 		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
-		if(session.getAttribute("usuarioAdmin").equals(1)){
+		boolean isAdmin = (boolean) session.getAttribute("usuarioAdmin");
+		if(isAdmin){
 			model.addAttribute("generos", Genero.values());
 			return "cadastroFilmes";
 		}
