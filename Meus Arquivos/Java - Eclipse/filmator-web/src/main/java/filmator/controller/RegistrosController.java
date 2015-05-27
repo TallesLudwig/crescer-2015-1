@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,29 +25,12 @@ public class RegistrosController {
 	@Inject 
 	private FilmeDao filmeDao;
 	
-/*@RequestMapping(value = "/filmesSalvos", method=RequestMethod.GET)
-	public String mostraCadastrados( Model model) {
-		
-		for (Filme a : bibli.getLista()) {
-		
-			model.addAttribute("nome", a.getNome() );
-			model.addAttribute("ano", a.getAno() );
-			model.addAttribute("listaFilmes", bibli.getLista());		
-			model.addAttribute("sinopse", a.getSinopse() );
-			model.addAttribute("imagem", a.getImagem() );
-			
-			
-		}
-	
-	
-		return "registroDeFilmes";
-	}*/
-	
-	//@ResponseBody //@ResponseBody faz transformar o retorno para JSON!
+
 	@RequestMapping(value = "/filmesSalvos", method = RequestMethod.GET)
-	public String mostraCadastrados(Model model) {
+	public String mostraCadastrados(Model model,  HttpSession session) {
 		
-		
+		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
+
 	
 		model.addAttribute("listafilmes", filmeDao.buscaTodosFilmesJava8());	
 	

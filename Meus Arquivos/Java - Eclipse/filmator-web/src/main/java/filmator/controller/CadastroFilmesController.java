@@ -3,6 +3,7 @@ package filmator.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,16 +19,17 @@ import filmator.model.Genero;
 
 
 @Controller
-public class CadastroController {
+public class CadastroFilmesController {
 	
 	
 	@Inject 
 	private FilmeDao filmeDao;
 
 	@RequestMapping(value = "/cadastro-filmes", method=RequestMethod.GET)
-	public String abreTelaCadastro(Filme filme, Model model) {
+	public String abreTelaCadastro(Filme filme, Model model, HttpSession session) {
+		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
 		model.addAttribute("generos", Genero.values());
-		return "cadastro";
+		return "cadastroFilmes";
 	}
 
 	
@@ -41,7 +43,6 @@ public class CadastroController {
 		
 		return "redirect:/cadastro-filmes";
 		
-		//return filmeDao.buscaTodosFilmesJava8();
 	}
 	
 	

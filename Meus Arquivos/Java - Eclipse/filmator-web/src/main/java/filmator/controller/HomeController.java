@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import org.mockito.InjectMocks;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +23,16 @@ import filmator.model.Genero;
 @Controller
 public class HomeController {
 	
+
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home(Model model, HttpSession session) {
+
+		
+		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
 		model.addAttribute("mensagem", "Bem vindo.");
 		model.addAttribute("texto", "	Lorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus.");
-	
+		
 		return "nomeDoArquivo";
 	}
 	

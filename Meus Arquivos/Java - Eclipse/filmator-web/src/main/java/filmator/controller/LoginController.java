@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.mockito.InjectMocks;
 import org.springframework.stereotype.Controller;
@@ -29,20 +30,24 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String home(Model model) {
-		model.addAttribute("mensagem", "Bem vindo.");
-		
+		model.addAttribute("mensagem", "Informe os dados:");
+		model.addAttribute("logado", "Deslogado");
 	
 		return "login";
 	}
 	
 	
 	@RequestMapping(value = "/entrar", method = RequestMethod.POST)
-	public String salvar(Model model, Usuario usuario) {
+	public String salvar(Model model, Usuario usuario, HttpSession session) {
 	
-		
-		if(  usuarioDao.autentica(usuario) == 1 ){
+		if(  usuarioDao.buscaUsuario(usuario) != null ){
 			
-			System.out.println("entro");
+			session.setAttribute("usuarioLogadomome", usuarioDao.buscaUsuario(usuario).get(0).getNome());
+			session.setAttribute("usuarioLogado", usuario);
+			session.setAttribute("usuarioAdmin", usuarioDao.buscaUsuario(usuario).get(0).getAdmin());
+			System.out.println(usuarioDao.buscaUsuario(usuario).get(0).getAdmin());
+			
+			
 		} else {
 			System.out.println("Não entro");
 			
@@ -52,6 +57,9 @@ public class LoginController {
 		
 		
 	}
+	
+	
+
 
 	
 

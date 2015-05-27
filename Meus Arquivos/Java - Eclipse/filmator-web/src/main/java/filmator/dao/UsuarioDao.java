@@ -2,6 +2,7 @@ package filmator.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -23,16 +24,50 @@ public class UsuarioDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	
-public int autentica(Usuario usuario){
+public void inserir(Usuario usuario){
 		
-	String sql = "SELECT CASE WHEN EXISTS ( Select  * from USUARIO as u where u.NOME = ? and u.SENHA = ?) THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END";
-	 
-	Customer customer = (Customer)getJdbcTemplate().queryForObject(
-			sql, new Object[] { custId }, new CustomerRowMapper());
-	
-		return jdbcTemplate.query("SELECT CASE WHEN EXISTS ( Select  * from USUARIO as u where u.NOME = ? and u.SENHA = ?) THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END", 
-				 usuario.getNome(), usuario.getSenha());
+		
+		jdbcTemplate.update("INSERT INTO USUARIOS (login, nome, senha) VALUES (?, ?, ?)", 
+				usuario.getLogin(), usuario.getNome(), usuario.getSenha());
 	}
+	
+	
+public boolean autenticaUsuario(Usuario usuario){
+		
+	String sql = "SELECT CASE WHEN EXISTS ( Select  * from USUARIOS as u where u.LOGIN = (?) and u.SENHA = (?)) THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END";
+
+	return jdbcTemplate.queryForObject(sql, Boolean.class, usuario.getNome(), usuario.getSenha());
+
+
+}
+	
+
+public List<Usuario> buscaUsuario(Usuario usuario){
+	
+	String filtroNome = usuario.getLogin(); 
+	  String filtroSenha = usuario.getSenha();
+	 
+	  
+	return jdbcTemplate.query("Select  login, nome, senha, admin from USUARIOS as u where u.LOGIN = ? and u.SENHA = ?", new RowMapper<Usuario>() {
+		
+		  public Usuario mapRow(ResultSet rs, int rowNum) throws SQLException {
+			  Usuario usuarioum = new Usuario();
+			  usuarioum.setLogin(rs.getString("login"));
+			  usuarioum.setNome(rs.getString("nome"));
+		      usuarioum.setSenha(rs.getString("senha")); 
+		      usuarioum.setAdmin(rs.getInt("admin")); 
+		    return usuarioum;
+		  }
+		}, filtroNome, filtroSenha);
+}
+		
+
+
+
+
+
+
+		
 
 
 
