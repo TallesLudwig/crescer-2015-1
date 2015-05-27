@@ -15,11 +15,13 @@
 						
 							 
 						 <div class="jumbotron">
+						 {{#mensagem}}
 							<h1>{{mensagem}}</h1>
+						 {{/mensagem}}
+						 {{#texto}}
 							<p>{{texto}}</p>
-							<p><input type="button" class="btn btn-primary btn-lg" onclick="location.href='/cadastro-filmes.html'" value="Cadastrar" >
-								<input type="button" class="btn btn-primary btn-lg" onclick="location.href='/filmesSalvos.html'" value="Mostrar Regitros" >
-							</p>				
+						{{/texto}}
+	
 							</div>
 							
 						

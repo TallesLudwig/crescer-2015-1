@@ -26,10 +26,18 @@ public class CadastroFilmesController {
 	private FilmeDao filmeDao;
 
 	@RequestMapping(value = "/cadastro-filmes", method=RequestMethod.GET)
-	public String abreTelaCadastro(Filme filme, Model model, HttpSession session) {
+	public String abreTelaCadastro(Model model, HttpSession session) {
+		
 		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
-		model.addAttribute("generos", Genero.values());
-		return "cadastroFilmes";
+		if(session.getAttribute("usuarioAdmin").equals(1)){
+			model.addAttribute("generos", Genero.values());
+			return "cadastroFilmes";
+		}
+		else{
+			return "redirect:/naoAutorizado";
+		}
+		
+		
 	}
 
 	

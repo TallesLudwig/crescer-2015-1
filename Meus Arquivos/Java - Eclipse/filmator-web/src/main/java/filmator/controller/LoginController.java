@@ -41,7 +41,6 @@ public class LoginController {
 	public String salvar(Model model, Usuario usuario, HttpSession session) {
 	
 		if(  usuarioDao.buscaUsuario(usuario) != null ){
-			
 			session.setAttribute("usuarioLogadomome", usuarioDao.buscaUsuario(usuario).get(0).getNome());
 			session.setAttribute("usuarioLogado", usuario);
 			session.setAttribute("usuarioAdmin", usuarioDao.buscaUsuario(usuario).get(0).getAdmin());
