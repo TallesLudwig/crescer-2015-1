@@ -7,6 +7,8 @@ public class Filme {
 	private Genero genero;
 	private String sinopse;
 	private String imagem;
+	private int notaMedia;
+	private int id;
 	
 	public Filme(){
 	
@@ -69,6 +71,27 @@ public class Filme {
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public int getNotaMedia() {
+		return notaMedia;
+	}
+
+
+	public void setNotaMedia(int notaMedia) {
+		this.notaMedia = notaMedia;
+	}
+	
 	
 	
 	

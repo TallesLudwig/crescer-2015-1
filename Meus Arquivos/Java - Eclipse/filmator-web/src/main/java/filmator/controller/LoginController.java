@@ -44,6 +44,7 @@ public class LoginController {
 			session.setAttribute("usuarioLogadomome", usuarioDao.buscaUsuario(usuario).get(0).getNome());
 			session.setAttribute("usuarioLogado", usuario);
 			session.setAttribute("usuarioAdmin", usuarioDao.buscaUsuario(usuario).get(0).getAdmin() == 1);
+			session.setAttribute("usuarioLogadoId", usuarioDao.buscaUsuario(usuario).get(0).getId());
 			System.out.println(usuarioDao.buscaUsuario(usuario).get(0).getAdmin());
 			
 			

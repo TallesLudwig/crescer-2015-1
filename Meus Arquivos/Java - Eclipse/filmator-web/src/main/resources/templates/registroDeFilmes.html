@@ -36,28 +36,52 @@
 															<th>Genero</th>
 															<th>Sinopse</th>
 															<th>Imagem</th>
+															<th>Nota</th>
 														</tr>
 													</thead>
 													<tbody>
 																  
 														{{#listafilmes}}
 															<tr>
-															<td>
-																{{nome}}
-															</td> 
-															<td>
-																{{ano}}
-															</td> 
-															<td> 
-																{{genero.descricao}}
-															</td>
-															<td class="minhaTD" >
-																{{sinopse}}
-															</td>
-															<td>
+																<td >
+																	{{nome}}
+																</td> 
+																<td>
+																	{{ano}}
+																</td> 
+																<td> 
+																	{{genero.descricao}}
+																</td>
+																<td class="minhaTD" >
+																	{{sinopse}}
+																</td>
+																<td>
+																	
+																<img src="{{imagem}}" height="100" width="70" class="imagem"> </img>
+																</td>
 																
-															<img src="{{imagem}}" height="100" width="70" class="imagem"> </img>
-															</td>
+																<td>
+																	<div class="form-group">
+																	
+																		<label>Avalie</label>
+																			<select name="nota"  id="nota{{id}}" class="form-control">
+																				<option> </option>
+																				<option>1</option>
+																				<option>2</option>
+																				<option>3</option>
+																				<option>4</option>
+																				<option>5</option>
+																			</select>
+																		</div>
+																			
+																	<input type="button" class="btn-avaliar  btn btn-default" id="botao" value="Avaliar" idFilme="{{id}}">
+																</td>
+																{{#notaMedia}}
+																<td id="media{{id}}">
+																	{{notaMedia}}
+																</td>
+																{{#notaMedia}}	
+																
 															</tr>
 														 {{/listafilmes}}	
 													</tbody>
@@ -68,8 +92,10 @@
 						 </div>
 					</div>
 					
+					
+					
 
-				<!-- /.container-fluid -->
+				<!-- /.container-fluid   -->
 
 			</div>
 	
@@ -80,6 +106,37 @@
 	</div>
 	{{> scripts2}}
 	</body>
+	
+	
+	
+	<script>
+	
+	function avaliar(idFilme){
+		$.ajax({
+			url:'/avaliar?id=' + idFilme + '&nota='+ $('#nota'+idFilme).val(),
+			type:'POST'
+		}).done(function(resp) {
+			alert("filme avaliado com sucesso");
+		
+		$('#media'+idFilme).text(resp);
+			
+		});
+	}
+	
+	
+	
+	
+	$(function(){
+		$('.btn-avaliar ').click(function(){
+			var idFilme = $(this).attr('idFilme');
+		
+			avaliar(idFilme);
+		});	
+	})
+	
+	
+	
+	</script>
 	
 </html>
 

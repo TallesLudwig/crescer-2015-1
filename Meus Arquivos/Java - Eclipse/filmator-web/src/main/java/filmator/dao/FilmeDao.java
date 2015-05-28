@@ -22,10 +22,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import filmator.model.Filme;
 import filmator.model.Genero;
+import filmator.model.Nota;
 
 @Component
 public class FilmeDao {
 
+	@Inject 
+	private AvaliacaoDao avaliacaoDao;
 	
 	@Inject
 	private JdbcTemplate jdbcTemplate;
@@ -42,7 +45,7 @@ public class FilmeDao {
 	
 	public List<Filme> buscaTodosFilmesJava8(){
 
-		return jdbcTemplate.query("SELECT nome, ano, genero, sinopse, imagem FROM Filme", new RowMapper<Filme>(){
+		return jdbcTemplate.query("SELECT id, nome, ano, genero, sinopse, imagem FROM Filme", new RowMapper<Filme>(){
 			
 			
 				
@@ -51,12 +54,16 @@ public class FilmeDao {
 				
 				
 				Filme filme = new Filme();
+				filme.setId(rs.getInt("id"));
 				filme.setNome(rs.getString("nome"));
 				filme.setAno(rs.getInt("ano"));
 				filme.setGenero(Genero.valueOf(rs.getString("genero")));
 				filme.setSinopse(rs.getString("sinopse"));
 				filme.setImagem(rs.getString("imagem"));
 			
+				int nota = (Integer)avaliacaoDao.mediaAvaliacao(filme.getId()).get(0).getNota();
+				
+				filme.setNotaMedia(nota);
 			
 				return filme;
 				

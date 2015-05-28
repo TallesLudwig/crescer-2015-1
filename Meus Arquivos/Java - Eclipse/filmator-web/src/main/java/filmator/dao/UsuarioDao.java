@@ -48,10 +48,11 @@ public List<Usuario> buscaUsuario(Usuario usuario){
 	  String filtroSenha = usuario.getSenha();
 	 
 	  
-	return jdbcTemplate.query("Select  login, nome, senha, admin from USUARIOS as u where u.LOGIN = ? and u.SENHA = ?", new RowMapper<Usuario>() {
+	return jdbcTemplate.query("Select  id, login, nome, senha, admin from USUARIOS as u where u.LOGIN = ? and u.SENHA = ?", new RowMapper<Usuario>() {
 		
 		  public Usuario mapRow(ResultSet rs, int rowNum) throws SQLException {
 			  Usuario usuarioum = new Usuario();
+			  usuarioum.setId(rs.getInt("id"));
 			  usuarioum.setLogin(rs.getString("login"));
 			  usuarioum.setNome(rs.getString("nome"));
 		      usuarioum.setSenha(rs.getString("senha")); 
