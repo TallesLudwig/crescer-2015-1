@@ -34,6 +34,7 @@ public class RegistrosController {
 	
 	@RequestMapping(value = "/filmesSalvos", method = RequestMethod.GET)
 	public String mostraCadastrados(Model model,  HttpSession session) {
+	
 		Boolean isAdmin = (Boolean) session.getAttribute("usuarioAdmin");
 		model.addAttribute("isAdmin", isAdmin != null && isAdmin);
 		
@@ -63,7 +64,6 @@ public class RegistrosController {
 		
 		
 		
-		//double mediaAtual = avaliacaoDao.buscaMediaAtual(idFilme);	
 		return avaliacaoDao.mediaAvaliacao(id).get(0).getNota();
 		
 	}
