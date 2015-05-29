@@ -36,14 +36,14 @@
 															<th>Genero</th>
 															<th>Sinopse</th>
 															<th>Imagem</th>
-															<th>Nota</th>
+															<th>Media de Notas</th>
 														</tr>
 													</thead>
 													<tbody>
 																  
 														{{#listafilmes}}
 															<tr>
-																<td >
+																<td class="minhaTD">
 																	{{nome}}
 																</td> 
 																<td>
@@ -60,7 +60,7 @@
 																<img src="{{imagem}}" height="100" width="70" class="imagem"> </img>
 																</td>
 																
-																<td>
+																<td class="nota{{id}}">
 																	<div class="form-group">
 																	
 																		<label>Avalie</label>
@@ -75,12 +75,13 @@
 																		</div>
 																			
 																	<input type="button" class="btn-avaliar  btn btn-default" id="botao" value="Avaliar" idFilme="{{id}}">
+																	<input type="button" class="btn-media  btn btn-default" id="botaoMedia" value="Media" idFilme="{{id}}">
 																</td>
-																{{#notaMedia}}
-																<td id="media{{id}}">
-																	{{notaMedia}}
+																<td  id="media{{id}}"  style="display: none">
+																
+																
+																
 																</td>
-																{{#notaMedia}}	
 																
 															</tr>
 														 {{/listafilmes}}	
@@ -117,11 +118,44 @@
 			type:'POST'
 		}).done(function(resp) {
 			alert("filme avaliado com sucesso");
-		
-		$('#media'+idFilme).text(resp);
+			mudaTela(resp , idFilme);
+
+			
+	
+	
+			
 			
 		});
 	}
+	
+	function buscar(idFilme){
+		$.ajax({
+			url:'/buscar?id=' + idFilme,
+			type:'POST'
+		}).done(function(resp) {
+			
+			mudaTela(resp , idFilme);
+		
+			
+		});
+	}
+	
+	function mudaTela(resp , idFilme){
+	
+		$('#media'+idFilme).show();
+		$(".nota"+idFilme).remove();
+
+		for (var i = 0; i< (5-resp); i++) {
+			$('#media'+idFilme).prepend('<img src="http://www.clker.com/cliparts/1/m/K/Y/P/x/star-grey-md.png" height="22" width="22" class="imagem"> </img>')
+		}
+		for (var i = 0; i< resp; i++) {
+			$('#media'+idFilme).prepend('<img src="http://www.clker.com/cliparts/f/9/8/1/1216181106356570529jean_victor_balin_icon_star.svg.hi.png" height="22" width="22" class="imagem"> </img>')
+
+		}
+		
+	}
+	
+	
 	
 	
 	
@@ -134,6 +168,16 @@
 		});	
 	})
 	
+	$(function(){
+		$('.btn-media  ').click(function(){
+			var idFilme = $(this).attr('idFilme');
+		
+			buscar(idFilme);
+		});	
+	})
+	
+	
+	//$( "div.tumble" ).toggleClass( "bounce" )
 	
 	
 	</script>

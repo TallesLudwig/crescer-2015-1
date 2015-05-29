@@ -32,8 +32,11 @@ public class AvaliacaoDao {
 					);
 		}
 	
-	public void jaAvaliou(int idUsu, int idFilme){
+	public Boolean jaAvaliou(int idUsu, int idFilme){
 		
+		String sql = "SELECT CASE WHEN EXISTS ( Select  * from AVALIACAO  as u where u.IDFILME  = ? and u.IDUSUARIO  = ?) THEN CAST(0 AS BIT) ELSE CAST(1 AS BIT) END";
+
+		return jdbcTemplate.queryForObject(sql, Boolean.class, idFilme, idUsu);
 
 		
 	

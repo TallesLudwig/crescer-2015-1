@@ -230,5 +230,11 @@ ul.alert-dropdown {
 }
 .minhaTD{
 max-width: 500px; 
-min-width: 390px
+min-width: 330px
+}
+.imagem{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+	
 }
