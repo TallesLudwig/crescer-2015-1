@@ -79,8 +79,8 @@
 																</td>
 																<td  id="media{{id}}"  style="display: none">
 																
-																
-																
+																	
+																<input type="button" class="btn-voltar  btn btn-default" id="botaoVoltar" value="Voltar" idFilme="{{id}}">
 																</td>
 																
 															</tr>
@@ -143,7 +143,9 @@
 	function mudaTela(resp , idFilme){
 	
 		$('#media'+idFilme).show();
-		$(".nota"+idFilme).remove();
+		$(".nota"+idFilme).hide();
+	
+		
 
 		for (var i = 0; i< (5-resp); i++) {
 			$('#media'+idFilme).prepend('<img src="http://www.clker.com/cliparts/1/m/K/Y/P/x/star-grey-md.png" height="22" width="22" class="imagem"> </img>')
@@ -152,9 +154,21 @@
 			$('#media'+idFilme).prepend('<img src="http://www.clker.com/cliparts/f/9/8/1/1216181106356570529jean_victor_balin_icon_star.svg.hi.png" height="22" width="22" class="imagem"> </img>')
 
 		}
+	
 		
 	}
 	
+	
+
+	function voltar(idFilme){
+	
+		$('#media'+idFilme+' .imagem ').remove();
+		$('#media'+idFilme).hide();
+		$(".nota"+idFilme).show();
+
+		
+		
+	}
 	
 	
 	
@@ -173,6 +187,14 @@
 			var idFilme = $(this).attr('idFilme');
 		
 			buscar(idFilme);
+		});	
+	})
+	
+	$(function(){
+		$('.btn-voltar').click(function(){
+			var idFilme = $(this).attr('idFilme');
+		
+			voltar(idFilme);
 		});	
 	})
 	
