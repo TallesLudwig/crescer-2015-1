@@ -32,6 +32,9 @@ public class RegistrosController {
 	@Inject 
 	private AvaliacaoDao avaliacaoDao;
 	
+
+	
+	
 	@RequestMapping(value = "/filmesSalvos", method = RequestMethod.GET)
 	public String mostraCadastrados(Model model,  HttpSession session) {
 	
@@ -59,11 +62,25 @@ public class RegistrosController {
 	public double salvarNota(int nota, int id, HttpSession session) {
 		
 		int idusu= (int) session.getAttribute("usuarioLogadoId");
+		
 		Nota vNota = new Nota(nota, id, idusu );
 		avaliacaoDao.inserir(vNota);
 		
 		
 		
+		return avaliacaoDao.mediaAvaliacao(id).get(0).getNota();
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/buscar", method = RequestMethod.POST)
+	public double buscarNota( int id, HttpSession session) {
+		
+	
+		
+		
+		
+		//double mediaAtual = avaliacaoDao.buscaMediaAtual(idFilme);	
 		return avaliacaoDao.mediaAvaliacao(id).get(0).getNota();
 		
 	}
