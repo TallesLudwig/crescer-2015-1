@@ -48,9 +48,13 @@ public class RegistrosController {
 		model.addAttribute("listafilmes", filmeDao.buscaTodosFilmesJava8());	
 		
 
-			
+		if (session.getAttribute("usuarioLogadomome") != null){
+			return "registroDeFilmes";
+		}else{
+			return "redirect:/naoAutorizado";
+		}
 		
-		return "registroDeFilmes";
+	
 	
 	}
 
@@ -64,6 +68,7 @@ public class RegistrosController {
 		int idusu= (int) session.getAttribute("usuarioLogadoId");
 		
 		Nota vNota = new Nota(nota, id, idusu );
+		
 		avaliacaoDao.inserir(vNota);
 		
 		
@@ -73,12 +78,10 @@ public class RegistrosController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/buscar", method = RequestMethod.POST)
+	@RequestMapping(value = "/media", method = RequestMethod.POST)
 	public double buscarNota( int id, HttpSession session) {
 		
-	
-		
-		
+
 		
 		//double mediaAtual = avaliacaoDao.buscaMediaAtual(idFilme);	
 		return avaliacaoDao.mediaAvaliacao(id).get(0).getNota();

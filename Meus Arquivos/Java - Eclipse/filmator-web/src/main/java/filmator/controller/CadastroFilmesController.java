@@ -17,47 +17,36 @@ import filmator.model.Biblioteca;
 import filmator.model.Filme;
 import filmator.model.Genero;
 
-
 @Controller
 public class CadastroFilmesController {
-	
-	
-	@Inject 
+
+	@Inject
 	private FilmeDao filmeDao;
 
-	@RequestMapping(value = "/cadastro-filmes", method=RequestMethod.GET)
+	@RequestMapping(value = "/cadastro-filmes", method = RequestMethod.GET)
 	public String abreTelaCadastro(Model model, HttpSession session) {
-		
+
 		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
-	
-		
+
 		Boolean isAdmin = (Boolean) session.getAttribute("usuarioAdmin");
 		model.addAttribute("isAdmin", isAdmin != null && isAdmin);
-		
-		
-		if(isAdmin){
+
+		if (isAdmin) {
 			model.addAttribute("generos", Genero.values());
 			return "cadastroFilmes";
-		}
-		else{
+		} else {
 			return "redirect:/naoAutorizado";
 		}
-		
-		
-	}
 
-	
-	
+	}
 
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
 	public String salvar(Model model, Filme filme) {
-	
+
 		filmeDao.inserir(filme);
 
-		
 		return "redirect:/cadastro-filmes";
-		
+
 	}
-	
-	
+
 }

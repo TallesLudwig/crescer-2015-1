@@ -29,6 +29,8 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpSession session) {
 
+		Boolean isUser =  (Boolean) session.getAttribute("usuarioAdmin");
+		
 		Boolean isAdmin =  (Boolean) session.getAttribute("usuarioAdmin");
 		
 		model.addAttribute("isAdmin", isAdmin != null && isAdmin);
@@ -36,7 +38,12 @@ public class HomeController {
 		model.addAttribute("mensagem", "Bem vindo.");
 		model.addAttribute("texto", "	Lorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus. Mattis ad molestie metus penatibusLorem ipsum dolor sit amet, condimentum libero mus, neque congue ac lacus.");
 		
-		return "nomeDoArquivo";
+		
+		if (session.getAttribute("usuarioLogadomome") != null){
+			return "nomeDoArquivo";
+		}else{
+			return "redirect:/naoAutorizado";
+		}
 	}
 	
 	

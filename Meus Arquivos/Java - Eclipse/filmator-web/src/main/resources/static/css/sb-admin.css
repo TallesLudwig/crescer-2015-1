@@ -225,12 +225,10 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
-.minhaTable{
-  overflow-x: initial;
-}
-.minhaTD{
-max-width: 500px; 
-min-width: 330px
+
+.col100{
+	width: 100%
+	
 }
 .imagem{
 	display: block;

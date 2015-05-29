@@ -5,28 +5,23 @@ public class Nota {
 	private int idFilme;
 	private int idUsuario;
 
-	
-	public Nota(){
-		
+	public Nota() {
+
 	}
-	
-	public Nota(int nota){
-	this.nota = nota;
+
+	public Nota(int nota) {
+		this.nota = nota;
 	}
-	
-	public Nota(int nota, int idFilm,int idUsu){
+
+	public Nota(int nota, int idFilm, int idUsu) {
 		this.nota = nota;
 		this.idFilme = idFilm;
 		this.idUsuario = idUsu;
 	}
-	
-
-
 
 	public int getNota() {
 		return nota;
 	}
-
 
 	public void setNota(int nota) {
 		this.nota = nota;
@@ -47,8 +42,5 @@ public class Nota {
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-
-
-	
 
 }

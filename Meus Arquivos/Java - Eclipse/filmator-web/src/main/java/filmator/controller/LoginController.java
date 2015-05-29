@@ -31,7 +31,7 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String home(Model model) {
 		model.addAttribute("mensagem", "Informe os dados:");
-		model.addAttribute("logado", "Deslogado");
+		
 	
 		return "login";
 	}

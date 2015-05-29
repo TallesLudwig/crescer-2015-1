@@ -16,9 +16,11 @@ public class NaoAutorizado {
 		
 
 		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
-		model.addAttribute("mensagem", "OOOOOOoops");
-		model.addAttribute("texto", "Sinto muito mas esse usuario não tem autorição para entrar nesta pagina.	");
 		
+		model.addAttribute("mensagem", "OOOOOOoops");
+		model.addAttribute("texto",
+				"Sinto muito mas voce não tem autorição para entrar nesta pagina. Tente fazer login com um usuario autorizado");
+
 		return "naoAutorizado";
 	}
 

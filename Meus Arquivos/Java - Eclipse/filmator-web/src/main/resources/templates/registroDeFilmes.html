@@ -22,13 +22,13 @@
 					
 
 					<div class="row">
-						<div class="col-lg-6">
+						<div class="col-lg-6 col100">
 								<form action="/filmesSalvos" method="GET">
 							
 
 											<h2>Filmes</h2>
 											<div class="table-responsive minhaTable">
-												<table class="table table-bordered table-hover table-striped ">
+												<table class="table table-bordered table-hover table-striped  minhaTD" >
 													<thead>
 														<tr>
 															<th>Nome</th>
@@ -36,6 +36,7 @@
 															<th>Genero</th>
 															<th>Sinopse</th>
 															<th>Imagem</th>
+															<th>Avalie</th>
 															<th>Media de Notas</th>
 														</tr>
 													</thead>
@@ -43,7 +44,7 @@
 																  
 														{{#listafilmes}}
 															<tr>
-																<td class="minhaTD">
+																<td class="filme "  idF="{{id}}">
 																	{{nome}}
 																</td> 
 																<td>
@@ -52,7 +53,7 @@
 																<td> 
 																	{{genero.descricao}}
 																</td>
-																<td class="minhaTD" >
+																<td >
 																	{{sinopse}}
 																</td>
 																<td>
@@ -66,7 +67,7 @@
 																		<label>Avalie</label>
 																			<select name="nota"  id="nota{{id}}" class="form-control">
 																				<option> </option>
-																				<option>1</option>
+																				<option>1 </option>
 																				<option>2</option>
 																				<option>3</option>
 																				<option>4</option>
@@ -75,12 +76,10 @@
 																		</div>
 																			
 																	<input type="button" class="btn-avaliar  btn btn-default" id="botao" value="Avaliar" idFilme="{{id}}">
-																	<input type="button" class="btn-media  btn btn-default" id="botaoMedia" value="Media" idFilme="{{id}}">
-																</td>
-																<td  id="media{{id}}"  style="display: none">
-																
 																	
-																<input type="button" class="btn-voltar  btn btn-default" id="botaoVoltar" value="Voltar" idFilme="{{id}}">
+																</td>
+																<td  id="media{{id}}"  media="{{notaMedia}}" class="estrelas">
+																
 																</td>
 																
 															</tr>
@@ -112,6 +111,38 @@
 	
 	<script>
 	
+
+	
+
+	
+	$(function(){
+	
+		inicializaEstrelas();
+	
+	})
+
+	
+	function inicializaEstrelas(){
+		$('.estrelas').each(function(i, elemen ){
+			var $elemen = $(elemen);
+			var media = $elemen.attr('media');
+		
+			
+			
+			for (var i = 0; i< (5-media); i++) {
+				$elemen.prepend('<img src="http://www.clker.com/cliparts/1/m/K/Y/P/x/star-grey-md.png" height="22" width="22" class="imagem"> </img>')
+			}
+			for (var i = 0; i< media; i++) {
+				$elemen.prepend('<img src="http://www.clker.com/cliparts/f/9/8/1/1216181106356570529jean_victor_balin_icon_star.svg.hi.png" height="22" width="22" class="imagem"> </img>')
+			}
+		});
+	
+	};
+	
+	
+	
+	
+	
 	function avaliar(idFilme){
 		$.ajax({
 			url:'/avaliar?id=' + idFilme + '&nota='+ $('#nota'+idFilme).val(),
@@ -119,34 +150,15 @@
 		}).done(function(resp) {
 			alert("filme avaliado com sucesso");
 			mudaTela(resp , idFilme);
+			
+		});
+	}
+	
+	
 
-			
-	
-	
-			
-			
-		});
-	}
-	
-	function buscar(idFilme){
-		$.ajax({
-			url:'/buscar?id=' + idFilme,
-			type:'POST'
-		}).done(function(resp) {
-			
-			mudaTela(resp , idFilme);
-		
-			
-		});
-	}
 	
 	function mudaTela(resp , idFilme){
-	
-		$('#media'+idFilme).show();
-		$(".nota"+idFilme).hide();
-	
-		
-
+		$('#media'+idFilme+' .imagem ').remove();
 		for (var i = 0; i< (5-resp); i++) {
 			$('#media'+idFilme).prepend('<img src="http://www.clker.com/cliparts/1/m/K/Y/P/x/star-grey-md.png" height="22" width="22" class="imagem"> </img>')
 		}
@@ -154,25 +166,10 @@
 			$('#media'+idFilme).prepend('<img src="http://www.clker.com/cliparts/f/9/8/1/1216181106356570529jean_victor_balin_icon_star.svg.hi.png" height="22" width="22" class="imagem"> </img>')
 
 		}
-	
 		
 	}
 	
-	
 
-	function voltar(idFilme){
-	
-		$('#media'+idFilme+' .imagem ').remove();
-		$('#media'+idFilme).hide();
-		$(".nota"+idFilme).show();
-
-		
-		
-	}
-	
-	
-	
-	
 	
 	$(function(){
 		$('.btn-avaliar ').click(function(){
@@ -182,21 +179,8 @@
 		});	
 	})
 	
-	$(function(){
-		$('.btn-media  ').click(function(){
-			var idFilme = $(this).attr('idFilme');
-		
-			buscar(idFilme);
-		});	
-	})
+
 	
-	$(function(){
-		$('.btn-voltar').click(function(){
-			var idFilme = $(this).attr('idFilme');
-		
-			voltar(idFilme);
-		});	
-	})
 	
 	
 	//$( "div.tumble" ).toggleClass( "bounce" )
