@@ -19,6 +19,7 @@ import filmator.dao.UsuarioDao;
 import filmator.model.Biblioteca;
 import filmator.model.Filme;
 import filmator.model.Nota;
+import filmator.model.Usuario;
 
 @Controller
 public class RegistrosController {
@@ -40,7 +41,8 @@ public class RegistrosController {
 	
 		Boolean isAdmin = (Boolean) session.getAttribute("usuarioAdmin");
 		model.addAttribute("isAdmin", isAdmin != null && isAdmin);
-		
+		model.addAttribute("removeFilme", isAdmin != null && isAdmin);
+
 		
 		
 		model.addAttribute("logado", session.getAttribute("usuarioLogadomome"));
@@ -57,7 +59,9 @@ public class RegistrosController {
 	
 	
 	}
+	
 
+	
 	
 
 
@@ -85,6 +89,17 @@ public class RegistrosController {
 		
 		//double mediaAtual = avaliacaoDao.buscaMediaAtual(idFilme);	
 		return avaliacaoDao.mediaAvaliacao(id).get(0).getNota();
+		
+	}
+	
+	
+	@RequestMapping(value = "/deletarFilme", method = RequestMethod.POST)
+	public String salvar(Model model, int idExcluir) {
+	
+		filmeDao.remove(idExcluir);
+
+		
+		return "registroDeFilmes";
 		
 	}
 

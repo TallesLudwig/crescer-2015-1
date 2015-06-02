@@ -70,9 +70,56 @@ public class FilmeDao {
 
 	}
 
-	// public static void main(String[] args) {
-	//
-	// System.out.println(Genero.FICCAO_CIENTIFICA.name());
-	// }
+	
+	
+	
+	public List<Filme> buscaFilmes(String nome) {
+
+		List<Filme> a= new ArrayList<Filme>();
+		
+	return jdbcTemplate.query(
+				"SELECT id, nome, ano, genero, sinopse, imagem FROM Filme where nome LIKE ?",
+				new RowMapper<Filme>() {
+
+					public Filme mapRow(ResultSet rs, int row)
+							throws SQLException {
+
+						Filme filme = new Filme();
+						filme.setId(rs.getInt("id"));
+						filme.setNome(rs.getString("nome"));
+						filme.setAno(rs.getInt("ano"));
+						filme.setGenero(Genero.valueOf(rs.getString("genero")));
+						filme.setSinopse(rs.getString("sinopse"));
+						filme.setImagem(rs.getString("imagem"));
+
+						int nota = (Integer) avaliacaoDao
+								.mediaAvaliacao(filme.getId()).get(0).getNota();
+
+						filme.setNotaMedia(nota);
+
+						return filme;
+
+					};
+
+				}, "%"+nome+"%");
+
+	
+
+	}
+	
+	
+	public void remove(int idFilme) {
+
+		jdbcTemplate.update("DELETE FROM Filme WHERE id = ?", idFilme);
+						
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
