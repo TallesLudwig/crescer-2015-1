@@ -109,7 +109,7 @@ public class FilmeDao {
 	
 	
 	public void remove(int idFilme) {
-
+		jdbcTemplate.update("DELETE FROM AVALIACAO WHERE IDFILME = ?", idFilme);
 		jdbcTemplate.update("DELETE FROM Filme WHERE id = ?", idFilme);
 						
 	}
