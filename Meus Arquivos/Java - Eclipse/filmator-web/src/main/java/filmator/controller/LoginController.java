@@ -40,20 +40,22 @@ public class LoginController {
 	@RequestMapping(value = "/entrar", method = RequestMethod.POST)
 	public String salvar(Model model, Usuario usuario, HttpSession session) {
 	
-		if(  usuarioDao.buscaUsuario(usuario) != null ){
+		
+	
+		if( usuarioDao.autenticaUsuario(usuario) ){
 			session.setAttribute("usuarioLogadomome", usuarioDao.buscaUsuario(usuario).get(0).getNome());
 			session.setAttribute("usuarioLogado", usuario);
 			session.setAttribute("usuarioAdmin", usuarioDao.buscaUsuario(usuario).get(0).getAdmin() == 1);
 			session.setAttribute("usuarioLogadoId", usuarioDao.buscaUsuario(usuario).get(0).getId());
 			System.out.println(usuarioDao.buscaUsuario(usuario).get(0).getAdmin());
-			
+			return "redirect:/";
 			
 		} else {
-			System.out.println("Não entro");
+			return "redirect:/naoAutorizado";
 			
 		}
 			
-			return "redirect:/";
+			
 		
 		
 	}

@@ -33,10 +33,12 @@ public void inserir(Usuario usuario){
 	
 	
 public boolean autenticaUsuario(Usuario usuario){
-		
-	String sql = "SELECT CASE WHEN EXISTS ( Select  * from USUARIOS as u where u.LOGIN = (?) and u.SENHA = (?)) THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END";
+	
+	System.out.println(usuario.getLogin());
+	System.out.println(usuario.getSenha());
+	String sql = "SELECT CASE WHEN EXISTS ( Select  * from USUARIOS as u where u.LOGIN = ? and u.SENHA = ?) THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END";
 
-	return jdbcTemplate.queryForObject(sql, Boolean.class, usuario.getNome(), usuario.getSenha());
+	return jdbcTemplate.queryForObject(sql, Boolean.class, usuario.getLogin(), usuario.getSenha());
 
 
 }
@@ -46,8 +48,10 @@ public List<Usuario> buscaUsuario(Usuario usuario){
 	
 	String filtroNome = usuario.getLogin(); 
 	  String filtroSenha = usuario.getSenha();
-	 
+	
+	  autenticaUsuario(usuario);
 	  
+	 
 	return jdbcTemplate.query("Select  id, login, nome, senha, admin from USUARIOS as u where u.LOGIN = ? and u.SENHA = ?", new RowMapper<Usuario>() {
 		
 		  public Usuario mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -60,7 +64,8 @@ public List<Usuario> buscaUsuario(Usuario usuario){
 		    return usuarioum;
 		  }
 		}, filtroNome, filtroSenha);
-}
+	}
+	  
 		
 
 
